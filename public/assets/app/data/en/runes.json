@@ -1,0 +1,4690 @@
+{
+	"10001": {
+		"tier": 3,
+		"image": "r10001",
+		"primary": "red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats": {
+			"CriticalDamagePercent": 2.2314
+		},
+		"tags": [
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"10002": {
+		"tier": 3,
+		"image": "r10002",
+		"primary": "black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats": {
+			"MovementSpeedPercent": 1.5
+		},
+		"tags": [
+			"utility",
+			"percent",
+			"quintessence"
+		]
+	},
+	"5001":{
+		"tier": 1,
+		"image": "rr_1_1",
+		"primary": "red",
+		"type": "mark",
+		"available": true,
+		"ip": 5,
+		"stats": {
+			"AttackDamage": 0.525
+		},
+		"tags": [
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"5002": {
+		"tier": 1,
+		"image": "rr_2_1",
+		"primary": "red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats": {
+			"AttackDamageScaling": 0.075
+		},
+		"tags": [
+			"physicalAttack",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5003": {
+		"tier": 1,
+		"image": "rr_3_1",
+		"primary": "red",
+		"type": "mark",
+		"available": true,
+		"ip": 5,
+		"stats": {
+			"AttackSpeedPercent": 0.9434
+		},
+		"tags": [
+			"physicalAttack",
+			"percent",
+			"mark"
+		]
+	},
+	"5005": {
+		"tier": 1,
+		"image": "rr_1_1",
+		"primary": "red",
+		"type": "mark",
+		"percent": true,
+		"scaling": false,
+		"available": false,
+		"ip": 0,
+		"stats": {
+			"CriticalDamagePercent": 1.2397
+		},
+		"tags": [
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"5007": {
+		"tier": 1,
+		"image": "rr_3_1",
+		"primary": "red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats": {
+			"CriticalChancePercent": 0.5155
+		},
+		"tags": [
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"5009": {
+		"tier": 1,
+		"image": "rr_1_1",
+		"primary": "red",
+		"type": "mark",
+		"available": true,
+		"ip": 5,
+		"stats": {
+			"ArmorPenetration": 0.72
+		},
+		"tags": [
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"5011": {
+		"name":"Lesser Mark of Health",
+		"description":"+1.93 health",
+		"tier": 1,
+		"image": "rr_3_1",
+		"primary": "red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats": {
+			"Health": 1.9305
+		},
+		"tags": [
+			"defense",
+			"flat",
+			"mark"
+		]
+	},
+	"5012": {
+		"tier": 1,
+		"image": "rr_4_1",
+		"primary": "red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats": {
+			"HealthScaling": 0.3005
+		},
+		"tags": [
+			"defense",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5013": {
+		"tier": 1,
+		"image": "rr_1_1",
+		"primary": "red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Armor": 0.508
+		},
+		"tags": [
+			"defense",
+			"flat",
+			"mark"
+		]
+	},
+	"5015": {
+		"tier": 1,
+		"image": "rr_3_1",
+		"primary": "red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MagicResist": 0.43
+		},
+		"tags": [
+			"defense",
+			"flat",
+			"mark"
+		]
+	},
+	"5016": {
+		"tier": 1,
+		"image": "rr_4_1",
+		"primary": "red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MagicResistScaling": 0.0412
+		},
+		"tags": [
+			"defense",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5021": {
+		"tier": 1,
+		"image": "rr_1_1",
+		"primary": "red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CooldownReductionPercent": -0.1112
+		},
+		"tags":[
+			"mark"
+		]
+	},
+	"5023":{
+		"tier": 1,
+		"image": "rr_3_1",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPower":0.33
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"mark"
+		]
+	},
+	"5024":{
+		"tier": 1,
+		"image": "rr_4_1",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPowerScaling":0.0577
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5025":{
+		"name":"Lesser Mark of Mana",
+		"description":"+3.28 mana",
+		"tier": 1,
+		"image": "rr_1_1",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Mana":3.2813
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"mark"
+		]
+	},
+	"5026":{
+		"tier": 1,
+		"image": "rr_2_1",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaScaling":0.6481
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5027":{
+		"tier": 1,
+		"image": "rr_3_1",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaRegeneration":0.02916
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"mark"
+		]
+	},
+	"5029":{
+		"tier": 1,
+		"image": "rr_1_1",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 5,
+		"stats":{
+			"MagicPenetration":0.49
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"mark"
+		]
+	},
+	"5031":{
+		"tier": 1,
+		"image": "rb_1_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackDamage":0.1575
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"glyph"
+		]
+	},
+	"5032":{
+		"tier": 1,
+		"image": "rb_2_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackDamageScaling":0.0225
+		},
+		"tags":[
+			"physicalAttack",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5033":{
+		"tier": 1,
+		"image": "rb_3_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackSpeedPercent":0.3538
+		},
+		"tags":[
+			"physicalAttack",
+			"percent",
+			"glyph"
+		]
+	},
+	"5035":{
+		"tier": 1,
+		"image": "rb_1_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalDamagePercent": 0.3099
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"glyph"
+		]
+	},
+	"5037":{
+		"tier": 1,
+		"image": "rb_3_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalChancePercent":0.1546
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"glyph"
+		]
+	},
+	"5041":{
+		"tier": 1,
+		"image": "rb_3_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Health":1.485
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"glyph"
+		]
+	},
+	"5042":{
+		"tier": 1,
+		"image": "rb_4_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthScaling":0.3005
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5043":{
+		"tier": 1,
+		"image": "rb_1_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Armor":0.3908
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"glyph"
+		]
+	},
+	"5045":{
+		"tier": 1,
+		"image": "rb_3_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 5,
+		"stats":{
+			"MagicResist":0.74
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"glyph"
+		]
+	},
+	"5046":{
+		"tier": 1,
+		"image": "rb_4_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MagicResistScaling":0.09333
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5047":{
+		"tier": 1,
+		"image": "rb_1_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthRegeneration":0.03
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"glyph"
+		]
+	},
+	"5051":{
+		"tier": 1,
+		"image": "rb_1_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 5,
+		"stats":{
+			"CooldownReductionPercent":-0.47
+		},
+		"tags":[
+			"glyph"
+		]
+	},
+	"5052":{
+		"tier": 1,
+		"image": "rb_2_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CooldownReductionPercentScaling":-0.051667
+		},
+		"tags":[
+			"glyph"
+		]
+	},
+	"5053":{
+		"tier": 1,
+		"image": "rb_3_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 5,
+		"stats":{
+			"AbilityPower":0.66
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"glyph"
+		]
+	},
+	"5054":{
+		"tier": 1,
+		"image": "rb_4_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPowerScaling":0.0962
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5055":{
+		"tier": 1,
+		"image": "rb_1_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Mana":6.25
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"glyph"
+		]
+	},
+	"5056":{
+		"tier": 1,
+		"image": "rb_2_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaScaling":0.787
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5057":{
+		"tier": 1,
+		"image": "rb_3_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 5,
+		"stats":{
+			"ManaRegeneration":0.038
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"glyph"
+		]
+	},
+	"5058":{
+		"tier": 1,
+		"image": "rb_4_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 0,
+		"stats":{
+			"ManaRegenerationScaling":0.007444
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5059":{
+		"tier": 1,
+		"image": "rb_1_1",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MagicPenetration":0.35
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"glyph"
+		]
+	},
+	"5061":{
+		"tier": 1,
+		"image": "ry_1_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackDamage":0.2364
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"seal"
+		]
+	},
+	"5062":{
+		"tier": 1,
+		"image": "ry_2_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackDamageScaling":0.0338
+		},
+		"tags":[
+			"physicalAttack",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5063":{
+		"tier": 1,
+		"image": "ry_3_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackSpeedPercent":0.4245
+		},
+		"tags":[
+			"physicalAttack",
+			"percent",
+			"seal"
+		]
+	},
+	"5065":{
+		"tier": 1,
+		"image": "ry_1_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalDamagePercent": 0.4339
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"seal"
+		]
+	},
+	"5067":{
+		"tier": 1,
+		"image": "ry_3_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalChancePercent":0.232
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"seal"
+		]
+	},
+	"5071":{
+		"tier": 1,
+		"image": "ry_3_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 5,
+		"stats":{
+			"Health":4.48
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"seal"
+		]
+	},
+	"5072":{
+		"tier": 1,
+		"image": "ry_2_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthScaling":0.74667
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5073":{
+		"tier": 1,
+		"image": "ry_1_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 5,
+		"stats":{
+			"Armor":0.56
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"seal"
+		]
+	},
+	"5074":{
+		"tier": 1,
+		"image": "ry_2_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ArmorScaling":0.09333
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5075":{
+		"tier": 1,
+		"image": "ry_3_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 5,
+		"stats":{
+			"MagicResist":0.4125
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"seal"
+		]
+	},
+	"5076":{
+		"tier": 1,
+		"image": "ry_2_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MagicResistScaling":0.0536
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5077":{
+		"tier": 1,
+		"image": "ry_1_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 5,
+		"stats":{
+			"HealthRegeneration":0.062
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"seal"
+		]
+	},
+	"5078":{
+		"tier": 1,
+		"image": "ry_2_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthRegenerationScaling":0.0125
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5081":{
+		"tier": 1,
+		"image": "ry_1_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CooldownReductionPercent":-0.2
+		},
+		"tags":[
+			"seal"
+		]
+	},
+	"5083":{
+		"tier": 1,
+		"image": "ry_3_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPower":0.33
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"seal"
+		]
+	},
+	"5084":{
+		"tier": 1,
+		"image": "ry_2_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPowerScaling":0.0577
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5085":{
+		"tier": 1,
+		"image": "ry_1_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Mana":3.8281
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"seal"
+		]
+	},
+	"5086":{
+		"tier": 1,
+		"image": "ry_2_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaScaling":0.6481
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5087":{
+		"tier": 1,
+		"image": "ry_3_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaRegeneration":0.04514
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"seal"
+		]
+	},
+	"5088":{
+		"tier": 1,
+		"image": "ry_2_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaRegenerationScaling":0.0072
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5091":{
+		"tier": 1,
+		"image": "rbl_1_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 15,
+		"stats":{
+			"AttackDamage":1.25
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5092":{
+		"tier": 1,
+		"image": "rbl_2_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackDamageScaling":0.1389
+		},
+		"tags":[
+			"physicalAttack",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5093":{
+		"tier": 1,
+		"image": "rbl_3_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 15,
+		"stats":{
+			"AttackSpeedPercent":2.52
+		},
+		"tags":[
+			"physicalAttack",
+			"percent",
+			"quintessence"
+		]
+	},
+	"5095":{
+		"tier": 1,
+		"image": "rbl_1_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalDamagePercent": 2.4793
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5097":{
+		"tier": 1,
+		"image": "rbl_3_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalChancePercent":1.0309
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5099":{
+		"tier": 1,
+		"image": "rbl_1_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 15,
+		"stats":{
+			"ArmorPenetration":1.42
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5101":{
+		"tier": 1,
+		"image": "rbl_3_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 15,
+		"stats":{
+			"Health":14.5
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5102":{
+		"tier": 1,
+		"image": "rbl_4_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthScaling":1.5024
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5103":{
+		"tier": 1,
+		"image": "rbl_1_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 15,
+		"stats":{
+			"Armor":2.3684
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5104":{
+		"tier": 1,
+		"image": "rbl_2_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ArmorScaling":0.2083
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5105":{
+		"tier": 1,
+		"image": "rbl_3_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 15,
+		"stats":{
+			"MagicResist":2.22
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5106":{
+		"tier": 1,
+		"image": "rbl_4_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MagicResistScaling":0.2062
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5107":{
+		"tier": 1,
+		"image": "rbl_1_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthRegeneration":0.3
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5108":{
+		"tier": 1,
+		"image": "rbl_2_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthRegenerationScaling":0.03126
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5111":{
+		"tier": 1,
+		"image": "rbl_1_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 15,
+		"stats":{
+			"CooldownReductionPercent":-1.4
+		},
+		"tags":[
+			"quintessence"
+		]
+	},
+	"5112":{
+		"tier": 1,
+		"image": "rbl_2_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CooldownReductionPercentScaling":-0.15556
+		},
+		"tags":[
+			"quintessence"
+		]
+	},
+	"5113":{
+		"tier": 1,
+		"image": "rbl_3_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 15,
+		"stats":{
+			"AbilityPower":2.75
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5114":{
+		"tier": 1,
+		"image": "rbl_4_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPowerScaling":0.2404
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5115":{
+		"tier": 1,
+		"image": "rbl_1_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Mana":20.8333
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5116":{
+		"tier": 1,
+		"image": "rbl_2_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaScaling":2.3148
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5117":{
+		"tier": 1,
+		"image": "rbl_3_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaRegeneration":0.13888
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5118":{
+		"tier": 1,
+		"image": "rbl_4_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaRegenerationScaling":0.02712
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5119":{
+		"tier": 1,
+		"image": "rbl_1_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 15,
+		"stats":{
+			"MagicPenetration":1.11
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5121":{
+		"tier": 1,
+		"image": "rbl_3_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 15,
+		"stats":{
+			"MovementSpeedPercent":0.8333
+		},
+		"tags":[
+			"utility",
+			"percent",
+			"quintessence"
+		]
+	},
+	"5123":{
+		"tier": 2,
+		"image": "rr_1_2",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 35,
+		"stats":{
+			"AttackDamage":0.735
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"5124":{
+		"tier": 2,
+		"image": "rr_2_2",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackDamageScaling":0.105
+		},
+		"tags":[
+			"physicalAttack",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5125":{
+		"tier": 2,
+		"image": "rr_3_2",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 35,
+		"stats":{
+			"AttackSpeedPercent":1.3208
+		},
+		"tags":[
+			"physicalAttack",
+			"percent",
+			"mark"
+		]
+	},
+	"5127":{
+		"tier": 2,
+		"image": "rr_1_2",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalDamagePercent": 1.7355
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"5129":{
+		"tier": 2,
+		"image": "rr_3_2",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalChancePercent":0.7216
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"5131":{
+		"tier": 2,
+		"image": "rr_1_2",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 35,
+		"stats":{
+			"ArmorPenetration":1
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"5133":{
+		"tier": 2,
+		"image": "rr_3_2",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Health":2.7027
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"mark"
+		]
+	},
+	"5134":{
+		"tier": 2,
+		"image": "rr_4_2",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 0,
+		"stats":{
+			"HealthScaling":0.4207
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5135":{
+		"tier": 2,
+		"image": "rr_1_2",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Armor":0.7112
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"mark"
+		]
+	},
+	"5137":{
+		"tier": 2,
+		"image": "rr_3_2",
+		"primary":"red",
+		"type": "",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MagicResist":0.6
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"mark"
+		]
+	},
+	"5138":{
+		"tier": 2,
+		"image": "rr_4_2",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MagicResistScaling":0.0577
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5143":{
+		"tier": 2,
+		"image": "rr_1_2",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CooldownReductionPercent":-0.1556
+		},
+		"tags":[
+			"mark"
+		]
+	},
+	"5145":{
+		"tier": 2,
+		"image": "rr_3_2",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPower":0.462
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"mark"
+		]
+	},
+	"5146":{
+		"tier": 2,
+		"image": "rr_4_2",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPowerScaling":0.0808
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5147":{
+		"tier": 2,
+		"image": "rr_1_2",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Mana":4.5938
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"mark"
+		]
+	},
+	"5148":{
+		"tier": 2,
+		"image": "rr_2_2",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaScaling":0.9074
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5149":{
+		"tier": 2,
+		"image": "rr_3_2",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaRegeneration":0.04084
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"mark"
+		]
+	},
+	"5151":{
+		"tier": 2,
+		"image": "rr_1_2",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 35,
+		"stats":{
+			"MagicPenetration":0.68
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"mark"
+		]
+	},
+	"5153":{
+		"tier": 2,
+		"image": "rb_1_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackDamage":0.2205
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"glyph"
+		]
+	},
+	"5154":{
+		"tier": 2,
+		"image": "rb_2_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackDamageScaling":0.0315
+		},
+		"tags":[
+			"physicalAttack",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5155":{
+		"tier": 2,
+		"image": "rb_3_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackSpeedPercent":0.4953
+		},
+		"tags":[
+			"physicalAttack",
+			"percent",
+			"glyph"
+		]
+	},
+	"5157":{
+		"tier": 2,
+		"image": "rb_1_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalDamagePercent": 0.4339
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"glyph"
+		]
+	},
+	"5159":{
+		"tier": 2,
+		"image": "rb_3_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalChancePercent":0.2165
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"glyph"
+		]
+	},
+	"5163":{
+		"tier": 2,
+		"image": "rb_3_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Health":2.079
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"glyph"
+		]
+	},
+	"5164":{
+		"tier": 2,
+		"image": "rb_4_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthScaling":0.4207
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5165":{
+		"tier": 2,
+		"image": "rb_1_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Armor":0.5471
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"glyph"
+		]
+	},
+	"5167":{
+		"tier": 2,
+		"image": "rb_3_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 35,
+		"stats":{
+			"MagicResist":1.04
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"glyph"
+		]
+	},
+	"5168":{
+		"tier": 2,
+		"image": "rb_4_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MagicResistScaling":0.13
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5169":{
+		"tier": 2,
+		"image": "rb_1_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthRegeneration":0.042
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"glyph"
+		]
+	},
+	"5173":{
+		"tier": 2,
+		"image": "rb_1_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 35,
+		"stats":{
+			"CooldownReductionPercent":-0.667
+		},
+		"tags":[
+			"glyph"
+		]
+	},
+	"5174":{
+		"tier": 2,
+		"image": "rb_2_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CooldownReductionPercentScaling":-0.07223
+		},
+		"tags":[
+			"glyph"
+		]
+	},
+	"5175":{
+		"tier": 2,
+		"image": "rb_3_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 35,
+		"stats":{
+			"AbilityPower":0.92
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"glyph"
+		]
+	},
+	"5176":{
+		"tier": 2,
+		"image": "rb_4_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPowerScaling":0.1346
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5177":{
+		"tier": 2,
+		"image": "rb_1_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Mana":8.75
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"glyph"
+		]
+	},
+	"5178":{
+		"tier": 2,
+		"image": "rb_2_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaScaling":1.1019
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5179":{
+		"tier": 2,
+		"image": "rb_3_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 35,
+		"stats":{
+			"ManaRegeneration":0.052
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"glyph"
+		]
+	},
+	"5180":{
+		"tier": 2,
+		"image": "rb_4_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaRegenerationScaling":0.01044
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5181":{
+		"tier": 2,
+		"image": "rb_1_2",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MagicPenetration":0.49
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"glyph"
+		]
+	},
+	"5183":{
+		"tier": 2,
+		"image": "ry_1_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackDamage":0.3309
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"seal"
+		]
+	},
+	"5184":{
+		"tier": 2,
+		"image": "ry_2_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackDamageScaling":0.0473
+		},
+		"tags":[
+			"physicalAttack",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5185":{
+		"tier": 2,
+		"image": "ry_3_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackSpeedPercent":0.5943
+		},
+		"tags":[
+			"physicalAttack",
+			"percent",
+			"seal"
+		]
+	},
+	"5187":{
+		"tier": 2,
+		"image": "ry_1_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalDamagePercent": 0.6074
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"seal"
+		]
+	},
+	"5189":{
+		"tier": 2,
+		"image": "ry_3_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalChancePercent":0.3247
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"seal"
+		]
+	},
+	"5193":{
+		"tier": 2,
+		"image": "ry_3_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 35,
+		"stats":{
+			"Health":6.24
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"seal"
+		]
+	},
+	"5194":{
+		"tier": 2,
+		"image": "ry_2_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthScaling":1.04
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5195":{
+		"tier": 2,
+		"image": "ry_1_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 35,
+		"stats":{
+			"Armor":0.78
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"seal"
+		]
+	},
+	"5196":{
+		"tier": 2,
+		"image": "ry_2_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ArmorScaling":0.13
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5197":{
+		"tier": 2,
+		"image": "ry_3_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 35,
+		"stats":{
+			"MagicResist":0.5775
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"seal"
+		]
+	},
+	"5198":{
+		"tier": 2,
+		"image": "ry_2_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MagicResistScaling":0.075
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5199":{
+		"tier": 2,
+		"image": "ry_1_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 35,
+		"stats":{
+			"HealthRegeneration":0.086
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"seal"
+		]
+	},
+	"5200":{
+		"tier": 2,
+		"image": "ry_2_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthRegenerationScaling":0.0175
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5203":{
+		"tier": 2,
+		"image": "ry_1_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CooldownReductionPercent":-0.2889
+		},
+		"tags":[
+			"seal"
+		]
+	},
+	"5205":{
+		"tier": 2,
+		"image": "ry_3_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPower":0.462
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"seal"
+		]
+	},
+	"5206":{
+		"tier": 2,
+		"image": "ry_2_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPowerScaling":0.0808
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5207":{
+		"tier": 2,
+		"image": "ry_1_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Mana":5.3594
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"seal"
+		]
+	},
+	"5208":{
+		"tier": 2,
+		"image": "ry_2_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaScaling":0.9074
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5209":{
+		"tier": 2,
+		"image": "ry_3_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaRegeneration":0.0632
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"seal"
+		]
+	},
+	"5210":{
+		"tier": 2,
+		"image": "ry_2_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaRegenerationScaling":0.01
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5213":{
+		"tier": 2,
+		"image": "rbl_1_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 100,
+		"stats":{
+			"AttackDamage":1.75
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5214":{
+		"tier": 2,
+		"image": "rbl_2_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackDamageScaling":0.1944
+		},
+		"tags":[
+			"physicalAttack",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5215":{
+		"tier": 2,
+		"image": "rbl_3_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 100,
+		"stats":{
+			"AttackSpeedPercent":3.51
+		},
+		"tags":[
+			"physicalAttack",
+			"percent",
+			"quintessence"
+		]
+	},
+	"5217":{
+		"tier": 2,
+		"image": "rbl_1_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalDamagePercent": 3.4711
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5219":{
+		"tier": 2,
+		"image": "rbl_3_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalChancePercent":1.4433
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5221":{
+		"tier": 2,
+		"image": "rbl_1_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 100,
+		"stats":{
+			"ArmorPenetration":1.99
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5223":{
+		"tier": 2,
+		"image": "rbl_3_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 100,
+		"stats":{
+			"Health":20.0
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5224":{
+		"tier": 2,
+		"image": "rbl_4_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthScaling":2.1034
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5225":{
+		"tier": 2,
+		"image": "rbl_1_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 100,
+		"stats":{
+			"Armor":3.3158
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5226":{
+		"tier": 2,
+		"image": "rbl_2_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ArmorScaling":0.2917
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5227":{
+		"tier": 2,
+		"image": "rbl_3_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 100,
+		"stats":{
+			"MagicResist":3.11
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5228":{
+		"tier": 2,
+		"image": "rbl_4_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MagicResistScaling":0.2886
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5229":{
+		"tier": 2,
+		"image": "rbl_1_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthRegeneration":0.42
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5230":{
+		"tier": 2,
+		"image": "rbl_2_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthRegenerationScaling":0.04376
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5233":{
+		"tier": 2,
+		"image": "rbl_1_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 100,
+		"stats":{
+			"CooldownReductionPercent":-1.95
+		},
+		"tags":[
+			"quintessence"
+		]
+	},
+	"5234":{
+		"tier": 2,
+		"image": "rbl_2_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CooldownReductionPercentScaling":-0.2167
+		},
+		"tags":[
+			"quintessence"
+		]
+	},
+	"5235":{
+		"tier": 2,
+		"image": "rbl_3_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 100,
+		"stats":{
+			"AbilityPower":3.85
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5236":{
+		"tier": 2,
+		"image": "rbl_4_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPowerScaling":0.3365
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5237":{
+		"tier": 2,
+		"image": "rbl_1_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Mana":29.1667
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5238":{
+		"tier": 2,
+		"image": "rbl_2_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaScaling":3.2407
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5239":{
+		"tier": 2,
+		"image": "rbl_3_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaRegeneration":0.19444
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5240":{
+		"tier": 2,
+		"image": "rbl_4_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ManaRegenerationScaling":0.03798
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5241":{
+		"tier": 2,
+		"image": "rbl_1_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 100,
+		"stats":{
+			"MagicPenetration":1.56
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5243":{
+		"tier": 2,
+		"image": "rbl_3_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 100,
+		"stats":{
+			"MovementSpeedPercent":1.1667
+		},
+		"tags":[
+			"utility",
+			"percent",
+			"quintessence"
+		]
+	},
+	"5245":{
+		"tier": 3,
+		"image": "rr_1_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"AttackDamage":0.945
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"5246":{
+		"tier": 3,
+		"image": "rr_2_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"AttackDamageScaling":0.135
+		},
+		"tags":[
+			"physicalAttack",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5247":{
+		"tier": 3,
+		"image": "rr_3_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"AttackSpeedPercent":1.6981
+		},
+		"tags":[
+			"physicalAttack",
+			"percent",
+			"mark"
+		]
+	},
+	"5249":{
+		"tier": 3,
+		"image": "rr_1_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"CriticalDamagePercent": 2.2314
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"5251":{
+		"tier": 3,
+		"image": "rr_3_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"CriticalChancePercent":0.9278
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"5253":{
+		"tier": 3,
+		"image": "rr_1_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"ArmorPenetration":1.28
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"5255":{
+		"tier": 3,
+		"image": "rr_3_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"Health":3.4749
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"mark"
+		]
+	},
+	"5256":{
+		"tier": 3,
+		"image": "rr_4_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"HealthScaling":0.5409
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5257":{
+		"tier": 3,
+		"image": "rr_1_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"Armor":0.9144
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"mark"
+		]
+	},
+	"5259":{
+		"tier": 3,
+		"image": "rr_3_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"MagicResist":0.77
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"mark"
+		]
+	},
+	"5260":{
+		"tier": 3,
+		"image": "rr_4_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"MagicResistScaling":0.0742
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5265":{
+		"tier": 3,
+		"image": "rr_1_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"CooldownReductionPercent":-0.2
+		},
+		"tags":[
+			"mark"
+		]
+	},
+	"5267":{
+		"tier": 3,
+		"image": "rr_3_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"AbilityPower":0.594
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"mark"
+		]
+	},
+	"5268":{
+		"tier": 3,
+		"image": "rr_4_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"AbilityPowerScaling":0.1038
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5269":{
+		"tier": 3,
+		"image": "rr_1_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"Mana":5.9063
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"mark"
+		]
+	},
+	"5270":{
+		"tier": 3,
+		"image": "rr_2_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"ManaScaling":1.1667
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"mark"
+		]
+	},
+	"5271":{
+		"tier": 3,
+		"image": "rr_3_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"ManaRegeneration":0.0525
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"mark"
+		]
+	},
+	"5273":{
+		"tier": 3,
+		"image": "rr_1_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"MagicPenetration":0.87
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"mark"
+		]
+	},
+	"5275":{
+		"tier": 3,
+		"image": "rb_1_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"AttackDamage":0.2835
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"glyph"
+		]
+	},
+	"5276":{
+		"tier": 3,
+		"image": "rb_2_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"AttackDamageScaling":0.0405
+		},
+		"tags":[
+			"physicalAttack",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5277":{
+		"tier": 3,
+		"image": "rb_3_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"AttackSpeedPercent":0.6368
+		},
+		"tags":[
+			"physicalAttack",
+			"percent",
+			"glyph"
+		]
+	},
+	"5279":{
+		"tier": 3,
+		"image": "rb_1_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"CriticalDamagePercent": 0.5579
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"glyph"
+		]
+	},
+	"5281":{
+		"tier": 3,
+		"image": "rb_3_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"CriticalChancePercent":0.2784
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"glyph"
+		]
+	},
+	"5285":{
+		"tier": 3,
+		"image": "rb_3_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"Health":2.673
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"glyph"
+		]
+	},
+	"5286":{
+		"tier": 3,
+		"image": "rb_4_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"HealthScaling":0.5409
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5287":{
+		"tier": 3,
+		"image": "rb_1_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"Armor":0.7034
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"glyph"
+		]
+	},
+	"5289":{
+		"tier": 3,
+		"image": "rb_3_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"MagicResist":1.34
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"glyph"
+		]
+	},
+	"5290":{
+		"tier": 3,
+		"image": "rb_4_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"MagicResistScaling":0.16667
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5291":{
+		"tier": 3,
+		"image": "rb_1_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"HealthRegeneration":0.054
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"glyph"
+		]
+	},
+	"5295":{
+		"tier": 3,
+		"image": "rb_1_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"CooldownReductionPercent":-0.8334
+		},
+		"tags":[
+			"glyph"
+		]
+	},
+	"5296":{
+		"tier": 3,
+		"image": "rb_2_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"CooldownReductionPercentScaling":-0.09278
+		},
+		"tags":[
+			"glyph"
+		]
+	},
+	"5297":{
+		"tier": 3,
+		"image": "rb_3_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"AbilityPower":1.19
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"glyph"
+		]
+	},
+	"5298":{
+		"tier": 3,
+		"image": "rb_4_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"AbilityPowerScaling":0.1731
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5299":{
+		"tier": 3,
+		"image": "rb_1_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"Mana":11.25
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"glyph"
+		]
+	},
+	"5300":{
+		"tier": 3,
+		"image": "rb_2_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"ManaScaling":1.4167
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5301":{
+		"tier": 3,
+		"image": "rb_3_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"ManaRegeneration":0.066
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"glyph"
+		]
+	},
+	"5302":{
+		"tier": 3,
+		"image": "rb_2_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"ManaRegenerationScaling":0.01334
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"5303":{
+		"tier": 3,
+		"image": "rb_1_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"MagicPenetration":0.63
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"glyph"
+		]
+	},
+	"5305":{
+		"tier": 3,
+		"image": "ry_1_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"AttackDamage":0.4254
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"seal"
+		]
+	},
+	"5306":{
+		"tier": 3,
+		"image": "ry_2_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"AttackDamageScaling":0.0608
+		},
+		"tags":[
+			"physicalAttack",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5307":{
+		"tier": 3,
+		"image": "ry_3_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"AttackSpeedPercent":0.7642
+		},
+		"tags":[
+			"physicalAttack",
+			"percent",
+			"seal"
+		]
+	},
+	"5309":{
+		"tier": 3,
+		"image": "ry_1_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"CriticalDamagePercent": 0.781
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"seal"
+		]
+	},
+	"5311":{
+		"tier": 3,
+		"image": "ry_3_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"CriticalChancePercent":0.4175
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"seal"
+		]
+	},
+	"5315":{
+		"tier": 3,
+		"image": "ry_3_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"Health":8.0
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"seal"
+		]
+	},
+	"5316":{
+		"tier": 3,
+		"image": "ry_2_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"HealthScaling":1.3334
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5317":{
+		"tier": 3,
+		"image": "ry_1_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"Armor":1.0
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"seal"
+		]
+	},
+	"5318":{
+		"tier": 3,
+		"image": "ry_2_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"ArmorScaling":0.16667
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5319":{
+		"tier": 3,
+		"image": "ry_3_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"MagicResist":0.7425
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"seal"
+		]
+	},
+	"5320":{
+		"tier": 3,
+		"image": "ry_2_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"MagicResistScaling":0.0965
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5321":{
+		"tier": 3,
+		"image": "ry_1_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"HealthRegeneration":0.1112
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"seal"
+		]
+	},
+	"5322":{
+		"tier": 3,
+		"image": "ry_2_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"HealthRegenerationScaling":0.0225
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5325":{
+		"tier": 3,
+		"image": "ry_1_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"CooldownReductionPercent":-0.3556
+		},
+		"tags":[
+			"seal"
+		]
+	},
+	"5327":{
+		"tier": 3,
+		"image": "ry_3_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"AbilityPower":0.594
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"seal"
+		]
+	},
+	"5328":{
+		"tier": 3,
+		"image": "ry_2_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"AbilityPowerScaling":0.1038
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5329":{
+		"tier": 3,
+		"image": "ry_1_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"Mana":6.8906
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"seal"
+		]
+	},
+	"5330":{
+		"tier": 3,
+		"image": "ry_2_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"ManaScaling":1.1667
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5331":{
+		"tier": 3,
+		"image": "ry_3_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"ManaRegeneration":0.08126
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"seal"
+		]
+	},
+	"5332":{
+		"tier": 3,
+		"image": "ry_2_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 205,
+		"stats":{
+			"ManaRegenerationScaling":0.013
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"seal"
+		]
+	},
+	"5335":{
+		"tier": 3,
+		"image": "rbl_1_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"AttackDamage":2.25
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5336":{
+		"tier": 3,
+		"image": "rbl_2_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 515,
+		"stats":{
+			"AttackDamageScaling":0.25
+		},
+		"tags":[
+			"physicalAttack",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5337":{
+		"tier": 3,
+		"image": "rbl_3_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"AttackSpeedPercent":4.5
+		},
+		"tags":[
+			"physicalAttack",
+			"percent",
+			"quintessence"
+		]
+	},
+	"5339":{
+		"tier": 3,
+		"image": "rbl_1_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"CriticalDamagePercent": 4.4628
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5341":{
+		"tier": 3,
+		"image": "rbl_3_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"CriticalChancePercent":1.8557
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5343":{
+		"tier": 3,
+		"image": "rbl_1_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"ArmorPenetration":2.56
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5345":{
+		"tier": 3,
+		"image": "rbl_3_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 2050,
+		"stats":{
+			"Health":26.0
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5346":{
+		"tier": 3,
+		"image": "rbl_4_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 2050,
+		"stats":{
+			"HealthScaling":2.7043
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5347":{
+		"tier": 3,
+		"image": "rbl_1_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"Armor":4.2632
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5348":{
+		"tier": 3,
+		"image": "rbl_2_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"ArmorScaling":0.375
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5349":{
+		"tier": 3,
+		"image": "rbl_3_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"MagicResist":4.0
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5350":{
+		"tier": 3,
+		"image": "rbl_4_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"MagicResistScaling":0.3711
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5351":{
+		"tier": 3,
+		"image": "rbl_1_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 2050,
+		"stats":{
+			"HealthRegeneration":0.54
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5352":{
+		"tier": 3,
+		"image": "rbl_2_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 2050,
+		"stats":{
+			"HealthRegenerationScaling":0.05626
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5355":{
+		"tier": 3,
+		"image": "rbl_1_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 2050,
+		"stats":{
+			"CooldownReductionPercent":-2.5
+		},
+		"tags":[
+			"quintessence"
+		]
+	},
+	"5356":{
+		"tier": 3,
+		"image": "rbl_2_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"CooldownReductionPercentScaling":-0.2778
+		},
+		"tags":[
+			"quintessence"
+		]
+	},
+	"5357":{
+		"tier": 3,
+		"image": "rbl_3_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"AbilityPower":4.95
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5358":{
+		"tier": 3,
+		"image": "rbl_4_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"AbilityPowerScaling":0.4327
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5359":{
+		"tier": 3,
+		"image": "rbl_1_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"Mana":37.5
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5360":{
+		"tier": 3,
+		"image": "rbl_2_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 515,
+		"stats":{
+			"ManaScaling":4.1667
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5361":{
+		"tier": 3,
+		"image": "rbl_3_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"ManaRegeneration":0.25
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5362":{
+		"tier": 3,
+		"image": "rbl_4_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"ManaRegenerationScaling":0.04882
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"quintessence"
+		]
+	},
+	"5363":{
+		"tier": 3,
+		"image": "rbl_1_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"MagicPenetration":2.01
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"5365":{
+		"tier": 3,
+		"image": "rbl_3_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 2050,
+		"stats":{
+			"MovementSpeedPercent":1.5
+		},
+		"tags":[
+			"utility",
+			"percent",
+			"quintessence"
+		]
+	},
+	"5366":{
+		"tier": 3,
+		"image": "rbl_1_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"TimeDeadPercent":5
+		},
+		"tags":[
+			"utility",
+			"percent",
+			"quintessence"
+		]
+	},
+	"5367":{
+		"tier": 3,
+		"image": "rbl_4_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 515,
+		"stats":{
+			"GoldPer10":1.0
+		},
+		"tags":[
+			"utility",
+			"quintessence"
+		]
+	},
+	"5368":{
+		"tier": 3,
+		"image": "rbl_2_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 2050,
+		"stats":{
+			"ExperiencePercent":2
+		},
+		"tags":[
+			"utility",
+			"percent",
+			"quintessence"
+		]
+	},
+	"5369":{
+		"tier": 3,
+		"image": "ry_1_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"EnergyRegeneration":0.126
+		},
+		"tags":[
+			"seal"
+		]
+	},
+	"5370":{
+		"tier": 3,
+		"image": "ry_3_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"EnergyRegenerationScaling":0.01283
+		},
+		"tags":[
+			"seal"
+		]
+	},
+	"5371":{
+		"tier": 3,
+		"image": "rb_3_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"Energy":2.2
+		},
+		"tags":[
+			"glyph"
+		]
+	},
+	"5372":{
+		"tier": 3,
+		"image": "rb_2_3",
+		"primary":"blue",
+		"type": "glyph",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"EnergyScaling":0.161
+		},
+		"tags":[
+			"glyph"
+		]
+	},
+	"5373":{
+		"tier": 3,
+		"image": "rbl_2_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 2050,
+		"stats":{
+			"EnergyRegeneration":0.315
+		},
+		"tags":[
+			"quintessence"
+		]
+	},
+	"5374":{
+		"tier": 3,
+		"image": "rbl_3_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 1025,
+		"stats":{
+			"Energy":5.4
+		},
+		"tags":[
+			"quintessence"
+		]
+	},
+	"5400":{
+		"tier": 1,
+		"image": "rr_1_1",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ArmorPenetration":0.5,
+			"MagicPenetration":0.34
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"magic",
+			"mark"
+		]
+	},
+	"5401":{
+		"tier": 2,
+		"image": "rr_1_2",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ArmorPenetration":0.7,
+			"MagicPenetration":0.48
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"magic",
+			"mark"
+		]
+	},
+	"5402":{
+		"tier": 3,
+		"image": "rr_1_3",
+		"primary":"red",
+		"type": "mark",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"ArmorPenetration":0.9,
+			"MagicPenetration":0.61
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"magic",
+			"mark"
+		]
+	},
+	"5403":{
+		"tier": 3,
+		"image": "ry_3_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 410,
+		"stats":{
+			"GoldPer10":0.25
+		},
+		"tags":[
+			"utility",
+			"seal"
+		]
+	},
+	"5404":{
+		"tier": 1,
+		"image": "rbl_2_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthPercent":0.84
+		},
+		"tags":[
+			"defense",
+			"percent",
+			"quintessence"
+		]
+	},
+	"5405":{
+		"tier": 2,
+		"image": "rbl_2_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthPercent":1.17
+		},
+		"tags":[
+			"defense",
+			"percent",
+			"quintessence"
+		]
+	},
+	"5406":{
+		"tier": 3,
+		"image": "rbl_3_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 2050,
+		"stats":{
+			"HealthPercent":1.5
+		},
+		"tags":[
+			"defense",
+			"percent",
+			"quintessence"
+		]
+	},
+	"5407":{
+		"tier": 1,
+		"image": "rbl_4_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"SpellVampPercent":1.12
+		},
+		"tags":[
+			"quintessence"
+		]
+	},
+	"5408":{
+		"tier": 2,
+		"image": "rbl_4_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"SpellVampPercent":1.56
+		},
+		"tags":[
+			"quintessence"
+		]
+	},
+	"5409":{
+		"tier": 3,
+		"image": "rbl_4_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 2050,
+		"stats":{
+			"SpellVampPercent":2
+		},
+		"tags":[
+			"quintessence"
+		]
+	},
+	"5410":{
+		"tier": 1,
+		"image": "rbl_1_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"LifeStealPercent":0.84
+		},
+		"tags":[
+			"quintessence"
+		]
+	},
+	"5411":{
+		"tier": 2,
+		"image": "rbl_1_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"LifeStealPercent":1.17
+		},
+		"tags":[
+			"quintessence"
+		]
+	},
+	"5412":{
+		"tier": 3,
+		"image": "rbl_1_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 2050,
+		"stats":{
+			"LifeStealPercent":1.5
+		},
+		"tags":[
+			"quintessence"
+		]
+	},
+	"5413":{
+		"tier": 1,
+		"image": "ry_2_1",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthPercent":0.28
+		},
+		"tags":[
+			"defense",
+			"percent",
+			"seal"
+		]
+	},
+	"5414":{
+		"tier": 2,
+		"image": "ry_2_2",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthPercent":0.39
+		},
+		"tags":[
+			"defense",
+			"percent",
+			"seal"
+		]
+	},
+	"5415":{
+		"tier": 3,
+		"image": "ry_3_3",
+		"primary":"yellow",
+		"type": "seal",
+		"available": true,
+		"ip": 820,
+		"stats":{
+			"HealthPercent":0.5
+		},
+		"tags":[
+			"defense",
+			"percent",
+			"seal"
+		]
+	},
+	"5416":{
+		"tier": 1,
+		"image": "rbl_4_1",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ArmorPenetration":0.99,
+			"MagicPenetration":0.78
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"magic",
+			"quintessence"
+		]
+	},
+	"5417":{
+		"tier": 2,
+		"image": "rbl_4_2",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ArmorPenetration":1.39,
+			"MagicPenetration":1.09
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"magic",
+			"quintessence"
+		]
+	},
+	"5418":{
+		"tier": 3,
+		"image": "rbl_4_3",
+		"primary":"black",
+		"type": "quintessence",
+		"available": true,
+		"ip": 2050,
+		"stats":{
+			"ArmorPenetration":1.79,
+			"MagicPenetration":1.4
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"magic",
+			"quintessence"
+		]
+	},
+	"8001":{
+		"tier": 2,
+		"image": "r8001",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalDamagePercent": 1.9835
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"8002":{
+		"tier": 1,
+		"image": "r8002",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalChancePercent":0.61855
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"8003":{
+		"tier": 2,
+		"image": "r8003",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CooldownReductionPercent":-0.75
+		},
+		"tags":[
+			"glyph"
+		]
+	},
+	"8005":{
+		"tier": 1,
+		"image": "r8005",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPowerScaling":0.1154
+		},
+		"tags":[
+			"magic",
+			"perLevel",
+			"glyph"
+		]
+	},
+	"8006":{
+		"tier": 1,
+		"image": "r8006",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"HealthScaling":0.72115
+		},
+		"tags":[
+			"defense",
+			"perLevel",
+			"seal"
+		]
+	},
+	"8007":{
+		"tier": 1,
+		"image": "r8007",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AttackSpeedPercent":1.1321
+		},
+		"tags":[
+			"physicalAttack",
+			"percent",
+			"mark"
+		]
+	},
+	"8008":{
+		"tier": 2,
+		"image": "r8008",
+		"primary":"red",
+		"type": "mark",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CriticalDamagePercent": 1.9835
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"mark"
+		]
+	},
+	"8009":{
+		"tier": 1,
+		"image": "r8009",
+		"primary":"yellow",
+		"type": "seal",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Health":3.564
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"seal"
+		]
+	},
+	"8011":{
+		"tier": 1,
+		"image": "r8011",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPower":0.66
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"glyph"
+		]
+	},
+	"8012":{
+		"tier": 2,
+		"image": "r8012",
+		"primary":"blue",
+		"type": "glyph",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"CooldownReductionPercent":-0.75
+		},
+		"tags":[
+			"glyph"
+		]
+	},
+	"8013":{
+		"tier": 2,
+		"image": "r8013",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ArmorPenetration":2.37
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"quintessence"
+		]
+	},
+	"8014":{
+		"tier": 2,
+		"image": "r8014",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MagicPenetration":1.85
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"8015":{
+		"tier": 2,
+		"image": "r8015",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Health":24.0
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"quintessence"
+		]
+	},
+	"8016":{
+		"tier": 2,
+		"image": "r8016",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MovementSpeedPercent":1.39
+		},
+		"tags":[
+			"utility",
+			"percent",
+			"quintessence"
+		]
+	},
+	"8017":{
+		"tier": 2,
+		"image": "r8017",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"AbilityPower":4.56
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"8019":{
+		"tier": 3,
+		"image": "r8019",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MagicPenetration":2.01
+		},
+		"tags":[
+			"magic",
+			"flat",
+			"quintessence"
+		]
+	},
+	"8020":{
+		"tier": 3,
+		"image": "r8020",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"ArmorPenetration":2.56
+		},
+		"tags":[
+			"physicalAttack",
+			"flat",
+			"quintessence"
+		]
+	},
+	"8021":{
+		"tier": 3,
+		"image": "r8021",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"Health":26.0
+		},
+		"tags":[
+			"defense",
+			"flat",
+			"quintessence"
+		]
+	},
+	"8022":{
+		"tier": 3,
+		"image": "r8022",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MovementSpeedPercent":1.5
+		},
+		"tags":[
+			"utility",
+			"percent",
+			"quintessence"
+		]
+	},
+	"8035":{
+		"tier": 3,
+		"image": "r8035",
+		"primary":"black",
+		"type": "quintessence",
+		"available": false,
+		"ip": 0,
+		"stats":{
+			"MovementSpeedPercent":1.5
+		},
+		"tags":[
+			"utility",
+			"percent",
+			"quintessence"
+		]
+	}
+}

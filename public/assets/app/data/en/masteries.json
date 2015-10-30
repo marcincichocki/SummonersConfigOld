@@ -1,0 +1,506 @@
+{
+	"000": {
+		"name": "Double-Edged Sword",
+		"description": [
+				"Melee - Deal an additional 2% damage and receive an additional 1% damage<br>Ranged - Deal an additional 1.5% damage and receive an additional 1.5% damage"
+		],
+		"ranks": 1,
+		"prereq": "0"
+	},
+	"001": {
+		"name": "Fury",
+		"description": [
+				"+1.25% Attack Speed",
+				"+2.5% Attack Speed",
+				"+3.75% Attack Speed",
+				"+5% Attack Speed"
+		],
+		"ranks": 4,
+		"prereq": "0"
+	},
+	"002": {
+		"name": "Sorcery",
+		"description": [
+				"+1.25% Cooldown Reduction",
+				"+2.5% Cooldown Reduction",
+				"+3.75% Cooldown Reduction",
+				"+5% Cooldown Reduction"
+		],
+		"ranks": 4,
+		"prereq": "0"
+	},
+	"003": {
+			"name": "Butcher",
+			"description": [
+					"Basic attacks and single target spells deal an additional 2 damage to minions and monsters<br><br>This does not trigger off of area of effect damage or damage over time effects"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"010": {
+			"name": "Expose Weakness",
+			"description": [
+					"Damaging an enemy with a spell increases allied champions' damage to that enemy by 1% for the next 3 seconds"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"011": {
+			"name": "Brute Force",
+			"description": [
+					"+4 Attack Damage at level 18 (+0.22 Attack Damage per level)",
+					"+7 Attack Damage at level 18 (+0.39 Attack Damage per level)",
+					"+10 Attack Damage at level 18 (+0.55 Attack Damage per level)"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"012": {
+			"name": "Mental Force",
+			"description": [
+					"+6 Ability Power at level 18 (+0.33 Ability Power per level)",
+					"+11 Ability Power at level 18 (+0.61 Ability Power per level)",
+					"+16 Ability Power at level 18 (+0.89 Ability Power per level)"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"013": {
+			"name": "Feast",
+			"description": [
+					"Killing a unit restores 3 Health and 1 Mana"
+			],
+			"ranks": 1,
+			"prereq": "003"
+	},
+	"020": {
+			"name": "Spell Weaving",
+			"description": [
+					"Damaging an enemy champion with a Basic Attack increases Spell Damage by 1%, stacking up to 3 times (max 3% damage increase)"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"021": {
+			"name": "Martial Mastery",
+			"description": [
+					"+4 Attack Damage"
+			],
+			"ranks": 1,
+			"prereq": "011"
+	},
+	"022": {
+			"name": "Arcane Mastery",
+			"description": [
+					"+6 Ability Power"
+			],
+			"ranks": 1,
+			"prereq": "012"
+	},
+	"023": {
+			"name": "Executioner",
+			"description": [
+					"Increases damage dealt to champions below 20% Health by 5%",
+					"Increases damage dealt to champions below 35% Health by 5%",
+					"Increases damage dealt to champions below 50% Health by 5%"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"030": {
+			"name": "Blade Weaving",
+			"description": [
+					"Damaging an enemy champion with a spell increases Basic Attack Damage by 1%, stacking up to 3 times (max 3% damage increase)"
+			],
+			"ranks": 1,
+			"prereq": "020"
+	},
+	"031": {
+			"name": "Warlord",
+			"description": [
+					"Increases bonus Attack Damage by 2%",
+					"Increases Bonus Attack Damage by 3.5%",
+					"Increases Bonus Attack Damage by 5%"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"032": {
+			"name": "Archmage",
+			"description": [
+					"Increases Ability Power by 2%",
+					"Increases Ability Power by 3.5%",
+					"Increases Ability Power by 5%"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"033": {
+			"name": "Dangerous Game",
+			"description": [
+					"Champion kills and assists restore 5% missing Health and Mana"
+			],
+			"ranks": 1,
+			"prereq": "023"
+	},
+	"040": {
+			"name": "Frenzy",
+			"description": [
+					"Critical hits grant +5% Attack Speed for 3 seconds (stacks up to 3 times)"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"041": {
+			"name": "Devastating Strikes",
+			"description": [
+					"+2% Armor and Magic Penetration",
+					"+4% Armor and Magic Penetration",
+					"+6% Armor and Magic Penetration"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"043": {
+			"name": "Arcane Blade",
+			"description": [
+					"Basic Attacks also deal bonus magic damage equal to 5% of Ability Power"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"051": {
+			"name": "Havoc",
+			"description": [
+					"+3% increased damage"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"100": {
+			"name": "Block",
+			"description": [
+					"Reduces incoming damage from champion basic attacks by 1",
+					"Reduces incoming damage from champion basic attacks by 2"
+			],
+			"ranks": 2,
+			"prereq": "0"
+	},
+	"101": {
+			"name": "Recovery",
+			"description": [
+					"+1 Health per 5 seconds",
+					"+2 Health per 5 seconds"
+			],
+			"ranks": 2,
+			"prereq": "0"
+	},
+	"102": {
+			"name": "Enchanted Armor",
+			"description": [
+					"Increases bonus Armor and Magic Resist by 2.5%",
+					"Increases bonus Armor and Magic Resist by 5%"
+			],
+			"ranks": 2,
+			"prereq": "0"
+	},
+	"103": {
+			"name": "Tough Skin",
+			"description": [
+					"Reduces damage taken from neutral monsters by 1<br><br>This does not affect lane minions",
+					"Reduces damage taken from neutral monsters by 2<br><br>This does not affect lane minions"
+			],
+			"ranks": 2,
+			"prereq": "0"
+	},
+	"110": {
+			"name": "Unyielding",
+			"description": [
+					"Melee - Reduces all incoming damage from champions by 2<br>Ranged - Reduces all incoming damage from champions by 1"
+			],
+			"ranks": 1,
+			"prereq": "100"
+	},
+	"111": {
+			"name": "Veteran's Scars",
+			"description": [
+					"+12 Health",
+					"+24 Health",
+					"+36 Health"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"113": {
+			"name": "Bladed Armor",
+			"description": [
+					"Taking Basic Attack Damage from neutral monsters cause them to bleed, dealing physical damage equal to 1% of their current Health each second<br>This does not work against lane minions"
+			],
+			"ranks": 1,
+			"prereq": "103"
+	},
+	"120": {
+			"name": "Oppression",
+			"description": [
+					"Reduces damage taken by 3% from enemies that have impaired movement (slows, snares, taunts, stuns, etc.)"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"121": {
+			"name": "Juggernaut",
+			"description": [
+					"+3% Maximum Health"
+			],
+			"ranks": 1,
+			"prereq": "111"
+	},
+	"122": {
+			"name": "Hardiness",
+			"description": [
+					"+2 Armor",
+					"+3.5 Armor",
+					"+5 Armor"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"123": {
+			"name": "Resistance",
+			"description": [
+					"+2 Magic Resist",
+					"+3.5 Magic Resist",
+					"+5 Magic Resist"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"130": {
+			"name": "Perseverance ",
+			"description": [
+					"Regenerates 0.35% of missing Health every 5 seconds",
+					"Regenerates 0.675% of missing Health every 5 seconds",
+					"Regenerates 1% of missing Health every 5 seconds"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"131": {
+			"name": "Swiftness",
+			"description": [
+					"Reduces the effectiveness of slows by 10%"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"132": {
+			"name": "Reinforced Armor",
+			"description": [
+					"Reduces the total damage taken from critical strikes by 10%"
+			],
+			"ranks": 1,
+			"prereq": "122"
+	},
+	"133": {
+			"name": "Evasive",
+			"description": [
+					"Reduces damage taken by 4% from Area of Effect magic damage"
+			],
+			"ranks": 1,
+			"prereq": "123"
+	},
+	"140": {
+			"name": "Second Wind",
+			"description": [
+					"Increases self-healing, Health Regen, Lifesteal, and Spellvamp by 10% when below 25% Health"
+			],
+			"ranks": 1,
+			"prereq": "130"
+	},
+	"141": {
+			"name": "Legendary Guardian",
+			"description": [
+					"+1 Armor and 0.5 Magic Resist for each nearby enemy champion",
+					"+2 Armor and 1 Magic Resist for each nearby enemy champion",
+					"+3 Armor and 1.5 Magic Resist for each nearby enemy champion",
+					"+4 Armor and 2 Magic Resist for each nearby enemy champion"
+			],
+			"ranks": 4,
+			"prereq": "0"
+	},
+	"142": {
+			"name": "Runic Blessing",
+			"description": [
+					"Start the game with a 50 Health shield. This shield regenerates each time after respawning"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"151": {
+			"name": "Tenacious",
+			"description": [
+					"Reduces the duration of crowd control effects by 15%"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"200": {
+			"name": "Phasewalker",
+			"description": [
+					"Reduces the casting time of Recall by 1 second<br><br>Dominion - Reduces the casting time of Enhanced Recall by 0.5 seconds"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"201": {
+			"name": "Fleet of Foot",
+			"description": [
+					"+0.5% Movement Speed",
+					"+1% Movement Speed",
+					"+1.5% Movement Speed"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"202": {
+			"name": "Meditation",
+			"description": [
+					"+1 Mana Regen per 5 seconds",
+					"+2 Mana Regen per 5 seconds",
+					"+3 Mana Regen per 5 seconds"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"203": {
+			"name": "Scout",
+			"description": [
+					"Increases the cast range of trinket items by 15%"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"211": {
+			"name": "Summoner's Insight",
+			"description": [
+					"Reduces the cooldown of Summoner Spells by 4%",
+					"Reduces the cooldown of Summoner Spells by 7%",
+					"Reduces the cooldown of Summoner Spells by 10%"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"212": {
+			"name": "Strength of Spirit",
+			"description": [
+					"+1 Health Regen per 5 seconds for every 300 maximum Mana"
+			],
+			"ranks": 1,
+			"prereq": "202"
+	},
+	"213": {
+			"name": "Alchemist",
+			"description": [
+					"Increases the duration of potions and elixirs by 10%"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"220": {
+			"name": "Greed",
+			"description": [
+					"+0.5 Gold every 10 seconds",
+					"+1 Gold every 10 seconds",
+					"+1.5 Gold every 10 seconds"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"221": {
+			"name": "Runic Affinity",
+			"description": [
+					"Increases the duration of shrine, relic, quest, and neutral monster buffs by 20%"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"222": {
+			"name": "Vampirism",
+			"description": [
+					"+1% Lifesteal and Spellvamp",
+					"+2% Lifesteal and Spellvamp",
+					"+3% Lifesteal and Spellvamp"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"223": {
+			"name": "Culinary Master",
+			"description": [
+					"Health potions are upgraded into Biscuits that restore an additional 20 Health and 10 Mana instantly upon consumption"
+			],
+			"ranks": 1,
+			"prereq": "213"
+	},
+	"230": {
+			"name": "Scavenger",
+			"description": [
+					"+1 Gold each time an ally kills a nearby lane minion"
+			],
+			"ranks": 1,
+			"prereq": "220"
+	},
+	"231": {
+			"name": "Wealth",
+			"description": [
+					"+40 Starting Gold"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	},
+	"232": {
+			"name": "Expanded Mind",
+			"description": [
+					"+2% increased maximum Mana",
+					"+3.5% increased maximum Mana",
+					"+5% increased maximum Mana"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"233": {
+			"name": "Inspiration",
+			"description": [
+					"+5 Experience every 10 seconds while near a higher level allied champion",
+					"+10 Experience every 10 seconds while near a higher level allied champion"
+			],
+			"ranks": 2,
+			"prereq": "0"
+	},
+	"241": {
+			"name": "Bandit",
+			"description": [
+					"Melee - Grants +15 Gold on champion kill or assist<br>Ranged - Grants +3 Gold each time an enemy champion is attacked. This cannot trigger on the same champion more than once every 5 seconds"
+			],
+			"ranks": 1,
+			"prereq": "231"
+	},
+	"242": {
+			"name": "Intelligence",
+			"description": [
+					"+2% Cooldown Reduction and reduces the cooldown of Activated Items by 4%",
+					"+3.5% Cooldown Reduction and reduces the cooldown of Activated Items by 7%",
+					"+5% Cooldown Reduction and reduces the cooldown of Activated Items by 10%"
+			],
+			"ranks": 3,
+			"prereq": "0"
+	},
+	"251": {
+			"name": "Wanderer",
+			"description": [
+					"+5% Movement Speed out of combat"
+			],
+			"ranks": 1,
+			"prereq": "0"
+	}
+}
