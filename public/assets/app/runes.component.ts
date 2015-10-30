@@ -1,14 +1,19 @@
 import {Component, CORE_DIRECTIVES, OnInit} from 'angular2/angular2';
 import {Http} from 'angular2/http';
 import {Rune} from './Rune';
+import {Search} from './search.pipe';
+import {SearchComponent} from './search.component';
 
 
 @Component({
+  pipes: [Search],
+  directives: [CORE_DIRECTIVES, SearchComponent],
   selector: 'runes-component',
   template: `
+    <search-component #search-component></search-component>
     <div id="runes-list">
       <h2>Rune list</h2>
-      <div class="media" *ng-for="#rune of runes">
+      <div class="media" *ng-for="#rune of runes | search: 'name': searchComponent.query">
         <a class="media-left" href="#">
           <img width="50px" height="50px" alt="rune image">
         </a>
@@ -18,12 +23,11 @@ import {Rune} from './Rune';
         </div>
       </div>
     </div>
-  `,
-  directives: [CORE_DIRECTIVES]
+  `
 })
 export class RunesComponent {
   public stats: Object;
-  public runes: Rune[];
+  public runes: Rune[] = [new Rune('000', 'Test', 'Desc')];
   constructor(public http: Http) {}
 
   getRunes() {
