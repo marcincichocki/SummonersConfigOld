@@ -12,10 +12,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
 var route_config_1 = require('./route.config');
+var rune_service_1 = require('./rune.service');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(runeService) {
+        this.runeService = runeService;
         this.routes = route_config_1.Routes;
     }
+    AppComponent.prototype.onInit = function () {
+        this.runeService.getRunes();
+    };
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'app-component',
@@ -23,7 +28,7 @@ var AppComponent = (function () {
             directives: [router_1.ROUTER_DIRECTIVES]
         }),
         router_1.RouteConfig(route_config_1.APP_ROUTES), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [rune_service_1.RuneService])
     ], AppComponent);
     return AppComponent;
 })();
