@@ -10,7 +10,13 @@
     "outDir": "assets/js/"
   },
   "files": [
+    "assets/app/bootstrap.ts",
     "assets/app/app.component.ts",
-    "assets/app/bootstrap.ts"
+    "assets/app/home.component.ts",
+    "assets/app/runes.component.ts",
+    "assets/app/search.component.ts",
+    "assets/app/Rune.ts",
+    "assets/app/search.pipe.ts",
+    "assets/app/route.config.ts"
   ]
 }
