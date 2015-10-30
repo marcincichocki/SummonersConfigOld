@@ -2,10 +2,14 @@
   "compilerOptions": {
     "target": "ES5",
     "module": "commonjs",
-    "sourceMap": true,
+    "sourceMap": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false
-  }
+  },
+  "files": [
+    "assets/app/app.component.ts",
+    "assets/app/bootstrap.ts"
+  ]
 }
