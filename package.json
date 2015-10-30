@@ -1,0 +1,23 @@
+{
+  "name": "summonersconfig",
+  "version": "0.0.1",
+  "description": "Be prepared for everything!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcincichocki/SummonersConfig.git"
+  },
+  "author": "Marcin Cichocki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcincichocki/SummonersConfig/issues"
+  },
+  "homepage": "https://github.com/marcincichocki/SummonersConfig#readme",
+  "devDependencies": {
+    "angular2": "^2.0.0-alpha.45",
+    "systemjs": "^0.19.2"
+  }
+}
