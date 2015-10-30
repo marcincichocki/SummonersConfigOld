@@ -1,0 +1,22 @@
+{
+  "name": "summonersconfig",
+  "description": "Be prepared for everything!",
+  "main": "index.js",
+  "authors": [
+    "Marcin Cichocki"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/marcincichocki/SummonersConfig",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha"
+  }
+}
