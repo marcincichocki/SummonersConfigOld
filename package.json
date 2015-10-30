@@ -4,7 +4,8 @@
   "description": "Be prepared for everything!",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc -p public -w"
+    "tsc": "tsc -p public -w",
+    "server": "http-server ./ -p 3000"
   },
   "repository": {
     "type": "git",
