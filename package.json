@@ -17,8 +17,8 @@
     "url": "https://github.com/marcincichocki/SummonersConfig/issues"
   },
   "homepage": "https://github.com/marcincichocki/SummonersConfig#readme",
-  "devDependencies": {
-    "angular2": "^2.0.0-alpha.45",
-    "systemjs": "^0.19.2"
+  "dependencies": {
+    "angular2": "2.0.0-alpha.44",
+    "systemjs": "0.19.2"
   }
 }
