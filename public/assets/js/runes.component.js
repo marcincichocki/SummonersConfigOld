@@ -11,15 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var http_1 = require('angular2/http');
-var Rune_1 = require('./Rune');
 var search_pipe_1 = require('./search.pipe');
 var search_component_1 = require('./search.component');
 var RunesComponent = (function () {
     function RunesComponent(http) {
         this.http = http;
-        // TODO: Find way to NOT render elements until http req is done.
-        // This is just a workaround.
-        this.runes = [new Rune_1.Rune('000', 'Test', 'Desc')];
+        this.runes = [];
     }
     RunesComponent.prototype.getRunes = function () {
         var _this = this;
@@ -38,7 +35,7 @@ var RunesComponent = (function () {
             pipes: [search_pipe_1.Search],
             directives: [angular2_1.CORE_DIRECTIVES, search_component_1.SearchComponent],
             selector: 'runes-component',
-            template: "\n    <search-component #search-component></search-component>\n    <div id=\"runes-list\">\n      <h2>Rune list</h2>\n      <div class=\"media\" *ng-for=\"#rune of runes | search: 'name': searchComponent.query\">\n        <a class=\"media-left\" href=\"#\">\n          <img width=\"50px\" height=\"50px\" alt=\"rune image\">\n        </a>\n        <div class=\"media-body\">\n          <h4 class=\"media-heading\">{{ rune.name }}</h4>\n          <p>{{ rune.description }}</p>\n        </div>\n      </div>\n    </div>\n  "
+            template: "\n    <search-component #search-component></search-component>\n    <div id=\"runes-list\" *ng-if=\"runes.length\">\n      <h2>Rune list</h2>\n      <div class=\"media\" *ng-for=\"#rune of runes | search: 'name': searchComponent.query\">\n        <a class=\"media-left\" href=\"#\">\n          <img width=\"50px\" height=\"50px\" alt=\"rune image\">\n        </a>\n        <div class=\"media-body\">\n          <h4 class=\"media-heading\">{{ rune.name }}</h4>\n          <p>{{ rune.description }}</p>\n        </div>\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [http_1.Http])
     ], RunesComponent);

@@ -11,7 +11,7 @@ import {SearchComponent} from './search.component';
   selector: 'runes-component',
   template: `
     <search-component #search-component></search-component>
-    <div id="runes-list">
+    <div id="runes-list" *ng-if="runes.length">
       <h2>Rune list</h2>
       <div class="media" *ng-for="#rune of runes | search: 'name': searchComponent.query">
         <a class="media-left" href="#">
@@ -27,10 +27,7 @@ import {SearchComponent} from './search.component';
 })
 export class RunesComponent {
   public stats: Object;
-
-  // TODO: Find way to NOT render elements until http req is done.
-  // This is just a workaround.
-  public runes: Rune[] = [new Rune('000', 'Test', 'Desc')];
+  public runes: Rune[] = [];
   constructor(public http: Http) {}
 
   getRunes() {
