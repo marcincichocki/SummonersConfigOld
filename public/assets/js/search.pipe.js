@@ -10,12 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
+// TODO: async observable search
 var Search = (function () {
     function Search() {
     }
     Search.prototype.transform = function (value, _a) {
         var field = _a[0], query = _a[1];
-        return value.filter(function (item) { return item[field].includes(query); });
+        return value.filter(function (item) { return new RegExp(query, 'i').test(item[field]); });
     };
     Search = __decorate([
         angular2_1.Pipe({
