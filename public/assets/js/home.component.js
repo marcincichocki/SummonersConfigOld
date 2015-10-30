@@ -10,21 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var router_1 = require('angular2/router');
-var route_config_1 = require('./route.config');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.routes = route_config_1.Routes;
+var HomeComponent = (function () {
+    function HomeComponent() {
     }
-    AppComponent = __decorate([
+    HomeComponent = __decorate([
         angular2_1.Component({
-            selector: 'app-component',
-            templateUrl: 'assets/app/templates/app.component.html',
-            directives: [router_1.ROUTER_DIRECTIVES]
-        }),
-        router_1.RouteConfig(route_config_1.APP_ROUTES), 
+            selector: 'home-component',
+            template: "\n    <p>Home</p>\n  ",
+        }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], HomeComponent);
+    return HomeComponent;
 })();
-exports.AppComponent = AppComponent;
+exports.HomeComponent = HomeComponent;
