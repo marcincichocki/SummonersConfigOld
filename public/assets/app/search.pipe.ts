@@ -3,7 +3,7 @@ import {Pipe} from 'angular2/angular2';
 
 @Pipe({
   name: 'search',
-  pure: false
+  pure: true
 })
 export class Search {
   transform(value, [field, query]: [string, string]) {

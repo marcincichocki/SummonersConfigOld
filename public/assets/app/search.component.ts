@@ -5,7 +5,7 @@ import {Component, FORM_DIRECTIVES} from 'angular2/angular2';
   directives: [FORM_DIRECTIVES],
   selector: 'search-component',
   template: `
-    <input type="text" [(ng-model)]="query">
+    Search: <input type="text" [(ng-model)]="query">
   `
 })
 export class SearchComponent {

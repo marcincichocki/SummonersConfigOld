@@ -27,6 +27,9 @@ import {SearchComponent} from './search.component';
 })
 export class RunesComponent {
   public stats: Object;
+
+  // TODO: Find way to NOT render elements until http req is done.
+  // This is just a workaround.
   public runes: Rune[] = [new Rune('000', 'Test', 'Desc')];
   constructor(public http: Http) {}
 

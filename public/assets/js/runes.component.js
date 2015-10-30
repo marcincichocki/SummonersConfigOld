@@ -17,6 +17,8 @@ var search_component_1 = require('./search.component');
 var RunesComponent = (function () {
     function RunesComponent(http) {
         this.http = http;
+        // TODO: Find way to NOT render elements until http req is done.
+        // This is just a workaround.
         this.runes = [new Rune_1.Rune('000', 'Test', 'Desc')];
     }
     RunesComponent.prototype.getRunes = function () {

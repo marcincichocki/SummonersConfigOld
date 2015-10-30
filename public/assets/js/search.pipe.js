@@ -20,7 +20,7 @@ var Search = (function () {
     Search = __decorate([
         angular2_1.Pipe({
             name: 'search',
-            pure: false
+            pure: true
         }), 
         __metadata('design:paramtypes', [])
     ], Search);
