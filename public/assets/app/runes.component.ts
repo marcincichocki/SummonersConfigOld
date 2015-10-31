@@ -8,6 +8,12 @@ import {RuneService} from './rune.service';
   pipes: [Search],
   directives: [CORE_DIRECTIVES, SearchComponent],
   selector: 'runes-component',
+  styles: [`
+    #runes-list {
+      height: 60vh;
+      overflow: auto;
+    }
+  `],
   template: `
     <search-component #search-component></search-component>
     <div id="runes-list" *ng-if="runeService.runes.length">

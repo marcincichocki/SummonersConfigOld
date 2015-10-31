@@ -22,6 +22,7 @@ var RunesComponent = (function () {
             pipes: [search_pipe_1.Search],
             directives: [angular2_1.CORE_DIRECTIVES, search_component_1.SearchComponent],
             selector: 'runes-component',
+            styles: ["\n    #runes-list {\n      height: 60vh;\n      overflow: auto;\n    }\n  "],
             template: "\n    <search-component #search-component></search-component>\n    <div id=\"runes-list\" *ng-if=\"runeService.runes.length\">\n      <h2>Rune list</h2>\n      <div class=\"media\" *ng-for=\"#rune of runeService.runes | search: 'name': searchComponent.query\">\n        <a class=\"media-left\" href=\"#\">\n          <img width=\"50px\" height=\"50px\" alt=\"rune image\">\n        </a>\n        <div class=\"media-body\">\n          <h4 class=\"media-heading\">{{ rune.name }}</h4>\n          <p>{{ rune.description }}</p>\n        </div>\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])
