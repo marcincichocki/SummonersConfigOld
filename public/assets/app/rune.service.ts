@@ -1,12 +1,13 @@
 import {Http} from 'angular2/http';
 import {Injectable} from 'angular2/core';
-import {Rune} from './Rune';
+import {Page} from './Page';
 
 
 @Injectable()
 export class RuneService {
   public stats: Object;
-  public runes: Rune[] = [];
+  public runes: Object[] = [];
+  public page: Page[] = [];
   constructor(public http: Http) { }
 
   getRunes() {
@@ -20,5 +21,11 @@ export class RuneService {
         error => console.log(error),
         () => console.log('Done!')
       );
+  }
+
+  addPage(name) {
+    if (this.page.length < 20) {
+      this.page.push(new Page(name));
+    }
   }
 }

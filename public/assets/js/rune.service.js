@@ -11,10 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var http_1 = require('angular2/http');
 var core_1 = require('angular2/core');
+var Page_1 = require('./Page');
 var RuneService = (function () {
     function RuneService(http) {
         this.http = http;
         this.runes = [];
+        this.page = [];
     }
     RuneService.prototype.getRunes = function () {
         var _this = this;
@@ -24,6 +26,11 @@ var RuneService = (function () {
             _this.stats = data.stats;
             _this.runes = data.runes;
         }, function (error) { return console.log(error); }, function () { return console.log('Done!'); });
+    };
+    RuneService.prototype.addPage = function (name) {
+        if (this.page.length < 20) {
+            this.page.push(new Page_1.Page(name));
+        }
     };
     RuneService = __decorate([
         core_1.Injectable(), 
