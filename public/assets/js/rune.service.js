@@ -17,6 +17,7 @@ var RuneService = (function () {
         this.http = http;
         this.runes = [];
         this.page = [];
+        this.types = ['mark', 'seal', 'glyph', 'quintessence'];
     }
     RuneService.prototype.getRunes = function () {
         var _this = this;

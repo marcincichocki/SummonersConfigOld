@@ -8,6 +8,7 @@ export class RuneService {
   public stats: Object;
   public runes: Object[] = [];
   public page: Page[] = [];
+  private types: string[] = ['mark', 'seal', 'glyph', 'quintessence'];
   constructor(public http: Http) { }
 
   getRunes() {
