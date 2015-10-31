@@ -11,20 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 // TODO: async observable search
-var Search = (function () {
-    function Search() {
+var SearchPipe = (function () {
+    function SearchPipe() {
     }
-    Search.prototype.transform = function (value, _a) {
+    SearchPipe.prototype.transform = function (value, _a) {
         var field = _a[0], query = _a[1];
         return value.filter(function (item) { return new RegExp(query, 'i').test(item[field]); });
     };
-    Search = __decorate([
+    SearchPipe = __decorate([
         angular2_1.Pipe({
             name: 'search',
             pure: true
         }), 
         __metadata('design:paramtypes', [])
-    ], Search);
-    return Search;
+    ], SearchPipe);
+    return SearchPipe;
 })();
-exports.Search = Search;
+exports.SearchPipe = SearchPipe;

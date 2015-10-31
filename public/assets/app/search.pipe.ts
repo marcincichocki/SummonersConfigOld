@@ -6,7 +6,7 @@ import {Pipe} from 'angular2/angular2';
   name: 'search',
   pure: true
 })
-export class Search {
+export class SearchPipe {
   transform(value, [field, query]: [string, string]) {
     return value.filter(item => new RegExp(query, 'i').test(item[field]));
   }

@@ -26,7 +26,7 @@ var RuneListComponent = (function () {
         angular2_1.Component({
             selector: 'rune-list-component',
             styles: ["\n    #runes-list {\n      height: 60vh;\n      overflow: auto;\n    }\n  "],
-            pipes: [search_pipe_1.Search],
+            pipes: [search_pipe_1.SearchPipe],
             templateUrl: 'assets/app/templates/runeList.component.html',
             directives: [angular2_1.CORE_DIRECTIVES, runeListItem_component_1.RuneListItemComponent]
         }), 
