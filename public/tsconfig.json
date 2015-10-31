@@ -16,6 +16,7 @@
     "assets/app/runes.component.ts",
     "assets/app/search.component.ts",
     "assets/app/runeList.component.ts",
+    "assets/app/runeListItem.component.ts",
     "assets/app/Rune.ts",
     "assets/app/search.pipe.ts",
     "assets/app/route.config.ts",

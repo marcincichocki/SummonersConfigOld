@@ -1,10 +1,6 @@
 <div id="runes-list" *ng-if="runeService.runes.length">
-  <div class="media" *ng-for="#rune of runeService.runes | search: 'description': searchComponent.query">
-    <a class="media-left" href="#">
-      <img width="50px" height="50px" alt="rune image">
-    </a>
-    <div class="media-body">
-      <p>{{ rune.description }}</p>
-    </div>
-  </div>
+  <rune-list-item-component
+    *ng-for="#rune of runeService.runes | search: 'description': searchComponent.query"
+    [rune]="rune">
+  </rune-list-item-component>
 </div>
