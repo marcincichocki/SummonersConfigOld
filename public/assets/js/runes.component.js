@@ -10,22 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var search_pipe_1 = require('./search.pipe');
 var search_component_1 = require('./search.component');
-var rune_service_1 = require('./rune.service');
+var runeList_component_1 = require('./runeList.component');
 var RunesComponent = (function () {
-    function RunesComponent(runeService) {
-        this.runeService = runeService;
+    function RunesComponent() {
     }
     RunesComponent = __decorate([
         angular2_1.Component({
-            pipes: [search_pipe_1.Search],
-            directives: [angular2_1.CORE_DIRECTIVES, search_component_1.SearchComponent],
+            directives: [search_component_1.SearchComponent, runeList_component_1.RuneListComponent],
             selector: 'runes-component',
-            styles: ["\n    #runes-list {\n      height: 60vh;\n      overflow: auto;\n    }\n  "],
-            template: "\n    <search-component #search-component></search-component>\n    <div id=\"runes-list\" *ng-if=\"runeService.runes.length\">\n      <h2>Rune list</h2>\n      <div class=\"media\" *ng-for=\"#rune of runeService.runes | search: 'name': searchComponent.query\">\n        <a class=\"media-left\" href=\"#\">\n          <img width=\"50px\" height=\"50px\" alt=\"rune image\">\n        </a>\n        <div class=\"media-body\">\n          <h4 class=\"media-heading\">{{ rune.name }}</h4>\n          <p>{{ rune.description }}</p>\n        </div>\n      </div>\n    </div>\n  "
+            template: "\n    <search-component #search-component></search-component>\n    <rune-list-component [search-component]=\"searchComponent\"></rune-list-component>\n  "
         }), 
-        __metadata('design:paramtypes', [rune_service_1.RuneService])
+        __metadata('design:paramtypes', [])
     ], RunesComponent);
     return RunesComponent;
 })();
