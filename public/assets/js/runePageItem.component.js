@@ -10,20 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var search_component_1 = require('./search.component');
-var runeList_component_1 = require('./runeList.component');
-var runePage_component_1 = require('./runePage.component');
-var RunesComponent = (function () {
-    function RunesComponent() {
+var RunePageItemComponent = (function () {
+    function RunePageItemComponent() {
     }
-    RunesComponent = __decorate([
+    __decorate([
+        angular2_1.Input(), 
+        __metadata('design:type', Object)
+    ], RunePageItemComponent.prototype, "rune");
+    RunePageItemComponent = __decorate([
         angular2_1.Component({
-            directives: [search_component_1.SearchComponent, runeList_component_1.RuneListComponent, runePage_component_1.RunePageComponent],
-            selector: 'runes-component',
-            template: "\n    <search-component #search-component></search-component>\n    <rune-list-component [search-component]=\"searchComponent\"></rune-list-component>\n    <rune-page-component></rune-page-component>\n  "
+            selector: 'rune-page-item-component',
+            templateUrl: 'assets/app/templates/runePageItem.component.html',
         }), 
         __metadata('design:paramtypes', [])
-    ], RunesComponent);
-    return RunesComponent;
+    ], RunePageItemComponent);
+    return RunePageItemComponent;
 })();
-exports.RunesComponent = RunesComponent;
+exports.RunePageItemComponent = RunePageItemComponent;
