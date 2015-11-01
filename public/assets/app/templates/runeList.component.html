@@ -1,6 +1,7 @@
 <div id="runes-list" *ng-if="runeService.runes.length">
   <rune-list-item-component
     *ng-for="#rune of runeService.runes | search: 'description': searchComponent.query"
-    [rune]="rune">
+    [rune]="rune"
+    (click)="runeService.addRune(rune.id)">
   </rune-list-item-component>
 </div>

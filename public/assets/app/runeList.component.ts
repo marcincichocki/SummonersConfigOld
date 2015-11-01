@@ -7,7 +7,9 @@ import {RuneListItemComponent} from './runeListItem.component';
   selector: 'rune-list-component',
   styles: [`
     #runes-list {
-      height: 60vh;
+      float: left;
+      width: 50vw;
+      height: 50vh;
       overflow: auto;
     }
   `],

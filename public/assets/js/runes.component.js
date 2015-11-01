@@ -12,15 +12,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var search_component_1 = require('./search.component');
 var runeList_component_1 = require('./runeList.component');
+var runeStat_component_1 = require('./runeStat.component');
 var runePage_component_1 = require('./runePage.component');
 var RunesComponent = (function () {
     function RunesComponent() {
     }
     RunesComponent = __decorate([
         angular2_1.Component({
-            directives: [search_component_1.SearchComponent, runeList_component_1.RuneListComponent, runePage_component_1.RunePageComponent],
+            directives: [search_component_1.SearchComponent, runeList_component_1.RuneListComponent, runeStat_component_1.RuneStatComponent, runePage_component_1.RunePageComponent],
             selector: 'runes-component',
-            template: "\n    <search-component #search-component></search-component>\n    <rune-list-component [search-component]=\"searchComponent\"></rune-list-component>\n    <rune-page-component></rune-page-component>\n  "
+            template: "\n    <search-component #search-component></search-component>\n    <div class=\"clearfix\">\n      <rune-list-component [search-component]=\"searchComponent\"></rune-list-component>\n      <rune-stat-component></rune-stat-component>\n    </div>\n    <rune-page-component></rune-page-component>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], RunesComponent);

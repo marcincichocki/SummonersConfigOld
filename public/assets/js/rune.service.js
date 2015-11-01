@@ -16,7 +16,9 @@ var RuneService = (function () {
     function RuneService(http) {
         this.http = http;
         this.runes = [];
-        this.page = [];
+        this.page = [new Page_1.Page(this.name + "1")];
+        this.active = 0;
+        this.name = 'Rune Page #';
         this.types = ['mark', 'seal', 'glyph', 'quintessence'];
     }
     RuneService.prototype.getRunes = function () {
@@ -27,11 +29,37 @@ var RuneService = (function () {
             _this.stats = data.stats;
             _this.runes = data.runes;
         }, function (error) { return console.log(error); }, function () { return console.log('Done!'); });
+        this.http.get('assets/app/data/en/runes.json')
+            .map(function (res) { return res.json(); })
+            .subscribe(function (data) {
+            _this.RUNES = data;
+        }, function (error) { return console.log(error); }, function () { return console.log('Done!'); });
     };
     RuneService.prototype.addPage = function (name) {
         if (this.page.length < 20) {
-            this.page.push(new Page_1.Page(name));
+            this.page.push(new Page_1.Page(this.name + this.page.length));
         }
+    };
+    RuneService.prototype.addRune = function (id) {
+        var rune = this.RUNES[id];
+        var type = this.types.indexOf(rune.type);
+        if (this.page[this.active].counter[type] > 0) {
+            this.page[this.active].addRune(rune, type);
+            this.count();
+        }
+        else {
+            console.log("Reached maximum of " + rune.type);
+        }
+    };
+    RuneService.prototype.removeRune = function (id) {
+        var rune = this.RUNES[id];
+        var type = this.types.indexOf(rune.type);
+        this.page[this.active].removeRune(rune, type);
+    };
+    RuneService.prototype.count = function () {
+        var _this = this;
+        var runes = this.page[this.active].runes.map(function (rune) { return _this.RUNES[rune]; });
+        this.page[this.active].count(runes);
     };
     RuneService = __decorate([
         core_1.Injectable(), 

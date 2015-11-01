@@ -19,6 +19,7 @@
     "assets/app/runeListItem.component.ts",
     "assets/app/runePage.component.ts",
     "assets/app/runePageItem.component.ts",
+    "assets/app/runeStat.component.ts",
     "assets/app/Page.ts",
     "assets/app/Rune.ts",
     "assets/app/search.pipe.ts",

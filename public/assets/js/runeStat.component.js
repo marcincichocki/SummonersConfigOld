@@ -11,27 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var rune_service_1 = require('./rune.service');
-var search_pipe_1 = require('./search.pipe');
-var runeListItem_component_1 = require('./runeListItem.component');
-var RuneListComponent = (function () {
-    function RuneListComponent(runeService) {
+var RuneStatComponent = (function () {
+    function RuneStatComponent(runeService) {
         this.runeService = runeService;
     }
     ;
-    __decorate([
-        angular2_1.Input(), 
-        __metadata('design:type', Object)
-    ], RuneListComponent.prototype, "searchComponent");
-    RuneListComponent = __decorate([
+    RuneStatComponent = __decorate([
         angular2_1.Component({
-            selector: 'rune-list-component',
-            styles: ["\n    #runes-list {\n      float: left;\n      width: 50vw;\n      height: 50vh;\n      overflow: auto;\n    }\n  "],
-            pipes: [search_pipe_1.SearchPipe],
-            templateUrl: 'assets/app/templates/runeList.component.html',
-            directives: [angular2_1.CORE_DIRECTIVES, runeListItem_component_1.RuneListItemComponent]
+            selector: 'rune-stat-component',
+            styles: ["\n    #rune-stat {\n      float: left;\n      width: 50vw;\n      height: 50vh;\n      overflow: auto;\n    }\n  "],
+            template: "\n    <div id=\"rune-stat\">\n      <div *ng-for=\"#stat of runeService.page[runeService.active].sums\">\n        <h6>{{ stat.unitId }}</h6>\n        <p>{{ stat.value }}</p>\n      </div>\n    </div>\n  ",
+            directives: [angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])
-    ], RuneListComponent);
-    return RuneListComponent;
+    ], RuneStatComponent);
+    return RuneStatComponent;
 })();
-exports.RuneListComponent = RuneListComponent;
+exports.RuneStatComponent = RuneStatComponent;
