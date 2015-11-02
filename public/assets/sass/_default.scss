@@ -1,0 +1,14 @@
+#container {
+  padding: 0;
+}
+
+#header,
+#main {
+  margin: 0;
+}
+
+header {
+  background-color: $header-background-color;
+  height: $header-height;
+  color: $header-font-color;
+}
