@@ -23,43 +23,57 @@ var RuneService = (function () {
     }
     RuneService.prototype.getRunes = function () {
         var _this = this;
-        this.http.get('assets/app/data/en/runes-lang.json')
+        this.http.get('assets/app/data/en/runes.json')
             .map(function (res) { return res.json(); })
             .subscribe(function (data) {
             _this.stats = data.stats;
             _this.runes = data.runes;
         }, function (error) { return console.log(error); }, function () { return console.log('Done!'); });
-        this.http.get('assets/app/data/en/runes.json')
+        this.http.get('assets/app/data/en/runesStats.json')
             .map(function (res) { return res.json(); })
             .subscribe(function (data) {
-            _this.RUNES = data;
+            _this.runesStats = data;
         }, function (error) { return console.log(error); }, function () { return console.log('Done!'); });
     };
     RuneService.prototype.addPage = function (name) {
         if (this.page.length < 20) {
             this.page.push(new Page_1.Page(this.name + this.page.length));
+            this.changePage(this.page.length - 1);
         }
     };
-    RuneService.prototype.addRune = function (id) {
-        var rune = this.RUNES[id];
-        var type = this.types.indexOf(rune.type);
-        if (this.page[this.active].counter[type] > 0) {
-            this.page[this.active].addRune(rune, type);
+    RuneService.prototype.removePage = function (page) {
+        if (this.page.length > 1) {
+            this.page.splice(page, 1);
+            this.changePage();
+        }
+    };
+    RuneService.prototype.changePage = function (page) {
+        if (page === void 0) { page = 0; }
+        if (page >= 0 && page < this.page.length) {
+            this.active = page;
+        }
+    };
+    RuneService.prototype.addRune = function (id, type, img) {
+        var typeId = this.types.indexOf(type);
+        if (this.page[this.active].counter[typeId] > 0) {
+            this.page[this.active].addRune(id, typeId, img);
             this.count();
         }
         else {
-            console.log("Reached maximum of " + rune.type);
+            console.log("Reached maximum of " + type);
         }
     };
     RuneService.prototype.removeRune = function (id) {
-        var rune = this.RUNES[id];
-        var type = this.types.indexOf(rune.type);
-        this.page[this.active].removeRune(rune, type);
+        this.page[this.active].removeRune(id);
+        this.count();
     };
     RuneService.prototype.count = function () {
         var _this = this;
-        var runes = this.page[this.active].runes.map(function (rune) { return _this.RUNES[rune]; });
+        var runes = this.page[this.active].runes.map(function (rune) { return _this.runesStats[rune.id]; });
         this.page[this.active].count(runes);
+    };
+    RuneService.prototype.isPercentage = function (unit) {
+        return unit.indexOf('Percent') > -1 ? '%' : '';
     };
     RuneService = __decorate([
         core_1.Injectable(), 

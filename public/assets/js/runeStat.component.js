@@ -19,8 +19,8 @@ var RuneStatComponent = (function () {
     RuneStatComponent = __decorate([
         angular2_1.Component({
             selector: 'rune-stat-component',
-            styles: ["\n    #rune-stat {\n      float: left;\n      width: 50vw;\n      height: 50vh;\n      overflow: auto;\n    }\n  "],
-            template: "\n    <div id=\"rune-stat\">\n      <div *ng-for=\"#stat of runeService.page[runeService.active].sums\">\n        <h6>{{ stat.unitId }}</h6>\n        <p>{{ stat.value }}</p>\n      </div>\n    </div>\n  ",
+            styles: ["\n    #rune-stat {\n      float: left;\n      width: 100%;\n      height: 50vh;\n      overflow: auto;\n    }\n  "],
+            template: "\n    <div id=\"rune-stat\">\n      <div *ng-for=\"#stat of runeService.page[runeService.active].sums\">\n        <h6>{{ runeService.stats[stat.unit] }}</h6>\n        <p>{{ stat.value }}{{ runeService.isPercentage(stat.unit) }}</p>\n      </div>\n    </div>\n  ",
             directives: [angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])

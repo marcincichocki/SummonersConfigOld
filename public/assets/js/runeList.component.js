@@ -25,7 +25,6 @@ var RuneListComponent = (function () {
     RuneListComponent = __decorate([
         angular2_1.Component({
             selector: 'rune-list-component',
-            styles: ["\n    #runes-list {\n      float: left;\n      width: 50vw;\n      height: 50vh;\n      overflow: auto;\n    }\n  "],
             pipes: [search_pipe_1.SearchPipe],
             templateUrl: 'assets/app/templates/runeList.component.html',
             directives: [angular2_1.CORE_DIRECTIVES, runeListItem_component_1.RuneListItemComponent]

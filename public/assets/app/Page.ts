@@ -1,23 +1,35 @@
 import {Rune} from './Rune';
+import {Sums} from './Sums';
 
 
 export class Page {
-  public runes: string[] = [];
+  public runes = [];
   public sums: Object[] = [];
   public counter: number[] = [9, 9, 9, 3];
+  private slotStart: number[] = [1, 10, 19, 28];
   constructor(public name: string) {}
 
-  addRune(rune, type: number) {
-    this.counter[type] -= 1;
-    this.runes.push(rune.id);
+  getSlot(typeId) {
+    const from = this.slotStart[typeId];
+    const to = from + 9 < 30 ? from + 9 : 30;
+    const runes = this.runes.map(obj => obj.position);
+
+    for (let i = from; i <= to; i += 1) {
+      if (runes.indexOf(i) === -1) return i;
+    }
+  }
+
+  addRune(id: string, typeId: number, image: string) {
+    this.counter[typeId] -= 1;
+    this.runes.push({id, typeId, image, position: this.getSlot(typeId)});
 
     console.log(this.runes);
   }
 
-  removeRune(rune, type: number) {
-    const index = this.runes.indexOf(rune.id);
+  removeRune(id: string) {
+    const index = this.runes.indexOf(id);
 
-    this.counter[type] += 1;
+    this.counter[this.runes[index].typeId] += 1;
     this.runes.splice(index, 1);
 
     console.log(this.runes);
@@ -25,6 +37,8 @@ export class Page {
 
   count(data) {
     let runes: Rune[] = [];
+
+
     data.forEach(rune => {
       Object.keys(rune.stats).forEach(stat => {
         runes.push(new Rune(
@@ -43,11 +57,11 @@ export class Page {
       let units = runes.map(obj => obj.unitId).filter((unit, index, self) => self.indexOf(unit) === index);
 
       units.forEach(unit => {
-        var test = runes.filter(obj => obj.unitId === unit);
-        this.sums.push({
-          unitId: unit,
-          value: parseFloat(test.map(obj => obj.value).reduce((a, b) => a + b, 0).toFixed(2))
-        });
+        let sameUnit = runes.filter(obj => obj.unitId === unit);
+        this.sums.push(new Sums(
+          unit,
+          parseFloat(sameUnit.map(obj => obj.value).reduce((a, b) => a + b, 0).toFixed(2))
+        ));
       });
 
       console.log(this.sums);

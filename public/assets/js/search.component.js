@@ -18,7 +18,7 @@ var SearchComponent = (function () {
         angular2_1.Component({
             directives: [angular2_1.FORM_DIRECTIVES],
             selector: 'search-component',
-            template: "\n    Search: <input type=\"text\" [(ng-model)]=\"query\">\n  "
+            template: "\n    <input type=\"text\" placeholder=\"Search\" [(ng-model)]=\"query\">\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], SearchComponent);

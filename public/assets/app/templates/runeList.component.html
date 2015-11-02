@@ -2,6 +2,6 @@
   <rune-list-item-component
     *ng-for="#rune of runeService.runes | search: 'description': searchComponent.query"
     [rune]="rune"
-    (click)="runeService.addRune(rune.id)">
+    (click)="runeService.addRune(rune.id, rune.type, rune.image)">
   </rune-list-item-component>
 </div>

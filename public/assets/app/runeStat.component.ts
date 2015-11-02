@@ -6,7 +6,7 @@ import {RuneService} from './rune.service';
   styles: [`
     #rune-stat {
       float: left;
-      width: 50vw;
+      width: 100%;
       height: 50vh;
       overflow: auto;
     }
@@ -14,8 +14,8 @@ import {RuneService} from './rune.service';
   template: `
     <div id="rune-stat">
       <div *ng-for="#stat of runeService.page[runeService.active].sums">
-        <h6>{{ stat.unitId }}</h6>
-        <p>{{ stat.value }}</p>
+        <h6>{{ runeService.stats[stat.unit] }}</h6>
+        <p>{{ stat.value }}{{ runeService.isPercentage(stat.unit) }}</p>
       </div>
     </div>
   `,

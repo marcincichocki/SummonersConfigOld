@@ -1,8 +1,9 @@
-<div class="media">
-  <a class="media-left" href="#">
-    <img width="50px" height="50px" alt="rune image">
-  </a>
-  <div class="media-body">
+<div class="rune">
+  <div class="rune-image-wrapper">
+    <div class="rune-image {{ rune.image }}s"></div>
+  </div>
+  <div class="rune-description">
     <p>{{ rune.description }}</p>
+    <span class="rune-ip">{{ rune.ip }}</span>
   </div>
 </div>

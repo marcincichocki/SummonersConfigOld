@@ -1,19 +1,30 @@
 var Rune_1 = require('./Rune');
+var Sums_1 = require('./Sums');
 var Page = (function () {
     function Page(name) {
         this.name = name;
         this.runes = [];
         this.sums = [];
         this.counter = [9, 9, 9, 3];
+        this.slotStart = [1, 10, 19, 28];
     }
-    Page.prototype.addRune = function (rune, type) {
-        this.counter[type] -= 1;
-        this.runes.push(rune.id);
+    Page.prototype.getSlot = function (typeId) {
+        var from = this.slotStart[typeId];
+        var to = from + 9 < 30 ? from + 9 : 30;
+        var runes = this.runes.map(function (obj) { return obj.position; });
+        for (var i = from; i <= to; i += 1) {
+            if (runes.indexOf(i) === -1)
+                return i;
+        }
+    };
+    Page.prototype.addRune = function (id, typeId, image) {
+        this.counter[typeId] -= 1;
+        this.runes.push({ id: id, typeId: typeId, image: image, position: this.getSlot(typeId) });
         console.log(this.runes);
     };
-    Page.prototype.removeRune = function (rune, type) {
-        var index = this.runes.indexOf(rune.id);
-        this.counter[type] += 1;
+    Page.prototype.removeRune = function (id) {
+        var index = this.runes.indexOf(id);
+        this.counter[this.runes[index].typeId] += 1;
         this.runes.splice(index, 1);
         console.log(this.runes);
     };
@@ -29,11 +40,8 @@ var Page = (function () {
             this.sums = [];
             var units = runes.map(function (obj) { return obj.unitId; }).filter(function (unit, index, self) { return self.indexOf(unit) === index; });
             units.forEach(function (unit) {
-                var test = runes.filter(function (obj) { return obj.unitId === unit; });
-                _this.sums.push({
-                    unitId: unit,
-                    value: parseFloat(test.map(function (obj) { return obj.value; }).reduce(function (a, b) { return a + b; }, 0).toFixed(2))
-                });
+                var sameUnit = runes.filter(function (obj) { return obj.unitId === unit; });
+                _this.sums.push(new Sums_1.Sums(unit, parseFloat(sameUnit.map(function (obj) { return obj.value; }).reduce(function (a, b) { return a + b; }, 0).toFixed(2))));
             });
             console.log(this.sums);
         }

@@ -9,12 +9,20 @@ import {RunePageComponent} from './runePage.component';
   directives: [SearchComponent, RuneListComponent, RuneStatComponent, RunePageComponent],
   selector: 'runes-component',
   template: `
-    <search-component #search-component></search-component>
-    <div class="clearfix">
-      <rune-list-component [search-component]="searchComponent"></rune-list-component>
+    <aside class="col-xs-4 runes-aside">
       <rune-stat-component></rune-stat-component>
-    </div>
-    <rune-page-component></rune-page-component>
+    </aside>
+    <section class="col-xs-8 runes-section">
+      <div class="runes-wrapper">
+        <div class="rune-list-wrapper">
+          <search-component #search-component></search-component>
+          <rune-list-component [search-component]="searchComponent"></rune-list-component>
+        </div>
+        <div class="rune-page-wrapper">
+          <rune-page-component></rune-page-component>
+        </div>
+      </div>
+    </section>
   `
 })
 export class RunesComponent {}
