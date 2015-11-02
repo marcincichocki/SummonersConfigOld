@@ -36,33 +36,43 @@ var RuneService = (function () {
         }, function (error) { return console.log(error); }, function () { return console.log('Done!'); });
     };
     RuneService.prototype.addPage = function (name) {
+        if (name === void 0) { name = this.name + this.page.length; }
         if (this.page.length < 20) {
-            this.page.push(new Page_1.Page(this.name + this.page.length));
+            this.page.push(new Page_1.Page(name));
             this.changePage(this.page.length - 1);
         }
     };
     RuneService.prototype.removePage = function (page) {
+        if (page === void 0) { page = this.active; }
         if (this.page.length > 1) {
             this.page.splice(page, 1);
             this.changePage();
         }
     };
+    RuneService.prototype.isInRange = function (page, max) {
+        return page >= 0 && page < (max || this.page.length);
+    };
     RuneService.prototype.changePage = function (page) {
         if (page === void 0) { page = 0; }
-        if (page >= 0 && page < this.page.length) {
+        if (this.isInRange(page)) {
             this.active = page;
         }
     };
     RuneService.prototype.clearPage = function (page) {
         if (page === void 0) { page = this.active; }
-        if (page >= 0 && page < this.page.length) {
+        if (this.isInRange(page)) {
             this.page[page] = new Page_1.Page(this.name + this.page.length);
         }
     };
     RuneService.prototype.isEmpty = function (page) {
         if (page === void 0) { page = this.active; }
-        if (page >= 0 && page < this.page.length) {
+        if (this.isInRange(page)) {
             return !this.page[page].sums.length;
+        }
+    };
+    RuneService.prototype.isActive = function (page) {
+        if (this.isInRange(page)) {
+            return page === this.active;
         }
     };
     RuneService.prototype.addRune = function (id, type, img) {

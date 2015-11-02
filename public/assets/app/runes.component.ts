@@ -3,13 +3,21 @@ import {SearchComponent} from './search.component';
 import {RuneListComponent} from './runeList.component';
 import {RuneStatComponent} from './runeStat.component';
 import {RunePageComponent} from './runePage.component';
+import {PagesComponent} from './pages.component';
 
 
 @Component({
-  directives: [SearchComponent, RuneListComponent, RuneStatComponent, RunePageComponent],
+  directives: [
+    SearchComponent,
+    RuneListComponent,
+    RuneStatComponent,
+    RunePageComponent,
+    PagesComponent
+  ],
   selector: 'runes-component',
   template: `
     <aside class="col-xs-4 runes-aside">
+      <pages-component></pages-component>
       <rune-stat-component></rune-stat-component>
     </aside>
     <section class="col-xs-8 runes-section">

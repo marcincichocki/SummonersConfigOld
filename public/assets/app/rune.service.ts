@@ -37,35 +37,45 @@ export class RuneService {
       );
   }
 
-  addPage(name) {
+  addPage(name: string = this.name + this.page.length) {
     if (this.page.length < 20) {
-      this.page.push(new Page(this.name + this.page.length));
+      this.page.push(new Page(name));
       this.changePage(this.page.length - 1)
     }
   }
 
-  removePage(page: number) {
+  removePage(page: number = this.active) {
     if (this.page.length > 1) {
       this.page.splice(page, 1);
       this.changePage();
     }
   }
 
+  isInRange(page: number, max?: number) {
+    return page >= 0 && page < (max || this.page.length);
+  }
+
   changePage(page: number = 0) {
-    if (page >= 0 && page < this.page.length) {
+    if (this.isInRange(page)) {
       this.active = page;
     }
   }
 
   clearPage(page = this.active) {
-    if (page >= 0 && page < this.page.length) {
+    if (this.isInRange(page)) {
       this.page[page] = new Page(this.name + this.page.length);
     }
   }
 
   isEmpty(page = this.active) {
-    if (page >= 0 && page < this.page.length) {
+    if (this.isInRange(page)) {
       return !this.page[page].sums.length;
+    }
+  }
+
+  isActive(page: number) {
+    if (this.isInRange(page)) {
+      return page === this.active;
     }
   }
 
