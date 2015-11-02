@@ -22,6 +22,7 @@
     "assets/app/runeStat.component.ts",
     "assets/app/runeStatItem.component.ts",
     "assets/app/pages.component.ts",
+    "assets/app/runeName.component.ts",
     "assets/app/Page.ts",
     "assets/app/Rune.ts",
     "assets/app/Sums.ts",

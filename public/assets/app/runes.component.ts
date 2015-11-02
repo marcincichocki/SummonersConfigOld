@@ -3,6 +3,7 @@ import {SearchComponent} from './search.component';
 import {RuneListComponent} from './runeList.component';
 import {RuneStatComponent} from './runeStat.component';
 import {RunePageComponent} from './runePage.component';
+import {RuneNameComponent} from './runeName.component';
 import {PagesComponent} from './pages.component';
 
 
@@ -12,12 +13,14 @@ import {PagesComponent} from './pages.component';
     RuneListComponent,
     RuneStatComponent,
     RunePageComponent,
+    RuneNameComponent,
     PagesComponent
   ],
   selector: 'runes-component',
   template: `
     <aside class="col-xs-4 runes-aside">
       <pages-component></pages-component>
+      <rune-name-component></rune-name-component>
       <rune-stat-component></rune-stat-component>
     </aside>
     <section class="col-xs-8 runes-section">

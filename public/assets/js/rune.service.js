@@ -15,11 +15,11 @@ var Page_1 = require('./Page');
 var RuneService = (function () {
     function RuneService(http) {
         this.http = http;
+        this.types = ['mark', 'seal', 'glyph', 'quintessence'];
+        this.name = 'Rune Page #';
         this.runes = [];
         this.page = [new Page_1.Page(this.name + "1")];
         this.active = 0;
-        this.name = 'Rune Page #';
-        this.types = ['mark', 'seal', 'glyph', 'quintessence'];
     }
     RuneService.prototype.getRunes = function () {
         var _this = this;
@@ -36,7 +36,7 @@ var RuneService = (function () {
         }, function (error) { return console.log(error); }, function () { return console.log('Done!'); });
     };
     RuneService.prototype.addPage = function (name) {
-        if (name === void 0) { name = this.name + this.page.length; }
+        if (name === void 0) { name = this.name + (this.page.length + 1); }
         if (this.page.length < 20) {
             this.page.push(new Page_1.Page(name));
             this.changePage(this.page.length - 1);
@@ -73,6 +73,12 @@ var RuneService = (function () {
     RuneService.prototype.isActive = function (page) {
         if (this.isInRange(page)) {
             return page === this.active;
+        }
+    };
+    RuneService.prototype.getName = function (page) {
+        if (page === void 0) { page = this.active; }
+        if (this.isInRange(page)) {
+            return this.page[page].name;
         }
     };
     RuneService.prototype.addRune = function (id, type, img) {

@@ -5,13 +5,14 @@ import {Page} from './Page';
 
 @Injectable()
 export class RuneService {
+  private types: string[] = ['mark', 'seal', 'glyph', 'quintessence'];
+  private name: string = 'Rune Page #';
+
   public stats: Object;
   public runes: Object[] = [];
   public runesStats: Object;
   public page: Page[] = [new Page(`${this.name}1`)];
   public active: number = 0;
-  private name: string = 'Rune Page #';
-  private types: string[] = ['mark', 'seal', 'glyph', 'quintessence'];
   constructor(public http: Http) { }
 
   getRunes() {
@@ -37,7 +38,7 @@ export class RuneService {
       );
   }
 
-  addPage(name: string = this.name + this.page.length) {
+  addPage(name: string = this.name + (this.page.length + 1)) {
     if (this.page.length < 20) {
       this.page.push(new Page(name));
       this.changePage(this.page.length - 1)
@@ -76,6 +77,12 @@ export class RuneService {
   isActive(page: number) {
     if (this.isInRange(page)) {
       return page === this.active;
+    }
+  }
+
+  getName(page: number = this.active) {
+    if (this.isInRange(page)) {
+      return this.page[page].name;
     }
   }
 
