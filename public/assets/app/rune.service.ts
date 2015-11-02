@@ -57,6 +57,12 @@ export class RuneService {
     }
   }
 
+  clearPage(page = this.active) {
+    if (page >= 0 && page < this.page.length) {
+      this.page[page] = new Page(this.name + this.page.length);
+    }
+  }
+
   addRune(id, type, img) {
     const typeId: number = this.types.indexOf(type);
 

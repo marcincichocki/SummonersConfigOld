@@ -53,6 +53,12 @@ var RuneService = (function () {
             this.active = page;
         }
     };
+    RuneService.prototype.clearPage = function (page) {
+        if (page === void 0) { page = this.active; }
+        if (page >= 0 && page < this.page.length) {
+            this.page[page] = new Page_1.Page(this.name + this.page.length);
+        }
+    };
     RuneService.prototype.addRune = function (id, type, img) {
         var typeId = this.types.indexOf(type);
         if (this.page[this.active].counter[typeId] > 0) {
