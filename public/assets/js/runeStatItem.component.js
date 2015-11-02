@@ -11,20 +11,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var rune_service_1 = require('./rune.service');
-var runeStatItem_component_1 = require('./runeStatItem.component');
-var RuneStatComponent = (function () {
-    function RuneStatComponent(runeService) {
+var RuneStatItemComponent = (function () {
+    function RuneStatItemComponent(runeService) {
         this.runeService = runeService;
     }
-    ;
-    RuneStatComponent = __decorate([
+    __decorate([
+        angular2_1.Input(), 
+        __metadata('design:type', Object)
+    ], RuneStatItemComponent.prototype, "stat");
+    RuneStatItemComponent = __decorate([
         angular2_1.Component({
-            selector: 'rune-stat-component',
-            template: "\n    <div class=\"row\">\n      <div class=\"col-xs-8\">\n        <rune-stat-item-component\n          *ng-for=\"#stat of runeService.page[runeService.active].sums\"\n          [stat]=\"stat\">\n        </rune-stat-item-component>\n      </div>\n      <div class=\"col-xs-4\">\n        <button class=\"btn btn-block btn-primary\"\n          (click)=\"runeService.clearPage()\"\n          [disabled]=\"runeService.isEmpty()\">Clear</button>\n      </div>\n    </div>\n  ",
-            directives: [angular2_1.CORE_DIRECTIVES, runeStatItem_component_1.RuneStatItemComponent]
+            selector: 'rune-stat-item-component',
+            template: "\n    <div>\n      <h6>{{ runeService.stats[stat.unit] }}</h6>\n      <p>{{ stat.value }}{{ runeService.isPercentage(stat.unit) }}</p>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])
-    ], RuneStatComponent);
-    return RuneStatComponent;
+    ], RuneStatItemComponent);
+    return RuneStatItemComponent;
 })();
-exports.RuneStatComponent = RuneStatComponent;
+exports.RuneStatItemComponent = RuneStatItemComponent;

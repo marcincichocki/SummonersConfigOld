@@ -20,6 +20,7 @@
     "assets/app/runePage.component.ts",
     "assets/app/runePageItem.component.ts",
     "assets/app/runeStat.component.ts",
+    "assets/app/runeStatItem.component.ts",
     "assets/app/Page.ts",
     "assets/app/Rune.ts",
     "assets/app/Sums.ts",

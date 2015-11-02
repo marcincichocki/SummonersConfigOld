@@ -1,25 +1,25 @@
 import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
 import {RuneService} from './rune.service';
+import {RuneStatItemComponent} from './runeStatItem.component';
 
 @Component({
   selector: 'rune-stat-component',
-  styles: [`
-    #rune-stat {
-      float: left;
-      width: 100%;
-      height: 50vh;
-      overflow: auto;
-    }
-  `],
   template: `
-    <div id="rune-stat">
-      <div *ng-for="#stat of runeService.page[runeService.active].sums">
-        <h6>{{ runeService.stats[stat.unit] }}</h6>
-        <p>{{ stat.value }}{{ runeService.isPercentage(stat.unit) }}</p>
+    <div class="row">
+      <div class="col-xs-8">
+        <rune-stat-item-component
+          *ng-for="#stat of runeService.page[runeService.active].sums"
+          [stat]="stat">
+        </rune-stat-item-component>
+      </div>
+      <div class="col-xs-4">
+        <button class="btn btn-block btn-primary"
+          (click)="runeService.clearPage()"
+          [disabled]="runeService.isEmpty()">Clear</button>
       </div>
     </div>
   `,
-  directives: [CORE_DIRECTIVES]
+  directives: [CORE_DIRECTIVES, RuneStatItemComponent]
 })
 export class RuneStatComponent {
   constructor(public runeService: RuneService) {};

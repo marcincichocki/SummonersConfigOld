@@ -63,6 +63,12 @@ export class RuneService {
     }
   }
 
+  isEmpty(page = this.active) {
+    if (page >= 0 && page < this.page.length) {
+      return !this.page[page].sums.length;
+    }
+  }
+
   addRune(id, type, img) {
     const typeId: number = this.types.indexOf(type);
 
