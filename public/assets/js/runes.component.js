@@ -15,6 +15,7 @@ var runeList_component_1 = require('./runeList.component');
 var runeStat_component_1 = require('./runeStat.component');
 var runePage_component_1 = require('./runePage.component');
 var runeName_component_1 = require('./runeName.component');
+var runeIpTime_component_1 = require('./runeIpTime.component');
 var pages_component_1 = require('./pages.component');
 var RunesComponent = (function () {
     function RunesComponent() {
@@ -27,10 +28,11 @@ var RunesComponent = (function () {
                 runeStat_component_1.RuneStatComponent,
                 runePage_component_1.RunePageComponent,
                 runeName_component_1.RuneNameComponent,
+                runeIpTime_component_1.RuneIpTimeComponent,
                 pages_component_1.PagesComponent
             ],
             selector: 'runes-component',
-            template: "\n    <aside class=\"col-xs-4 runes-aside\">\n      <pages-component></pages-component>\n      <rune-name-component></rune-name-component>\n      <rune-stat-component></rune-stat-component>\n    </aside>\n    <section class=\"col-xs-8 runes-section\">\n      <div class=\"runes-wrapper\">\n        <div class=\"rune-list-wrapper\">\n          <search-component #search-component></search-component>\n          <rune-list-component [search-component]=\"searchComponent\"></rune-list-component>\n        </div>\n        <div class=\"rune-page-wrapper\">\n          <rune-page-component></rune-page-component>\n        </div>\n      </div>\n    </section>\n  "
+            template: "\n    <aside class=\"col-xs-4 runes-aside\">\n      <pages-component></pages-component>\n      <rune-name-component></rune-name-component>\n      <rune-stat-component></rune-stat-component>\n      <rune-ip-time-component></rune-ip-time-component>\n    </aside>\n    <section class=\"col-xs-8 runes-section\">\n      <div class=\"runes-wrapper\">\n        <div class=\"rune-list-wrapper\">\n          <search-component #search-component></search-component>\n          <rune-list-component [search-component]=\"searchComponent\"></rune-list-component>\n        </div>\n        <div class=\"rune-page-wrapper\">\n          <rune-page-component></rune-page-component>\n        </div>\n      </div>\n    </section>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], RunesComponent);

@@ -87,6 +87,12 @@ var RuneService = (function () {
             this.page[page].name = name;
         }
     };
+    RuneService.prototype.getIp = function (page) {
+        if (page === void 0) { page = this.active; }
+        if (this.isInRange(page)) {
+            return this.page[page].ip;
+        }
+    };
     RuneService.prototype.addRune = function (id, type, img) {
         var typeId = this.types.indexOf(type);
         if (this.page[this.active].counter[typeId] > 0) {

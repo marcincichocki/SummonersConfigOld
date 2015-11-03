@@ -92,6 +92,12 @@ export class RuneService {
     }
   }
 
+  getIp(page: number = this.active) {
+    if (this.isInRange(page)) {
+      return this.page[page].ip;
+    }
+  }
+
   addRune(id, type, img) {
     const typeId: number = this.types.indexOf(type);
 

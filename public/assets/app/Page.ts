@@ -3,6 +3,7 @@ import {Sums} from './Sums';
 
 
 export class Page {
+  public ip: number = 0;
   public runes = [];
   public sums: Object[] = [];
   public counter: number[] = [9, 9, 9, 3];
@@ -49,6 +50,8 @@ export class Page {
         ));
       });
     });
+
+    this.ip = runes.map(obj => obj.ip).reduce((a, b) => a + b, 0);
 
     this.sums = [];
 

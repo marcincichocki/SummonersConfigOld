@@ -3,6 +3,7 @@ var Sums_1 = require('./Sums');
 var Page = (function () {
     function Page(name) {
         this.name = name;
+        this.ip = 0;
         this.runes = [];
         this.sums = [];
         this.counter = [9, 9, 9, 3];
@@ -36,6 +37,7 @@ var Page = (function () {
                 runes.push(new Rune_1.Rune(rune.ip, stat, rune.stats[stat], rune.type, rune.id));
             });
         });
+        this.ip = runes.map(function (obj) { return obj.ip; }).reduce(function (a, b) { return a + b; }, 0);
         this.sums = [];
         var units = runes.map(function (obj) { return obj.unitId; }).filter(function (unit, index, self) { return self.indexOf(unit) === index; });
         units.forEach(function (unit) {

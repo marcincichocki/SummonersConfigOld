@@ -4,6 +4,7 @@ import {RuneListComponent} from './runeList.component';
 import {RuneStatComponent} from './runeStat.component';
 import {RunePageComponent} from './runePage.component';
 import {RuneNameComponent} from './runeName.component';
+import {RuneIpTimeComponent} from './runeIpTime.component';
 import {PagesComponent} from './pages.component';
 
 
@@ -14,6 +15,7 @@ import {PagesComponent} from './pages.component';
     RuneStatComponent,
     RunePageComponent,
     RuneNameComponent,
+    RuneIpTimeComponent,
     PagesComponent
   ],
   selector: 'runes-component',
@@ -22,6 +24,7 @@ import {PagesComponent} from './pages.component';
       <pages-component></pages-component>
       <rune-name-component></rune-name-component>
       <rune-stat-component></rune-stat-component>
+      <rune-ip-time-component></rune-ip-time-component>
     </aside>
     <section class="col-xs-8 runes-section">
       <div class="runes-wrapper">
