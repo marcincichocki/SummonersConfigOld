@@ -61,7 +61,7 @@ var RuneService = (function () {
     RuneService.prototype.clearPage = function (page) {
         if (page === void 0) { page = this.active; }
         if (this.isInRange(page)) {
-            this.page[page] = new Page_1.Page(this.name + this.page.length);
+            this.page[page] = new Page_1.Page(this.getName());
         }
     };
     RuneService.prototype.isEmpty = function (page) {

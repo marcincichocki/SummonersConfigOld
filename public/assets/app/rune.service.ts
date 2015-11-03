@@ -64,7 +64,7 @@ export class RuneService {
 
   clearPage(page = this.active) {
     if (this.isInRange(page)) {
-      this.page[page] = new Page(this.name + this.page.length);
+      this.page[page] = new Page(this.getName());
     }
   }
 
