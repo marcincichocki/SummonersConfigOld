@@ -4,19 +4,25 @@ import {RuneService} from './rune.service';
 @Component({
   selector: 'rune-name-component',
   template: `
-    <div class="row">
+    <div class="row" *ng-if="!showInput">
       <div class="col-xs-8">
-        <h1 *ng-if="!showInput">{{ runeService.getName() }}</h1>
-        <input type="text" placeholder="new rune page name" *ng-if="showInput">
+        <h1>{{ runeService.getName() }}</h1>
       </div>
       <div class="col-xs-4">
         <button class="btn btn-block btn-primary"
-          (click)="toggleInput()"
-          *ng-if="!showInput">Change name</button>
-        <button class="btn btn-block btn-primary"
-          (click)="toggleInput()"
-          *ng-if="showInput">Save</button>
+          (click)="toggleInput()">Change name</button>
       </div>
+    </div>
+    <div class="row" *ng-if="showInput">
+      <form action="">
+        <div class="col-xs-8 form-group">
+          <input class="form-control" type="text" placeholder="new rune page name">
+        </div>
+        <div class="col-xs-4 form-group">
+          <input class="btn btn-block btn-primary" type="submit" value="Save"
+          (click)="toggleInput()">
+        </div>
+      </form>
     </div>
   `,
   directives: [CORE_DIRECTIVES]
