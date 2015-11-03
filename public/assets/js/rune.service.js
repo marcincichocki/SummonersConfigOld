@@ -98,8 +98,10 @@ var RuneService = (function () {
         }
     };
     RuneService.prototype.removeRune = function (id) {
-        this.page[this.active].removeRune(id);
-        this.count();
+        if (this.page[this.active].runes.length) {
+            this.page[this.active].removeRune(id);
+            this.count();
+        }
     };
     RuneService.prototype.count = function () {
         var _this = this;

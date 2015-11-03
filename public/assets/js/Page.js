@@ -36,15 +36,13 @@ var Page = (function () {
                 runes.push(new Rune_1.Rune(rune.ip, stat, rune.stats[stat], rune.type, rune.id));
             });
         });
-        if (runes.length) {
-            this.sums = [];
-            var units = runes.map(function (obj) { return obj.unitId; }).filter(function (unit, index, self) { return self.indexOf(unit) === index; });
-            units.forEach(function (unit) {
-                var sameUnit = runes.filter(function (obj) { return obj.unitId === unit; });
-                _this.sums.push(new Sums_1.Sums(unit, parseFloat(sameUnit.map(function (obj) { return obj.value; }).reduce(function (a, b) { return a + b; }, 0).toFixed(2))));
-            });
-            console.log(this.sums);
-        }
+        this.sums = [];
+        var units = runes.map(function (obj) { return obj.unitId; }).filter(function (unit, index, self) { return self.indexOf(unit) === index; });
+        units.forEach(function (unit) {
+            var sameUnit = runes.filter(function (obj) { return obj.unitId === unit; });
+            _this.sums.push(new Sums_1.Sums(unit, parseFloat(sameUnit.map(function (obj) { return obj.value; }).reduce(function (a, b) { return a + b; }, 0).toFixed(2))));
+        });
+        console.log(this.sums);
     };
     return Page;
 })();

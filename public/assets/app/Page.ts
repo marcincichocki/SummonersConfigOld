@@ -38,7 +38,6 @@ export class Page {
   count(data) {
     let runes: Rune[] = [];
 
-
     data.forEach(rune => {
       Object.keys(rune.stats).forEach(stat => {
         runes.push(new Rune(
@@ -51,21 +50,19 @@ export class Page {
       });
     });
 
-    if (runes.length) {
-      this.sums = [];
+    this.sums = [];
 
-      let units = runes.map(obj => obj.unitId).filter((unit, index, self) => self.indexOf(unit) === index);
+    let units = runes.map(obj => obj.unitId).filter((unit, index, self) => self.indexOf(unit) === index);
 
-      units.forEach(unit => {
-        let sameUnit = runes.filter(obj => obj.unitId === unit);
-        this.sums.push(new Sums(
-          unit,
-          parseFloat(sameUnit.map(obj => obj.value).reduce((a, b) => a + b, 0).toFixed(2))
-        ));
-      });
+    units.forEach(unit => {
+      let sameUnit = runes.filter(obj => obj.unitId === unit);
+      this.sums.push(new Sums(
+        unit,
+        parseFloat(sameUnit.map(obj => obj.value).reduce((a, b) => a + b, 0).toFixed(2))
+      ));
+    });
 
-      console.log(this.sums);
-    }
+    console.log(this.sums);
 
   }
 }

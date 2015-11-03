@@ -104,9 +104,11 @@ export class RuneService {
   }
 
   removeRune(id: string) {
-    this.page[this.active].removeRune(id);
+    if (this.page[this.active].runes.length) {
+      this.page[this.active].removeRune(id);
 
-    this.count();
+      this.count();
+    }
   }
 
   count() {
