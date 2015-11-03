@@ -86,6 +86,12 @@ export class RuneService {
     }
   }
 
+  setName(name: string, page: number = this.active) {
+    if (this.isInRange(page)) {
+      this.page[page].name = name;
+    }
+  }
+
   addRune(id, type, img) {
     const typeId: number = this.types.indexOf(type);
 
