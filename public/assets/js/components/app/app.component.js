@@ -12,7 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
 var route_config_1 = require('../../routes/route.config');
-var rune_service_1 = require('../../services/rune.service');
+var rune_service_1 = require('../../services/rune/rune.service');
 var AppComponent = (function () {
     function AppComponent(runeService) {
         this.runeService = runeService;

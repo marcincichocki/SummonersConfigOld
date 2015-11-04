@@ -1,6 +1,6 @@
 import {Component, CORE_DIRECTIVES, Input} from 'angular2/angular2';
 
-import {RuneService} from '../../services/rune.service';
+import {RuneService} from '../../services/rune/rune.service';
 import {SearchPipe} from '../../pipes/search.pipe';
 import {RuneListItemComponent} from '../runeListItem/runeListItem.component';
 

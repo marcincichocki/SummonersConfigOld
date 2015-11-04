@@ -1,5 +1,5 @@
 import {Rune} from './Rune';
-import {Sums} from './Sums';
+import {Sum} from './Sum';
 
 
 export class Page {
@@ -59,7 +59,7 @@ export class Page {
 
     units.forEach(unit => {
       let sameUnit = runes.filter(obj => obj.unitId === unit);
-      this.sums.push(new Sums(
+      this.sums.push(new Sum(
         unit,
         parseFloat(sameUnit.map(obj => obj.value).reduce((a, b) => a + b, 0).toFixed(2))
       ));

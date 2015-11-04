@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var http_1 = require('angular2/http');
 var core_1 = require('angular2/core');
-var Page_1 = require('../Page');
+var Page_1 = require('./Page');
 var RuneService = (function () {
     function RuneService(http) {
         this.http = http;

@@ -1,5 +1,5 @@
 var Rune_1 = require('./Rune');
-var Sums_1 = require('./Sums');
+var Sum_1 = require('./Sum');
 var Page = (function () {
     function Page(name) {
         this.name = name;
@@ -42,7 +42,7 @@ var Page = (function () {
         var units = runes.map(function (obj) { return obj.unitId; }).filter(function (unit, index, self) { return self.indexOf(unit) === index; });
         units.forEach(function (unit) {
             var sameUnit = runes.filter(function (obj) { return obj.unitId === unit; });
-            _this.sums.push(new Sums_1.Sums(unit, parseFloat(sameUnit.map(function (obj) { return obj.value; }).reduce(function (a, b) { return a + b; }, 0).toFixed(2))));
+            _this.sums.push(new Sum_1.Sum(unit, parseFloat(sameUnit.map(function (obj) { return obj.value; }).reduce(function (a, b) { return a + b; }, 0).toFixed(2))));
         });
         console.log(this.sums);
     };

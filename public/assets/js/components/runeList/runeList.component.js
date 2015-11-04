@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var rune_service_1 = require('../../services/rune.service');
+var rune_service_1 = require('../../services/rune/rune.service');
 var search_pipe_1 = require('../../pipes/search.pipe');
 var runeListItem_component_1 = require('../runeListItem/runeListItem.component');
 var RuneListComponent = (function () {

@@ -1,4 +1,4 @@
-export class Sums {
+export class Sum {
   constructor(
     public unit: string,
     public value: number

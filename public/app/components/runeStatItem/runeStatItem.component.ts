@@ -1,6 +1,6 @@
 import {Component, Input} from 'angular2/angular2';
 
-import {RuneService} from '../../services/rune.service';
+import {RuneService} from '../../services/rune/rune.service';
 
 
 @Component({

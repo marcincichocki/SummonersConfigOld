@@ -2,7 +2,7 @@ import {Component, OnInit} from 'angular2/angular2';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {Routes, APP_ROUTES} from '../../routes/route.config';
-import {RuneService} from '../../services/rune.service';
+import {RuneService} from '../../services/rune/rune.service';
 
 
 
