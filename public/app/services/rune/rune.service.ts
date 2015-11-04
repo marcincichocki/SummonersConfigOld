@@ -6,7 +6,7 @@ import {Page} from './Page';
 
 @Injectable()
 export class RuneService {
-  private types: string[] = ['mark', 'seal', 'glyph', 'quintessence'];
+  public types: string[] = ['mark', 'seal', 'glyph', 'quintessence'];
   private name: string = 'Rune Page #';
 
   public stats: Object;

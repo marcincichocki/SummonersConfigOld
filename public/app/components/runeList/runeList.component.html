@@ -1,7 +1,14 @@
 <div id="runes-list" *ng-if="runeService.runes.length">
-  <rune-list-item-component
-    *ng-for="#rune of runeService.runes | search: 'description': searchComponent.query"
-    [rune]="rune"
-    (click)="runeService.addRune(rune.id, rune.type, rune.image)">
-  </rune-list-item-component>
+  <div *ng-for="#type of runeService.types, #i = index">
+    <header (click)="toggle(i)">
+      <h3>{{ type }}</h3>
+    </header>
+    <section [hidden]="!show[i]">
+      <rune-list-item-component
+        *ng-for="#rune of (runeService.runes | filterType: type) | search: 'description': searchComponent.query"
+        [rune]="rune"
+        (click)="runeService.addRune(rune.id, rune.type, rune.image)">
+      </rune-list-item-component>
+    </section>
+  </div>
 </div>

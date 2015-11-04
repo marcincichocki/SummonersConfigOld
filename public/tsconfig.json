@@ -25,6 +25,7 @@
     "app/components/runeName/runeName.component.ts",
     "app/components/runeIpTime/runeIpTime.component.ts",
     "app/pipes/search.pipe.ts",
+    "app/pipes/filterType.pipe.ts",
     "app/routes/route.config.ts",
     "app/services/rune/rune.service.ts",
     "app/services/rune/Page.ts",
