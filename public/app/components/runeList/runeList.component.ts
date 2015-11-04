@@ -10,6 +10,7 @@ import {RuneListItemComponent} from '../runeListItem/runeListItem.component';
   selector: 'rune-list-component',
   pipes: [SearchPipe, FilterType],
   templateUrl: './app/components/runeList/runeList.component.html',
+  styleUrls: [`./app/components/runeList/style.css`],
   directives: [CORE_DIRECTIVES, RuneListItemComponent]
 })
 export class RuneListComponent {

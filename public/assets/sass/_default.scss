@@ -1,3 +1,8 @@
+body {
+  color: $font-color-primary !important;
+  font-family: 'Lato', sans-serif;
+}
+
 #container {
   padding: 0;
 }
@@ -10,5 +15,4 @@
 header {
   background-color: $header-background-color;
   height: $header-height;
-  color: $header-font-color;
 }

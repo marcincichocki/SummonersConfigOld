@@ -18,8 +18,8 @@ var PagesComponent = (function () {
     PagesComponent = __decorate([
         angular2_1.Component({
             selector: 'pages-component',
-            styles: ["\n    .pages {\n      display: flex;\n      flex-wrap: wrap;\n    }\n\n    .pages > button {\n      margin: 4px;\n      flex-grow: 1;\n      flex-basis: 50px;\n    }\n  "],
-            template: "\n    <div class=\"row\">\n      <div class=\"col-xs-8 pages\">\n        <button class=\"btn btn-primary-outline\"\n          *ng-for=\"#page of runeService.page, #i = index\"\n          (click)=\"runeService.changePage(i)\"\n          [disabled]=\"runeService.isActive(i)\"\n          [ng-class]=\"{active: runeService.isActive(i)}\">{{ i + 1 }}\n        </button>\n      </div>\n      <div class=\"col-xs-4\">\n        <button class=\"btn btn-block btn-primary\"\n          (click)=\"runeService.addPage()\"\n          [disabled]=\"runeService.page.length >= 20\">Add page\n        </button>\n        <button class=\"btn btn-block btn-primary\"\n          (click)=\"runeService.removePage()\"\n          [disabled]=\"runeService.page.length <= 1\">Remove page\n        </button>\n      </div>\n    </div>\n  ",
+            styleUrls: ['./app/components/pages/style.css'],
+            templateUrl: './app/components/pages/pages.component.html',
             directives: [angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])

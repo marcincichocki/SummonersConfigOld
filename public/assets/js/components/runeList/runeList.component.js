@@ -37,6 +37,7 @@ var RuneListComponent = (function () {
             selector: 'rune-list-component',
             pipes: [search_pipe_1.SearchPipe, filterType_pipe_1.FilterType],
             templateUrl: './app/components/runeList/runeList.component.html',
+            styleUrls: ["./app/components/runeList/style.css"],
             directives: [angular2_1.CORE_DIRECTIVES, runeListItem_component_1.RuneListItemComponent]
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])

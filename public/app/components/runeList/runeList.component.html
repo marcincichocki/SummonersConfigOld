@@ -1,7 +1,7 @@
 <div id="runes-list" *ng-if="runeService.runes.length">
   <div *ng-for="#type of runeService.types, #i = index">
-    <header (click)="toggle(i)">
-      <h3>{{ type }}</h3>
+    <header class="type-{{ type }}" (click)="toggle(i)">
+      <h1 [ng-class]="{active: show[i]}">{{ type }}</h1>
     </header>
     <section [hidden]="!show[i]">
       <rune-list-item-component
