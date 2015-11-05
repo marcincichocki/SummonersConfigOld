@@ -15,7 +15,6 @@ var FilterType = (function () {
     }
     FilterType.prototype.transform = function (value, _a) {
         var type = _a[0];
-        console.log(type);
         return value.filter(function (item) { return item['type'] === type; });
     };
     FilterType = __decorate([

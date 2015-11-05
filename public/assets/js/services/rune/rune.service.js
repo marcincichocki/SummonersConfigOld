@@ -29,7 +29,7 @@ var RuneService = (function () {
             _this.stats = data.stats;
             _this.runes = data.runes;
             _this.runesArray = Object.keys(data.runes).map(function (key) { return data.runes[key]; });
-        }, function (error) { return console.log(error); }, function () { return console.log(_this.runesArray); });
+        }, function (error) { return console.log(error); });
     };
     RuneService.prototype.addPage = function (name) {
         if (name === void 0) { name = this.name + (this.page.length + 1); }

@@ -26,8 +26,7 @@ export class RuneService {
           this.runes = data.runes;
           this.runesArray = Object.keys(data.runes).map(key => data.runes[key]);
         },
-        error => console.log(error),
-        () => console.log(this.runesArray)
+        error => console.log(error)
       );
   }
 
