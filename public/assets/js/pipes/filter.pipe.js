@@ -13,13 +13,13 @@ var angular2_1 = require('angular2/angular2');
 var FilterType = (function () {
     function FilterType() {
     }
-    FilterType.prototype.transform = function (value, _a) {
-        var type = _a[0];
-        return value.filter(function (item) { return item['type'] === type; });
+    FilterType.prototype.transform = function (arr, _a) {
+        var prop = _a[0], value = _a[1];
+        return arr.filter(function (obj) { return obj[prop].toString() === value; });
     };
     FilterType = __decorate([
         angular2_1.Pipe({
-            name: 'filterType',
+            name: 'filter',
             pure: true
         }), 
         __metadata('design:paramtypes', [])

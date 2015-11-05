@@ -5,7 +5,7 @@
     </header>
     <section [hidden]="!show[i]">
       <rune-list-item-component
-        *ng-for="#rune of (runeService.runesArray | filterType: type) | search: 'description': searchComponent.query"
+        *ng-for="#rune of (runeService.runesArray | filter: 'type': type) | search: 'description': searchComponent.query"
         [rune]="rune"
         (click)="runeService.addRune(rune.id)">
       </rune-list-item-component>

@@ -12,7 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var rune_service_1 = require('../../services/rune/rune.service');
 var search_pipe_1 = require('../../pipes/search.pipe');
-var filterType_pipe_1 = require('../../pipes/filterType.pipe');
+var filter_pipe_1 = require('../../pipes/filter.pipe');
 var runeListItem_component_1 = require('../runeListItem/runeListItem.component');
 var RuneListComponent = (function () {
     function RuneListComponent(runeService) {
@@ -35,7 +35,7 @@ var RuneListComponent = (function () {
     RuneListComponent = __decorate([
         angular2_1.Component({
             selector: 'rune-list-component',
-            pipes: [search_pipe_1.SearchPipe, filterType_pipe_1.FilterType],
+            pipes: [search_pipe_1.SearchPipe, filter_pipe_1.FilterType],
             templateUrl: './app/components/runeList/runeList.component.html',
             styleUrls: ["./app/components/runeList/style.css"],
             directives: [angular2_1.CORE_DIRECTIVES, runeListItem_component_1.RuneListItemComponent]
