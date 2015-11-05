@@ -1,10 +1,11 @@
-import {Rune} from './Rune';
+import {RuneSingle} from './RuneSingle';
 import {Sum} from './Sum';
+import {Rune} from './Rune';
 
 
 export class Page {
   public ip: number = 0;
-  public runes = [];
+  public runes: Rune[] = [];
   public sums: Sum[] = [];
   public counter: number[] = [9, 9, 9, 3];
   private slotStart: number[] = [1, 10, 19, 28];
@@ -36,11 +37,11 @@ export class Page {
   }
 
   count() {
-    let runes: Rune[] = [];
+    let runes: RuneSingle[] = [];
 
     this.runes.forEach(rune => {
       Object.keys(rune.stats).forEach(stat => {
-        runes.push(new Rune(
+        runes.push(new RuneSingle(
           rune.ip,
           stat,
           rune.stats[stat]

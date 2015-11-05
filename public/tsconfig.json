@@ -30,6 +30,7 @@
     "app/services/rune/rune.service.ts",
     "app/services/rune/Page.ts",
     "app/services/rune/Rune.ts",
+    "app/services/rune/RuneSingle.ts",
     "app/services/rune/Sum.ts"
   ]
 }

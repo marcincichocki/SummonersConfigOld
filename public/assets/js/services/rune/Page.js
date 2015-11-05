@@ -1,4 +1,4 @@
-var Rune_1 = require('./Rune');
+var RuneSingle_1 = require('./RuneSingle');
 var Sum_1 = require('./Sum');
 var Page = (function () {
     function Page(name) {
@@ -34,7 +34,7 @@ var Page = (function () {
         var runes = [];
         this.runes.forEach(function (rune) {
             Object.keys(rune.stats).forEach(function (stat) {
-                runes.push(new Rune_1.Rune(rune.ip, stat, rune.stats[stat]));
+                runes.push(new RuneSingle_1.RuneSingle(rune.ip, stat, rune.stats[stat]));
             });
         });
         // get sum of ip

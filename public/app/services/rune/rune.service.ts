@@ -2,6 +2,7 @@ import {Http} from 'angular2/http';
 import {Injectable} from 'angular2/core';
 
 import {Page} from './Page';
+import {Rune} from './Rune';
 
 
 @Injectable()
@@ -11,7 +12,7 @@ export class RuneService {
 
   public stats: Object;
   public runes: Object;
-  public runesArray: Object[] = [];
+  public runesArray: Rune[] = [];
   public page: Page[] = [new Page(`${this.name}1`)];
   public active: number = 0;
   constructor(public http: Http) { }
