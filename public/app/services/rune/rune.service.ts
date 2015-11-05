@@ -10,8 +10,8 @@ export class RuneService {
   private name: string = 'Rune Page #';
 
   public stats: Object;
-  public runes: Object[] = [];
-  public runesStats: Object;
+  public runes: Object;
+  public runesArray: Object[] = [];
   public page: Page[] = [new Page(`${this.name}1`)];
   public active: number = 0;
   constructor(public http: Http) { }
@@ -23,19 +23,10 @@ export class RuneService {
         data => {
           this.stats = data.stats;
           this.runes = data.runes;
+          this.runesArray = Object.keys(data.runes).map(key => data.runes[key]);
         },
         error => console.log(error),
-        () => console.log('Done!')
-      );
-
-     this.http.get('./app/data/en/runesStats.json')
-      .map(res => res.json())
-      .subscribe(
-        data => {
-          this.runesStats = data;
-        },
-        error => console.log(error),
-        () => console.log('Done!')
+        () => console.log(this.runesArray)
       );
   }
 
@@ -99,29 +90,29 @@ export class RuneService {
     }
   }
 
-  addRune(id, type, img) {
-    const typeId: number = this.types.indexOf(type);
+  addRune(id) {
+    const rune = this.runes[id];
+    const typeId: number = this.types.indexOf(rune.type);
 
     if (this.page[this.active].counter[typeId] > 0) {
-      this.page[this.active].addRune(id, typeId, img);
+      this.page[this.active].addRune(rune, typeId);
       this.count();
     } else {
-      console.log(`Reached maximum of ${type}`);
+      console.log(`Reached maximum of ${rune.type}`);
     }
   }
 
-  removeRune(id: string) {
+  removeRune(rune) {
+    const typeId: number = this.types.indexOf(rune.type);
     if (this.page[this.active].runes.length) {
-      this.page[this.active].removeRune(id);
+      this.page[this.active].removeRune(rune, typeId);
 
       this.count();
     }
   }
 
   count() {
-    const runes = this.page[this.active].runes.map(rune => this.runesStats[rune.id]);
-
-    this.page[this.active].count(runes);
+    this.page[this.active].count();
   }
 
   isPercentage(unit: string) {

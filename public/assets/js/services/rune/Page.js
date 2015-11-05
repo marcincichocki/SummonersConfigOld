@@ -18,21 +18,21 @@ var Page = (function () {
                 return i;
         }
     };
-    Page.prototype.addRune = function (id, typeId, image) {
+    Page.prototype.addRune = function (rune, typeId) {
         this.counter[typeId] -= 1;
-        this.runes.push({ id: id, typeId: typeId, image: image, position: this.getSlot(typeId) });
-        console.log(this.runes);
+        rune.position = this.getSlot(typeId);
+        // We don't like references here.
+        this.runes.push(JSON.parse(JSON.stringify(rune)));
     };
-    Page.prototype.removeRune = function (id) {
-        var index = this.runes.indexOf(id);
-        this.counter[this.runes[index].typeId] += 1;
+    Page.prototype.removeRune = function (rune, typeId) {
+        var index = this.runes.indexOf(rune);
+        this.counter[typeId] += 1;
         this.runes.splice(index, 1);
-        console.log(this.runes);
     };
-    Page.prototype.count = function (data) {
+    Page.prototype.count = function () {
         var _this = this;
         var runes = [];
-        data.forEach(function (rune) {
+        this.runes.forEach(function (rune) {
             Object.keys(rune.stats).forEach(function (stat) {
                 runes.push(new Rune_1.Rune(rune.ip, stat, rune.stats[stat], rune.type, rune.id));
             });
@@ -44,7 +44,6 @@ var Page = (function () {
             var sameUnit = runes.filter(function (obj) { return obj.unitId === unit; });
             _this.sums.push(new Sum_1.Sum(unit, parseFloat(sameUnit.map(function (obj) { return obj.value; }).reduce(function (a, b) { return a + b; }, 0).toFixed(2))));
         });
-        console.log(this.sums);
     };
     return Page;
 })();

@@ -17,7 +17,7 @@ var RuneService = (function () {
         this.http = http;
         this.types = ['mark', 'seal', 'glyph', 'quintessence'];
         this.name = 'Rune Page #';
-        this.runes = [];
+        this.runesArray = [];
         this.page = [new Page_1.Page(this.name + "1")];
         this.active = 0;
     }
@@ -28,12 +28,8 @@ var RuneService = (function () {
             .subscribe(function (data) {
             _this.stats = data.stats;
             _this.runes = data.runes;
-        }, function (error) { return console.log(error); }, function () { return console.log('Done!'); });
-        this.http.get('./app/data/en/runesStats.json')
-            .map(function (res) { return res.json(); })
-            .subscribe(function (data) {
-            _this.runesStats = data;
-        }, function (error) { return console.log(error); }, function () { return console.log('Done!'); });
+            _this.runesArray = Object.keys(data.runes).map(function (key) { return data.runes[key]; });
+        }, function (error) { return console.log(error); }, function () { return console.log(_this.runesArray); });
     };
     RuneService.prototype.addPage = function (name) {
         if (name === void 0) { name = this.name + (this.page.length + 1); }
@@ -93,26 +89,26 @@ var RuneService = (function () {
             return this.page[page].ip;
         }
     };
-    RuneService.prototype.addRune = function (id, type, img) {
-        var typeId = this.types.indexOf(type);
+    RuneService.prototype.addRune = function (id) {
+        var rune = this.runes[id];
+        var typeId = this.types.indexOf(rune.type);
         if (this.page[this.active].counter[typeId] > 0) {
-            this.page[this.active].addRune(id, typeId, img);
+            this.page[this.active].addRune(rune, typeId);
             this.count();
         }
         else {
-            console.log("Reached maximum of " + type);
+            console.log("Reached maximum of " + rune.type);
         }
     };
-    RuneService.prototype.removeRune = function (id) {
+    RuneService.prototype.removeRune = function (rune) {
+        var typeId = this.types.indexOf(rune.type);
         if (this.page[this.active].runes.length) {
-            this.page[this.active].removeRune(id);
+            this.page[this.active].removeRune(rune, typeId);
             this.count();
         }
     };
     RuneService.prototype.count = function () {
-        var _this = this;
-        var runes = this.page[this.active].runes.map(function (rune) { return _this.runesStats[rune.id]; });
-        this.page[this.active].count(runes);
+        this.page[this.active].count();
     };
     RuneService.prototype.isPercentage = function (unit) {
         return unit.indexOf('Percent') > -1 ? '%' : '';

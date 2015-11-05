@@ -20,26 +20,25 @@ export class Page {
     }
   }
 
-  addRune(id: string, typeId: number, image: string) {
+  addRune(rune, typeId) {
     this.counter[typeId] -= 1;
-    this.runes.push({id, typeId, image, position: this.getSlot(typeId)});
+    rune.position = this.getSlot(typeId);
 
-    console.log(this.runes);
+    // We don't like references here.
+    this.runes.push(JSON.parse(JSON.stringify(rune)));
   }
 
-  removeRune(id: string) {
-    const index = this.runes.indexOf(id);
+  removeRune(rune, typeId) {
+    const index = this.runes.indexOf(rune);
 
-    this.counter[this.runes[index].typeId] += 1;
+    this.counter[typeId] += 1;
     this.runes.splice(index, 1);
-
-    console.log(this.runes);
   }
 
-  count(data) {
+  count() {
     let runes: Rune[] = [];
 
-    data.forEach(rune => {
+    this.runes.forEach(rune => {
       Object.keys(rune.stats).forEach(stat => {
         runes.push(new Rune(
           rune.ip,
@@ -64,8 +63,5 @@ export class Page {
         parseFloat(sameUnit.map(obj => obj.value).reduce((a, b) => a + b, 0).toFixed(2))
       ));
     });
-
-    console.log(this.sums);
-
   }
 }
