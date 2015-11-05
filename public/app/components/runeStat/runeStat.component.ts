@@ -10,8 +10,8 @@ import {RuneStatItemComponent} from '../runeStatItem/runeStatItem.component';
     <div class="row">
       <div class="col-xs-8">
         <rune-stat-item-component
-          *ng-for="#stat of runeService.page[runeService.active].sums"
-          [stat]="stat">
+          *ng-for="#sum of runeService.page[runeService.active].sums"
+          [sum]="sum">
         </rune-stat-item-component>
       </div>
       <div class="col-xs-4">

@@ -12,12 +12,12 @@ import {RuneService} from '../../services/rune/rune.service';
   `],
   template: `
     <div>
-      <h5>{{ runeService.stats[stat.unit] }}</h5>
-      <p>{{ stat.value }}{{ runeService.isPercentage(stat.unit) }}</p>
+      <h5>{{ runeService.stats[sum.unitId] }}</h5>
+      <p>{{ sum.value }}{{ runeService.isPercentage(sum.unitId) }}</p>
     </div>
   `
 })
 export class RuneStatItemComponent {
-  @Input() stat;
+  @Input() sum;
   constructor(public runeService: RuneService) {}
 }

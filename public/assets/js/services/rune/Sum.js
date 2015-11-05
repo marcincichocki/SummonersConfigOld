@@ -1,6 +1,6 @@
 var Sum = (function () {
-    function Sum(unit, value) {
-        this.unit = unit;
+    function Sum(unitId, value) {
+        this.unitId = unitId;
         this.value = value;
     }
     return Sum;

@@ -5,7 +5,7 @@ import {Sum} from './Sum';
 export class Page {
   public ip: number = 0;
   public runes = [];
-  public sums: Object[] = [];
+  public sums: Sum[] = [];
   public counter: number[] = [9, 9, 9, 3];
   private slotStart: number[] = [1, 10, 19, 28];
   constructor(public name: string) {}
@@ -43,23 +43,30 @@ export class Page {
         runes.push(new Rune(
           rune.ip,
           stat,
-          rune.stats[stat],
-          rune.type,
-          rune.id
+          rune.stats[stat]
         ));
       });
     });
 
+    // get sum of ip
     this.ip = runes.map(obj => obj.ip).reduce((a, b) => a + b, 0);
 
+    // reset array
     this.sums = [];
 
-    let units = runes.map(obj => obj.unitId).filter((unit, index, self) => self.indexOf(unit) === index);
 
-    units.forEach(unit => {
-      let sameUnit = runes.filter(obj => obj.unitId === unit);
+    // store unique unit ids of all runes in page
+    const unitIds = runes.map(obj => obj.unitId).filter((unit, index, self) => self.indexOf(unit) === index);
+
+    // get sum of every unique unit id and save to array
+    unitIds.forEach(unitId => {
+
+      // get array of object with same unit
+      let sameUnit = runes.filter(obj => obj.unitId === unitId);
+
+      // push unit and sum of values to sums array
       this.sums.push(new Sum(
-        unit,
+        unitId,
         parseFloat(sameUnit.map(obj => obj.value).reduce((a, b) => a + b, 0).toFixed(2))
       ));
     });

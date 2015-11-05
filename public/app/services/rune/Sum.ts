@@ -1,6 +1,6 @@
 export class Sum {
   constructor(
-    public unit: string,
+    public unitId: string,
     public value: number
   ) {}
 }

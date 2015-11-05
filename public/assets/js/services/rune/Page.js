@@ -34,15 +34,21 @@ var Page = (function () {
         var runes = [];
         this.runes.forEach(function (rune) {
             Object.keys(rune.stats).forEach(function (stat) {
-                runes.push(new Rune_1.Rune(rune.ip, stat, rune.stats[stat], rune.type, rune.id));
+                runes.push(new Rune_1.Rune(rune.ip, stat, rune.stats[stat]));
             });
         });
+        // get sum of ip
         this.ip = runes.map(function (obj) { return obj.ip; }).reduce(function (a, b) { return a + b; }, 0);
+        // reset array
         this.sums = [];
-        var units = runes.map(function (obj) { return obj.unitId; }).filter(function (unit, index, self) { return self.indexOf(unit) === index; });
-        units.forEach(function (unit) {
-            var sameUnit = runes.filter(function (obj) { return obj.unitId === unit; });
-            _this.sums.push(new Sum_1.Sum(unit, parseFloat(sameUnit.map(function (obj) { return obj.value; }).reduce(function (a, b) { return a + b; }, 0).toFixed(2))));
+        // store unique unit ids of all runes in page
+        var unitIds = runes.map(function (obj) { return obj.unitId; }).filter(function (unit, index, self) { return self.indexOf(unit) === index; });
+        // get sum of every unique unit id and save to array
+        unitIds.forEach(function (unitId) {
+            // get array of object with same unit
+            var sameUnit = runes.filter(function (obj) { return obj.unitId === unitId; });
+            // push unit and sum of values to sums array
+            _this.sums.push(new Sum_1.Sum(unitId, parseFloat(sameUnit.map(function (obj) { return obj.value; }).reduce(function (a, b) { return a + b; }, 0).toFixed(2))));
         });
     };
     return Page;

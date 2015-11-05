@@ -20,7 +20,7 @@ var RuneStatComponent = (function () {
     RuneStatComponent = __decorate([
         angular2_1.Component({
             selector: 'rune-stat-component',
-            template: "\n    <div class=\"row\">\n      <div class=\"col-xs-8\">\n        <rune-stat-item-component\n          *ng-for=\"#stat of runeService.page[runeService.active].sums\"\n          [stat]=\"stat\">\n        </rune-stat-item-component>\n      </div>\n      <div class=\"col-xs-4\">\n        <button class=\"btn btn-block btn-primary\"\n          (click)=\"runeService.clearPage()\"\n          [disabled]=\"runeService.isEmpty()\">Clear</button>\n      </div>\n    </div>\n  ",
+            template: "\n    <div class=\"row\">\n      <div class=\"col-xs-8\">\n        <rune-stat-item-component\n          *ng-for=\"#sum of runeService.page[runeService.active].sums\"\n          [sum]=\"sum\">\n        </rune-stat-item-component>\n      </div>\n      <div class=\"col-xs-4\">\n        <button class=\"btn btn-block btn-primary\"\n          (click)=\"runeService.clearPage()\"\n          [disabled]=\"runeService.isEmpty()\">Clear</button>\n      </div>\n    </div>\n  ",
             directives: [angular2_1.CORE_DIRECTIVES, runeStatItem_component_1.RuneStatItemComponent]
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])

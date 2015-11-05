@@ -1,10 +1,8 @@
 var Rune = (function () {
-    function Rune(ip, unitId, value, type, id) {
+    function Rune(ip, unitId, value) {
         this.ip = ip;
         this.unitId = unitId;
         this.value = value;
-        this.type = type;
-        this.id = id;
     }
     return Rune;
 })();
