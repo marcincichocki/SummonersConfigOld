@@ -10,20 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var FilterType = (function () {
-    function FilterType() {
+var Filter = (function () {
+    function Filter() {
     }
-    FilterType.prototype.transform = function (arr, _a) {
+    Filter.prototype.transform = function (arr, _a) {
         var prop = _a[0], value = _a[1];
-        return arr.filter(function (obj) { return obj[prop].toString() === value; });
+        if (typeof value === 'string') {
+            return arr.filter(function (obj) { return obj[prop] === value; });
+        }
+        else if (Array.isArray(value)) {
+            return arr.filter(function (obj) { return value.indexOf(obj[prop]) > -1; });
+        }
     };
-    FilterType = __decorate([
+    Filter = __decorate([
         angular2_1.Pipe({
             name: 'filter',
             pure: true
         }), 
         __metadata('design:paramtypes', [])
-    ], FilterType);
-    return FilterType;
+    ], Filter);
+    return Filter;
 })();
-exports.FilterType = FilterType;
+exports.Filter = Filter;

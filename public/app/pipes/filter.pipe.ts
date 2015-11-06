@@ -5,8 +5,12 @@ import {Pipe} from 'angular2/angular2';
   name: 'filter',
   pure: true
 })
-export class FilterType {
-  transform(arr, [prop, value]: [string, string]) {
-    return arr.filter(obj => obj[prop].toString() === value);
+export class Filter {
+  transform(arr, [prop, value]: [string, any]) {
+    if (typeof value === 'string') {
+      return arr.filter(obj => obj[prop] === value);
+    } else if (Array.isArray(value)) {
+      return arr.filter(obj => value.indexOf(obj[prop]) > -1);
+    }
   }
 }

@@ -13,15 +13,33 @@ var angular2_1 = require('angular2/angular2');
 var SearchComponent = (function () {
     function SearchComponent() {
         this.query = '';
+        this.tiers = [
+            new Tier(1, 'Tier 1', false),
+            new Tier(2, 'Tier 2', false),
+            new Tier(3, 'Tier 3', true)
+        ];
     }
+    SearchComponent.prototype.getTiers = function () {
+        var selectedTiers = this.tiers.filter(function (tier) { return tier.selected; }).map(function (tier) { return tier.id; });
+        console.log(selectedTiers);
+        return selectedTiers;
+    };
     SearchComponent = __decorate([
         angular2_1.Component({
-            directives: [angular2_1.FORM_DIRECTIVES],
+            directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES],
             selector: 'search-component',
-            template: "\n    <input type=\"text\" placeholder=\"Search\" [(ng-model)]=\"query\">\n  "
+            template: "\n    <label *ng-for=\"#tier of tiers\">\n      <input type=\"checkbox\" [(ng-model)]=\"tier.selected\">{{ tier.name }}\n    </label>\n    <input type=\"text\" placeholder=\"Search\" [(ng-model)]=\"query\">\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], SearchComponent);
     return SearchComponent;
 })();
 exports.SearchComponent = SearchComponent;
+var Tier = (function () {
+    function Tier(id, name, selected) {
+        this.id = id;
+        this.name = name;
+        this.selected = selected;
+    }
+    return Tier;
+})();
