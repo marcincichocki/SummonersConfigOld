@@ -21,8 +21,8 @@ var TooltipComponent = (function () {
     TooltipComponent = __decorate([
         angular2_1.Component({
             selector: 'tooltip-component',
-            template: "\n    <div id=\"tooltip\" *ng-if=\"tooltipService.tooltip\"\n      style.top=\"{{tooltipService.y}}px\"\n      style.left=\"{{tooltipService.x}}px\">\n      <div id=\"tooltip-rune\" *ng-if=\"show('rune')\">\n        THIS IS A RUNE TOOLTIP\n        {{ tooltipService.tooltip.data.name }}\n      </div>\n      <div id=\"tooltip-mastery\" *ng-if=\"show('mastery')\">\n        so basicly this is how you make different templates for tooltips,\n        you pass type and make new div where you check type and hide if its\n        bad.\n      </div>\n    </div>\n  ",
-            styles: ["\n    #tooltip {\n      position: absolute;\n      font-size: 1rem;\n      color: #fff;\n      width: 200px;\n      height: 50px;\n      border-radius: 5px;\n      background-color: #000;\n      text-align: center;\n    }\n  "],
+            templateUrl: './app/components/tooltip/tooltip.component.html',
+            styleUrls: ['./app/components/tooltip/style.css'],
             directives: [angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [tooltip_service_1.TooltipService])

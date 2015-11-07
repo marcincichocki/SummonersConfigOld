@@ -1,0 +1,45 @@
+#tooltip {
+  position: absolute;
+  color: #fff;
+  width: 250px;
+  min-height: 50px;
+  border-radius: 5px;
+  background-color: rgba(0,0,0, .9);
+  box-shadow: 0 0 10px 0 #000;
+  text-align: center;
+}
+
+.tooltip-rune {
+  padding: 0 1rem;
+}
+
+.rune-name {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 .5rem;
+}
+
+.rune-description {
+  font-size: .8rem;
+}
+
+.rune-tier,
+.rune-ip {
+  position: absolute;
+  top: 2px;
+  font-size: .7rem;
+}
+
+.rune-tier {
+  left: 3px;
+  color: orange;
+}
+
+.rune-ip {
+  right: 3px;
+}
+
+
+.type-mark { color: #a1161f; }
+.type-seal { color: #c7da27; }
+.type-glyph { color: #4fb0f9; }
+.type-quintessence { color: #9f60eb; }

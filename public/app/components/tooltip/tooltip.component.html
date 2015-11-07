@@ -1,0 +1,19 @@
+<div id="tooltip" *ng-if="tooltipService.tooltip"
+  style.top="{{tooltipService.y}}px"
+  style.left="{{tooltipService.x}}px">
+
+  <!-- rune -->
+  <div class="tooltip-rune" *ng-if="show('rune')">
+    <h3 class="rune-name type-{{ tooltipService.tooltip.data.type }}">{{ tooltipService.tooltip.data.name }}</h3>
+    <p class="rune-description">{{ tooltipService.tooltip.data.description }}</p>
+    <span class="rune-tier">Tier {{ tooltipService.tooltip.data.tier }}</span>
+    <span class="rune-ip">{{ tooltipService.tooltip.data.ip }} ip</span>
+  </div>
+
+  <!-- mastery -->
+  <div class="tooltip-mastery" *ng-if="show('mastery')">
+    so basicly this is how you make different templates for tooltips,
+    you pass type and make new div where you check type and hide if its
+    bad.
+  </div>
+</div>
