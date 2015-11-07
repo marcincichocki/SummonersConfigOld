@@ -1762,7 +1762,7 @@
       "tier": 2,
       "image": "rr_3_2",
       "primary": "red",
-      "type": "",
+      "type": "mark",
       "available": false,
       "ip": 0,
       "tags": [
