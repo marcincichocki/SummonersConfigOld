@@ -3,8 +3,8 @@
     <button class="btn btn-primary-outline"
       *ng-for="#page of runeService.page, #i = index"
       (click)="runeService.changePage(i)"
-      [disabled]="runeService.isActive(i)"
-      [ng-class]="{active: runeService.isActive(i)}">{{ i + 1 }}
+      [ng-class]="{active: runeService.isActive(i)}"
+      [tooltip]="{ type: 'rune-sums', data: { sums: page.sums, index: i } }">{{ i + 1 }}
     </button>
   </div>
   <div class="col-xs-4">

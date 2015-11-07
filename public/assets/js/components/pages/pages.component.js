@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var rune_service_1 = require('../../services/rune/rune.service');
+var tooltip_directive_1 = require('../../directives/tooltip.directive');
 var PagesComponent = (function () {
     function PagesComponent(runeService) {
         this.runeService = runeService;
@@ -20,7 +21,7 @@ var PagesComponent = (function () {
             selector: 'pages-component',
             styleUrls: ['./app/components/pages/style.css'],
             templateUrl: './app/components/pages/pages.component.html',
-            directives: [angular2_1.CORE_DIRECTIVES]
+            directives: [angular2_1.CORE_DIRECTIVES, tooltip_directive_1.TooltipDirective]
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])
     ], PagesComponent);

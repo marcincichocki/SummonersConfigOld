@@ -10,6 +10,15 @@
     <span class="rune-ip">{{ tooltipService.tooltip.data.ip }} ip</span>
   </div>
 
+  <!-- rune-sums -->
+  <div class="tooltip-rune-sums" *ng-if="show('rune-sums')">
+    <h3 class="rune-page-name">{{ runeService.page[tooltipService.tooltip.data.index].name }}</h3>
+    <p *ng-for="#sum of tooltipService.tooltip.data.sums">
+      <span>{{ sum.value }}{{ runeService.isPercentage(sum.unitId) }}</span>
+      <span>{{ runeService.stats[sum.unitId] }}</span>
+    </p>
+  </div>
+
   <!-- mastery -->
   <div class="tooltip-mastery" *ng-if="show('mastery')">
     so basicly this is how you make different templates for tooltips,

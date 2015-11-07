@@ -1,6 +1,7 @@
 import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
 
 import {TooltipService} from '../../services/tooltip/tooltip.service';
+import {RuneService} from '../../services/rune/rune.service';
 
 
 @Component({
@@ -10,7 +11,10 @@ import {TooltipService} from '../../services/tooltip/tooltip.service';
   directives: [CORE_DIRECTIVES]
 })
 export class TooltipComponent {
-  constructor(public tooltipService: TooltipService) { }
+  constructor(
+    public tooltipService: TooltipService,
+    public runeService: RuneService
+  ) { }
 
   show(type: string): boolean {
     return this.tooltipService.tooltip.type === type;
