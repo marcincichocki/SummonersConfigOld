@@ -13,6 +13,8 @@ var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
 var route_config_1 = require('../../routes/route.config');
 var rune_service_1 = require('../../services/rune/rune.service');
+// test, move component to separate file
+var tooltip_directive_1 = require('../../directives/tooltip.directive');
 var AppComponent = (function () {
     function AppComponent(runeService) {
         this.runeService = runeService;
@@ -25,7 +27,7 @@ var AppComponent = (function () {
         angular2_1.Component({
             selector: 'app-component',
             templateUrl: './app/components/app/app.component.html',
-            directives: [router_1.ROUTER_DIRECTIVES]
+            directives: [router_1.ROUTER_DIRECTIVES, tooltip_directive_1.TooltipComponent]
         }),
         router_1.RouteConfig(route_config_1.APP_ROUTES), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])

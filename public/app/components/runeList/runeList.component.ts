@@ -4,7 +4,7 @@ import {RuneService} from '../../services/rune/rune.service';
 import {SearchPipe} from '../../pipes/search.pipe';
 import {Filter} from '../../pipes/filter.pipe';
 import {RuneListItemComponent} from '../runeListItem/runeListItem.component';
-import {Tooltip} from '../../directives/tooltip.directive';
+import {TooltipDirective} from '../../directives/tooltip.directive';
 
 
 @Component({
@@ -12,7 +12,7 @@ import {Tooltip} from '../../directives/tooltip.directive';
   pipes: [SearchPipe, Filter],
   templateUrl: './app/components/runeList/runeList.component.html',
   styleUrls: [`./app/components/runeList/style.css`],
-  directives: [CORE_DIRECTIVES, RuneListItemComponent, Tooltip]
+  directives: [CORE_DIRECTIVES, RuneListItemComponent, TooltipDirective]
 })
 export class RuneListComponent {
   @Input() searchComponent;
