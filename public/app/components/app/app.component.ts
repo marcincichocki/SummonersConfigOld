@@ -3,9 +3,8 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {Routes, APP_ROUTES} from '../../routes/route.config';
 import {RuneService} from '../../services/rune/rune.service';
+import {TooltipComponent} from '../tooltip/tooltip.component';
 
-// test, move component to separate file
-import {TooltipComponent} from '../../directives/tooltip.directive';
 
 @Component({
     selector: 'app-component',
