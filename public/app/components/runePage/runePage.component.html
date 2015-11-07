@@ -2,6 +2,7 @@
   <rune-page-item-component
     *ng-for="#rune of runeService.page[runeService.active].runes"
     [rune]="rune"
-    (click)="runeService.removeRune(rune)">
+    (click)="removeRune(rune)"
+    [tooltip]="{ type: 'rune', data: rune }">
   </rune-page-item-component>
 </div>

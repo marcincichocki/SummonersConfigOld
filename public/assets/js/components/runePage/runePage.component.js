@@ -12,18 +12,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var rune_service_1 = require('../../services/rune/rune.service');
 var runePageItem_component_1 = require('../runePageItem/runePageItem.component');
+var tooltip_directive_1 = require('../../directives/tooltip.directive');
+var tooltip_service_1 = require('../../services/tooltip/tooltip.service');
 var RunePageComponent = (function () {
-    function RunePageComponent(runeService) {
+    function RunePageComponent(runeService, tooltipService) {
         this.runeService = runeService;
+        this.tooltipService = tooltipService;
     }
     ;
+    RunePageComponent.prototype.removeRune = function (rune) {
+        this.tooltipService.hide();
+        this.runeService.removeRune(rune);
+    };
     RunePageComponent = __decorate([
         angular2_1.Component({
             selector: 'rune-page-component',
             templateUrl: './app/components/runePage/runePage.component.html',
-            directives: [angular2_1.CORE_DIRECTIVES, runePageItem_component_1.RunePageItemComponent]
+            directives: [angular2_1.CORE_DIRECTIVES, runePageItem_component_1.RunePageItemComponent, tooltip_directive_1.TooltipDirective]
         }), 
-        __metadata('design:paramtypes', [rune_service_1.RuneService])
+        __metadata('design:paramtypes', [rune_service_1.RuneService, tooltip_service_1.TooltipService])
     ], RunePageComponent);
     return RunePageComponent;
 })();
