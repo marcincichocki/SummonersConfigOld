@@ -20,9 +20,7 @@ var SearchComponent = (function () {
         ];
     }
     SearchComponent.prototype.getTiers = function () {
-        var selectedTiers = this.tiers.filter(function (tier) { return tier.selected; }).map(function (tier) { return tier.id; });
-        console.log(selectedTiers);
-        return selectedTiers;
+        return this.tiers.filter(function (tier) { return tier.selected; }).map(function (tier) { return tier.id; });
     };
     SearchComponent = __decorate([
         angular2_1.Component({

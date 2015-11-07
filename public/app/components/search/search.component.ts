@@ -20,9 +20,7 @@ export class SearchComponent {
   ];
 
   getTiers() {
-    const selectedTiers = this.tiers.filter(tier => tier.selected).map(tier => tier.id);
-    console.log(selectedTiers);
-    return selectedTiers;
+    return this.tiers.filter(tier => tier.selected).map(tier => tier.id);
   }
 }
 
