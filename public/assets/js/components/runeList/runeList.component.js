@@ -14,6 +14,7 @@ var rune_service_1 = require('../../services/rune/rune.service');
 var search_pipe_1 = require('../../pipes/search.pipe');
 var filter_pipe_1 = require('../../pipes/filter.pipe');
 var runeListItem_component_1 = require('../runeListItem/runeListItem.component');
+var tooltip_directive_1 = require('../../directives/tooltip.directive');
 var RuneListComponent = (function () {
     function RuneListComponent(runeService) {
         this.runeService = runeService;
@@ -38,7 +39,7 @@ var RuneListComponent = (function () {
             pipes: [search_pipe_1.SearchPipe, filter_pipe_1.Filter],
             templateUrl: './app/components/runeList/runeList.component.html',
             styleUrls: ["./app/components/runeList/style.css"],
-            directives: [angular2_1.CORE_DIRECTIVES, runeListItem_component_1.RuneListItemComponent]
+            directives: [angular2_1.CORE_DIRECTIVES, runeListItem_component_1.RuneListItemComponent, tooltip_directive_1.Tooltip]
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])
     ], RuneListComponent);

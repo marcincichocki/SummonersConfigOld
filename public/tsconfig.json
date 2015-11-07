@@ -31,6 +31,7 @@
     "app/services/rune/Page.ts",
     "app/services/rune/Rune.ts",
     "app/services/rune/RuneSingle.ts",
-    "app/services/rune/Sum.ts"
+    "app/services/rune/Sum.ts",
+    "app/directives/tooltip.directive.ts"
   ]
 }

@@ -10,7 +10,8 @@
         | filter: 'tier': searchComponent.getTiers())
         | search: 'description': searchComponent.query"
         [rune]="rune"
-        (click)="runeService.addRune(rune.id)">
+        (click)="runeService.addRune(rune.id)"
+        [tooltip]="rune">
       </rune-list-item-component>
     </section>
   </div>
