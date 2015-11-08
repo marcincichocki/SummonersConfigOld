@@ -6,6 +6,11 @@ import {Injectable} from 'angular2/core';
 export class MasteryService {
   public grid: any;
   public masteries: any;
+  public categories: string[] = [
+    'Resolve',
+    'Cunning',
+    'Ferocity'
+  ];
   constructor(public http: Http) { }
 
   getMasteries() {
@@ -18,5 +23,9 @@ export class MasteryService {
         },
         error => console.log(error)
       );
+  }
+
+  isEven(n) {
+    return (n + 1) % 2 === 0;
   }
 }

@@ -14,6 +14,11 @@ var core_1 = require('angular2/core');
 var MasteryService = (function () {
     function MasteryService(http) {
         this.http = http;
+        this.categories = [
+            'Resolve',
+            'Cunning',
+            'Ferocity'
+        ];
     }
     MasteryService.prototype.getMasteries = function () {
         var _this = this;
@@ -23,6 +28,9 @@ var MasteryService = (function () {
             _this.grid = data.masteries;
             _this.masteries = data.data;
         }, function (error) { return console.log(error); });
+    };
+    MasteryService.prototype.isEven = function (n) {
+        return (n + 1) % 2 === 0;
     };
     MasteryService = __decorate([
         core_1.Injectable(), 

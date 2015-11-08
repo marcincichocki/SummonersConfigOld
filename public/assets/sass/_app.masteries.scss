@@ -8,14 +8,25 @@
 
 .category {
   display: flex;
+  flex-direction: column;
   flex: 1 1 33.333333%;
+  padding: 1rem 3rem;
+
+  &.ferocity {
+    order: -1;
+  }
+
+  &.resolve {
+    order: 1;
+  }
 }
 
-.row {
-  justify-content: space-between;
+.mastery-row {
+  display: flex;
+  justify-content: center;
 
   &.even {
-    justify-content: center;
+    justify-content: space-between;
   }
 }
 
@@ -26,7 +37,8 @@
   height: 54px;
   background-image: url("../img/masteries-sprite.png");
   background-repeat: no-repeat;
-  margin: 5px;
+  margin: 7px 5px;
+  filter: grayscale(100%);
 }
 
 .m6131 { background-position: 0 -216px; }
