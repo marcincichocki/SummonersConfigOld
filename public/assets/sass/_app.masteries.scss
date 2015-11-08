@@ -23,10 +23,10 @@
 
 .mastery-row {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 
   &.even {
-    justify-content: space-between;
+    justify-content: center;
   }
 }
 

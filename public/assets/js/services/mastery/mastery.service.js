@@ -30,7 +30,7 @@ var MasteryService = (function () {
         }, function (error) { return console.log(error); });
     };
     MasteryService.prototype.isEven = function (n) {
-        return (n + 1) % 2 === 0;
+        return n % 2 === 0;
     };
     MasteryService = __decorate([
         core_1.Injectable(), 

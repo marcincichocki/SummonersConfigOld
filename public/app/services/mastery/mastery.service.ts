@@ -26,6 +26,6 @@ export class MasteryService {
   }
 
   isEven(n) {
-    return (n + 1) % 2 === 0;
+    return n % 2 === 0;
   }
 }
