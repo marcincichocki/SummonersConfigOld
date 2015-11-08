@@ -8,33 +8,5 @@
     "removeComments": false,
     "noImplicitAny": false,
     "outDir": "assets/js/"
-  },
-  "files": [
-    "app/bootstrap.ts",
-    "app/components/app/app.component.ts",
-    "app/components/home/home.component.ts",
-    "app/components/runes/runes.component.ts",
-    "app/components/search/search.component.ts",
-    "app/components/runeList/runeList.component.ts",
-    "app/components/runeListItem/runeListItem.component.ts",
-    "app/components/runePage/runePage.component.ts",
-    "app/components/runePageItem/runePageItem.component.ts",
-    "app/components/runeStat/runeStat.component.ts",
-    "app/components/runeStatItem/runeStatItem.component.ts",
-    "app/components/pages/pages.component.ts",
-    "app/components/runeName/runeName.component.ts",
-    "app/components/runeIpTime/runeIpTime.component.ts",
-    "app/pipes/search.pipe.ts",
-    "app/pipes/filter.pipe.ts",
-    "app/routes/route.config.ts",
-    "app/services/rune/rune.service.ts",
-    "app/services/rune/Page.ts",
-    "app/services/rune/Rune.ts",
-    "app/services/rune/RuneSingle.ts",
-    "app/services/rune/Sum.ts",
-    "app/directives/tooltip.directive.ts",
-    "app/services/tooltip/tooltip.service.ts",
-    "app/services/tooltip/tooltip.ts",
-    "app/components/tooltip/tooltip.component.ts"
-  ]
+  }
 }

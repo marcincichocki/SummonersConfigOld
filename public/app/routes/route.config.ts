@@ -1,5 +1,6 @@
-import {RunesComponent} from '../components/runes/runes.component';
 import {HomeComponent} from '../components/home/home.component';
+import {RunesComponent} from '../components/runes/runes.component';
+import {MasteriesComponent} from '../components/masteries/masteries.component';
 
 
 export var Routes = {
@@ -12,6 +13,11 @@ export var Routes = {
         path: '/runes',
         as: 'Runes',
         component: RunesComponent
+    },
+    masteries: {
+        path: '/masteries',
+        as: 'Masteries',
+        component: MasteriesComponent
     }
 }
 
