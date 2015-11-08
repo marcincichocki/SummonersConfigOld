@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var mastery_service_1 = require('../../services/mastery/mastery.service');
+var tooltip_directive_1 = require('../../directives/tooltip.directive');
 var MasteryPageComponent = (function () {
     function MasteryPageComponent(masteryService) {
         this.masteryService = masteryService;
@@ -19,7 +20,7 @@ var MasteryPageComponent = (function () {
         angular2_1.Component({
             selector: 'mastery-page-component',
             templateUrl: './app/components/masteryPage/masteryPage.component.html',
-            directives: [angular2_1.CORE_DIRECTIVES]
+            directives: [angular2_1.CORE_DIRECTIVES, tooltip_directive_1.TooltipDirective]
         }), 
         __metadata('design:paramtypes', [mastery_service_1.MasteryService])
     ], MasteryPageComponent);
