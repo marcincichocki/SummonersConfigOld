@@ -1,6 +1,7 @@
 <div id="tooltip" *ng-if="tooltipService.tooltip"
   style.top="{{tooltipService.y}}px"
-  style.left="{{tooltipService.x}}px">
+  style.left="{{tooltipService.x}}px"
+  [ng-class]="{translateX: tooltipService.translateX, translateY: tooltipService.translateY}">
 
   <!-- rune -->
   <div class="tooltip-rune" *ng-if="show('rune')">
