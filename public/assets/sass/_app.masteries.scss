@@ -1,0 +1,70 @@
+#mastery-page {
+  background-image: url("../img/masteries-background.jpg");
+  background-repeat: no-repeat;
+  width: 828px;
+  height: 479px;
+  display: flex;
+}
+
+.category {
+  display: flex;
+  flex: 1 1 33.333333%;
+}
+
+.row {
+  justify-content: space-between;
+
+  &.even {
+    justify-content: center;
+  }
+}
+
+
+
+.mastery {
+  width: 54px;
+  height: 54px;
+  background-image: url("../img/masteries-sprite.png");
+  background-repeat: no-repeat;
+  margin: 5px;
+}
+
+.m6131 { background-position: 0 -216px; }
+.m6122 { background-position: 0 -162px; }
+.m6121 { background-position: 0 -108px; }
+.m6114 { background-position: 0 -54px; }
+.m6111 { background-position: 0 0; }
+.m6363 { background-position: -54px -648px; }
+.m6362 { background-position: -54px -594px; }
+.m6361 { background-position: -54px -540px; }
+.m6352 { background-position: -54px -486px; }
+.m6351 { background-position: -54px -432px; }
+.m6343 { background-position: -54px -378px; }
+.m6342 { background-position: -54px -324px; }
+.m6332 { background-position: -54px -270px; }
+.m6331 { background-position: -54px -216px; }
+.m6322 { background-position: -54px -162px; }
+.m6321 { background-position: -54px -108px; }
+.m6312 { background-position: -54px -54px; }
+.m6311 { background-position: -54px 0; }
+.m6263 { background-position: -108px -648px; }
+.m6262 { background-position: -108px -594px; }
+.m6261 { background-position: -108px -540px; }
+.m6252 { background-position: -108px -486px; }
+.m6251 { background-position: -108px -432px; }
+.m6242 { background-position: -108px -378px; }
+.m6241 { background-position: -108px -324px; }
+.m6232 { background-position: -108px -270px; }
+.m6231 { background-position: -108px -216px; }
+.m6223 { background-position: -108px -162px; }
+.m6221 { background-position: -108px -108px; }
+.m6212 { background-position: -108px -54px; }
+.m6211 { background-position: -108px 0; }
+.m6164 { background-position: 0 -648px; }
+.m6162 { background-position: 0 -594px; }
+.m6161 { background-position: 0 -540px; }
+.m6154 { background-position: 0 -486px; }
+.m6151 { background-position: 0 -432px; }
+.m6142 { background-position: 0 -378px; }
+.m6141 { background-position: 0 -324px; }
+.m6134 { background-position: 0 -270px; }

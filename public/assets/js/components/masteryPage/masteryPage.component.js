@@ -16,7 +16,7 @@ var MasteryPageComponent = (function () {
     MasteryPageComponent = __decorate([
         angular2_1.Component({
             selector: 'mastery-page-component',
-            template: "\n    <div id=\"mastery-page\">\n      testXDDDD\n    </div>\n  ",
+            templateUrl: './app/components/masteryPage/masteryPage.component.html',
             directives: [angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
