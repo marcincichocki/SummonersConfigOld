@@ -1,6 +1,8 @@
 <div id="mastery-page">
   <div class="category {{ category | lowercase }}" *ng-for="#category of masteryService.categories">
-    <div class="mastery-row" *ng-for="#row of masteryService.grid[category], #i = index" [ng-class]="{ even: masteryService.isEven(i + 1) }">
+    <div class="mastery-row row{{ i + 1 }}"
+      *ng-for="#row of masteryService.grid[category], #i = index"
+      [ng-class]="{ even: masteryService.isEven(i + 1) }">
       <div class="mastery m{{ mastery }}"
         *ng-for="#mastery of row"
         [tooltip]="{ type: 'mastery', data: { mastery: masteryService.masteries[mastery], rank: masteryService.getRank(mastery) } }"
@@ -8,7 +10,10 @@
         (contextmenu)="masteryService.removeMastery(mastery, $event)"
         (wheel)="masteryService.onScroll(mastery, $event)"
         [ng-class]="{ available: masteryService.masteryCheckUp(mastery), active: masteryService.isMasteryActive(mastery), max: masteryService.isMasteryMaxed(mastery) }">
-
+        <p class="rank" *ng-if="masteryService.isEven(i)">
+          <span>{{ masteryService.getRank(mastery) || 0 }}/</span>
+          <span>{{ masteryService.masteries[mastery].ranks }}</span>
+        </p>
       </div>
     </div>
     <h3>{{ category }}</h3>
