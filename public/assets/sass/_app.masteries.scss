@@ -39,6 +39,20 @@
   background-repeat: no-repeat;
   margin: 7px 5px;
   filter: grayscale(100%);
+
+  &.available {
+    filter: none;
+  }
+
+  &.max {
+    filter: none;
+    border: 3px solid gold;
+  }
+
+  &.active {
+    filter: none;
+    border: 3px solid green;
+  }
 }
 
 .m6131 { background-position: 0 -216px; }
