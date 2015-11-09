@@ -101,26 +101,26 @@
   }
 }
 
-.mastery-row:not(.even) > .mastery {
+.mastery-row:not(.even) .mastery {
   transform: scale(.85);
   transform-origin: 0 0;
 }
 
-.row2 > .max::after {
+.row2 .max::after {
   width: 58px;
   height: 58px;
 
   background-position: 0 -54px;
 }
 
-.row4 > .max::after {
+.row4 .max::after {
   width: 68px;
   height: 68px;
 
   background-position: 0 -112px;
 }
 
-.row6 > .max::after {
+.row6 .max::after {
   width: 68px;
   height: 68px;
 
