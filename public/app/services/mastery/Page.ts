@@ -19,6 +19,7 @@ export class Page {
       mastery.rank += 1;
       this.rank[id] += 1;
     }
+    this.counter[category - 1] += 1;
     this.max -= 1;
     console.log(this.masteries);
   }
@@ -26,6 +27,7 @@ export class Page {
   removeMastery(id: string) {
     const mastery = this.masteries.filter(mastery => mastery.id === id)[0];
     const index = this.masteries.indexOf(mastery);
+    const category = parseInt(id.slice(1, 2), 10);
 
     if (mastery.rank > 1) {
       mastery.rank -= 1;
@@ -34,6 +36,7 @@ export class Page {
       this.masteries.splice(index, 1);
       delete this.rank[id];
     }
+    this.counter[category - 1] -= 1;
     this.max += 1;
     console.log(this.masteries);
   }

@@ -1,5 +1,5 @@
 <div id="mastery-page">
-  <div class="category {{ category | lowercase }}" *ng-for="#category of masteryService.categories">
+  <div class="category {{ category | lowercase }}" *ng-for="#category of masteryService.categories, #j = index">
     <div class="mastery-row row{{ i + 1 }}"
       *ng-for="#row of masteryService.grid[category], #i = index"
       [ng-class]="{ even: masteryService.isEven(i + 1) }">
@@ -16,6 +16,6 @@
         </p>
       </div>
     </div>
-    <h3>{{ category }}</h3>
+    <h3>{{ category }}: {{ masteryService.page[masteryService.active].counter[j] }}</h3>
   </div>
 </div>
