@@ -66,6 +66,15 @@
   transform: translateY(-100%);
 }
 
-.hidden {
+.mastery-description {
   display: none;
+
+  &.current,
+  &.next {
+    display: block;
+  }
+
+  &.next {
+    color: #666;
+  }
 }

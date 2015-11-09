@@ -29,10 +29,15 @@
       <span>{{ tooltipService.tooltip.data.mastery.ranks }}</span>
 
       <!-- TODO: display only current rank -->
-      <p *ng-for="#desc of tooltipService.tooltip.data.mastery.description, #i = index"
-        [ng-class]="{ hidden: !((i + 1) === tooltipService.tooltip.data.rank) }">
-        {{ desc }}
-      </p>
+      <div class="mastery-descriptions">
+        <p class="mastery-description" *ng-for="#desc of tooltipService.tooltip.data.mastery.description, #i = index"
+          [ng-class]="{
+            current: tooltipService.tooltip.data.rank - 1 === i,
+            next: (tooltipService.tooltip.data.rank || 0) === i
+          }">
+          {{ desc }}
+        </p>
+      </div>
     </p>
   </div>
 </div>
