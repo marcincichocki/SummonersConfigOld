@@ -22,8 +22,12 @@
 
   <!-- mastery -->
   <div class="tooltip-mastery" *ng-if="show('mastery')">
-    <h3 class="mastery-name">{{ tooltipService.tooltip.data.mastery.name }}</h3>
-    <p class="mastery-rank">Rank:
+    <h3 class="mastery-name {{ masteryService.categories[masteryService.getCategory(tooltipService.tooltip.data.mastery.id) - 1] | lowercase }}">{{ tooltipService.tooltip.data.mastery.name }}</h3>
+    <p class="mastery-rank"
+      [ng-class]="{
+        available: masteryService.masteryCheckUp(tooltipService.tooltip.data.mastery.id),
+        active: tooltipService.tooltip.data.rank > 0
+      }">Rank:
       <span>{{ tooltipService.tooltip.data.rank || 0 }} /</span>
       <span>{{ tooltipService.tooltip.data.mastery.ranks }}</span>
     </p>

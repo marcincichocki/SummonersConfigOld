@@ -75,6 +75,15 @@
 .mastery-rank {
   margin: 0;
   font-size: .8rem;
+  color: #999;
+
+  &.available {
+    color: #478fca;
+  }
+
+  &.active {
+    color: #ffd700;
+  }
 }
 
 .mastery-description {

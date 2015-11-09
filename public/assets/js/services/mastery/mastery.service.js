@@ -21,9 +21,9 @@ var MasteryService = (function () {
         this.name = 'Mastery Page #';
         this.active = 0;
         this.categories = [
-            'Resolve',
+            'Ferocity',
             'Cunning',
-            'Ferocity'
+            'Resolve'
         ];
     }
     MasteryService.prototype.getMasteries = function () {
@@ -130,6 +130,9 @@ var MasteryService = (function () {
     };
     MasteryService.prototype.getRank = function (id) {
         return this.page[this.active].rank[id];
+    };
+    MasteryService.prototype.getCategory = function (id) {
+        return parseInt(id.slice(1, 2), 10);
     };
     MasteryService.prototype.rowSum = function (row, category) {
         return this.page[this.active].masteries

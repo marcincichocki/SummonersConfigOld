@@ -13,9 +13,9 @@ export class MasteryService {
   public grid: any;
   public masteries: any;
   public categories: string[] = [
-    'Resolve',
+    'Ferocity',
     'Cunning',
-    'Ferocity'
+    'Resolve'
   ];
   constructor(public http: Http, public tooltipService: TooltipService) { }
 
@@ -140,6 +140,10 @@ export class MasteryService {
 
   getRank(id: string): number {
     return this.page[this.active].rank[id];
+  }
+
+  getCategory(id: string): number {
+    return parseInt(id.slice(1, 2), 10);
   }
 
   rowSum(row: number, category: number): number {
