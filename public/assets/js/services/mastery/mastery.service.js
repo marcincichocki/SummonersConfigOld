@@ -61,24 +61,31 @@ var MasteryService = (function () {
     MasteryService.prototype.isInRange = function (page, max) {
         return page >= 0 && page < (max || this.page.length);
     };
-    MasteryService.prototype.addMastery = function (id) {
+    MasteryService.prototype.addMastery = function (id, event) {
         var category = parseInt(id.slice(1, 2), 10);
         var row = parseInt(id.slice(2, 3), 10);
-        if (this.masteryCheck(id, category, row)) {
+        if (this.masteryCheckUp(id, category, row)) {
             this.page[this.active].addMastery(id, category, row);
-            this.tooltipService.show({
-                type: 'mastery',
-                data: {
-                    mastery: this.masteries[id],
-                    rank: this.getRank(id)
-                }
-            });
+            this.updateTooltip(id);
         }
         else {
             console.log('sorry, you can not do that!');
         }
     };
-    MasteryService.prototype.masteryCheck = function (id, category, row) {
+    MasteryService.prototype.removeMastery = function (id, event) {
+        // prevent context menu from showing up
+        event.preventDefault();
+        var category = parseInt(id.slice(1, 2), 10);
+        var row = parseInt(id.slice(2, 3), 10);
+        if (this.masteryCheckDown(id, row, category)) {
+            this.page[this.active].removeMastery(id);
+            this.updateTooltip(id);
+        }
+        else {
+            console.log('stop that!');
+        }
+    };
+    MasteryService.prototype.masteryCheckUp = function (id, category, row) {
         if (isNaN(category) || isNaN(row)) {
             var category = parseInt(id.slice(1, 2), 10);
             var row = parseInt(id.slice(2, 3), 10);
@@ -93,16 +100,33 @@ var MasteryService = (function () {
         }
         return false;
     };
+    MasteryService.prototype.onScroll = function (id, event) {
+        event.preventDefault();
+        if (event.deltaY > 0) {
+            this.removeMastery(id, event);
+        }
+        else {
+            this.addMastery(id, event);
+        }
+    };
+    MasteryService.prototype.masteryCheckDown = function (id, row, category) {
+        if (this.page[this.active].max < 30
+            && this.getRank(id) > 0
+            && this.rowSum(row + 1, category) === 0) {
+            return true;
+        }
+        return false;
+    };
     MasteryService.prototype.isMaxed = function (row, category) {
         var even = this.isEven(row);
         var rowSum = this.rowSum(row, category);
         return even ? rowSum === 1 : rowSum === 5;
     };
     MasteryService.prototype.isMasteryMaxed = function (id) {
-        return (this.page[this.active].rank[id] || 0) === this.masteries[id].ranks;
+        return (this.getRank(id) || 0) === this.masteries[id].ranks;
     };
     MasteryService.prototype.isMasteryActive = function (id) {
-        return (this.page[this.active].rank[id] || 0) > 0;
+        return (this.getRank(id) || 0) > 0;
     };
     MasteryService.prototype.getRank = function (id) {
         return this.page[this.active].rank[id];
@@ -112,6 +136,15 @@ var MasteryService = (function () {
             .filter(function (mastery) { return mastery.row === row && mastery.category === category; })
             .map(function (mastery) { return mastery.rank; })
             .reduce(function (a, b) { return a + b; }, 0);
+    };
+    MasteryService.prototype.updateTooltip = function (id) {
+        this.tooltipService.show({
+            type: 'mastery',
+            data: {
+                mastery: this.masteries[id],
+                rank: this.getRank(id)
+            }
+        });
     };
     MasteryService = __decorate([
         core_1.Injectable(), 

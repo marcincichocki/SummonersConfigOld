@@ -22,4 +22,19 @@ export class Page {
     this.max -= 1;
     console.log(this.masteries);
   }
+
+  removeMastery(id: string) {
+    const mastery = this.masteries.filter(mastery => mastery.id === id)[0];
+    const index = this.masteries.indexOf(mastery);
+
+    if (mastery.rank > 1) {
+      mastery.rank -= 1;
+      this.rank[id] -= 1;
+    } else {
+      this.masteries.splice(index, 1);
+      delete this.rank[id];
+    }
+    this.max += 1;
+    console.log(this.masteries);
+  }
 }

@@ -4,8 +4,10 @@
       <div class="mastery m{{ mastery }}"
         *ng-for="#mastery of row"
         [tooltip]="{ type: 'mastery', data: { mastery: masteryService.masteries[mastery], rank: masteryService.getRank(mastery) } }"
-        (click)="masteryService.addMastery(mastery)"
-        [ng-class]="{ available: masteryService.masteryCheck(mastery), active: masteryService.isMasteryActive(mastery), max: masteryService.isMasteryMaxed(mastery) }">
+        (click)="masteryService.addMastery(mastery, $event)"
+        (contextmenu)="masteryService.removeMastery(mastery, $event)"
+        (wheel)="masteryService.onScroll(mastery, $event)"
+        [ng-class]="{ available: masteryService.masteryCheckUp(mastery), active: masteryService.isMasteryActive(mastery), max: masteryService.isMasteryMaxed(mastery) }">
 
       </div>
     </div>

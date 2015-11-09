@@ -59,25 +59,35 @@ export class MasteryService {
     return page >= 0 && page < (max || this.page.length);
   }
 
-  addMastery(id: string) {
+  addMastery(id: string, event: MouseEvent): void {
     const category = parseInt(id.slice(1, 2), 10);
     const row = parseInt(id.slice(2, 3), 10);
 
-    if (this.masteryCheck(id, category, row)) {
+    if (this.masteryCheckUp(id, category, row)) {
       this.page[this.active].addMastery(id, category, row);
-      this.tooltipService.show({
-        type: 'mastery',
-        data: {
-          mastery: this.masteries[id],
-          rank: this.getRank(id)
-        }
-      });
+      this.updateTooltip(id);
     } else {
       console.log('sorry, you can not do that!');
     }
   }
 
-  masteryCheck(id: string, category?: number, row?: number) {
+  removeMastery(id: string, event: MouseEvent): void {
+
+    // prevent context menu from showing up
+    event.preventDefault();
+
+    const category = parseInt(id.slice(1, 2), 10);
+    const row = parseInt(id.slice(2, 3), 10);
+
+    if (this.masteryCheckDown(id, row, category)) {
+      this.page[this.active].removeMastery(id);
+      this.updateTooltip(id);
+    } else {
+      console.log('stop that!');
+    }
+  }
+
+  masteryCheckUp(id: string, category?: number, row?: number): boolean {
     if (isNaN(category) || isNaN(row)) {
       var category = parseInt(id.slice(1, 2), 10);
       var row = parseInt(id.slice(2, 3), 10);
@@ -93,29 +103,59 @@ export class MasteryService {
     return false;
   }
 
-  isMaxed(row: number, category: number) {
+  onScroll(id: string, event: WheelEvent): void {
+    event.preventDefault();
+    if (event.deltaY > 0) {
+      this.removeMastery(id, event);
+    } else {
+      this.addMastery(id, event);
+    }
+  }
+
+  masteryCheckDown(id: string, row: number, category: number): boolean {
+    if (
+      this.page[this.active].max < 30
+      && this.getRank(id) > 0
+      && this.rowSum(row + 1, category) === 0
+    ) {
+      return true;
+    }
+    return false;
+  }
+
+  isMaxed(row: number, category: number): boolean {
     const even = this.isEven(row);
     const rowSum = this.rowSum(row, category);
 
     return even ? rowSum === 1 : rowSum === 5;
   }
 
-  isMasteryMaxed(id: string) {
-    return (this.page[this.active].rank[id] || 0) === this.masteries[id].ranks;
+  isMasteryMaxed(id: string): boolean {
+    return (this.getRank(id) || 0) === this.masteries[id].ranks;
   }
 
-  isMasteryActive(id: string) {
-    return (this.page[this.active].rank[id] || 0) > 0;
+  isMasteryActive(id: string): boolean {
+    return (this.getRank(id) || 0) > 0;
   }
 
-  getRank(id: string) {
+  getRank(id: string): number {
     return this.page[this.active].rank[id];
   }
 
-  rowSum(row: number, category: number) {
+  rowSum(row: number, category: number): number {
     return this.page[this.active].masteries
       .filter(mastery => mastery.row === row && mastery.category === category)
       .map(mastery => mastery.rank)
       .reduce((a, b) => a + b, 0);
+  }
+
+  updateTooltip(id: string): void {
+    this.tooltipService.show({
+      type: 'mastery',
+      data: {
+        mastery: this.masteries[id],
+        rank: this.getRank(id)
+      }
+    });
   }
 }
