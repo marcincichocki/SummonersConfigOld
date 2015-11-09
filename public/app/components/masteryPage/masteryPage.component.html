@@ -3,7 +3,7 @@
     <div class="mastery-row" *ng-for="#row of masteryService.grid[category], #i = index" [ng-class]="{ even: masteryService.isEven(i + 1) }">
       <div class="mastery m{{ mastery }}"
         *ng-for="#mastery of row"
-        [tooltip]="{ type: 'mastery', data: masteryService.masteries[mastery] }"
+        [tooltip]="{ type: 'mastery', data: { mastery: masteryService.masteries[mastery], rank: masteryService.getRank(mastery) } }"
         (click)="masteryService.addMastery(mastery)"
         [ng-class]="{ available: masteryService.masteryCheck(mastery), active: masteryService.isMasteryActive(mastery), max: masteryService.isMasteryMaxed(mastery) }">
 

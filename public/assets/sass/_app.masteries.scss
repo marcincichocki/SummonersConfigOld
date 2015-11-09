@@ -46,7 +46,7 @@
 
   &.max {
     filter: none;
-    border: 3px solid gold;
+    border: 3px solid gold !important;
   }
 
   &.active {

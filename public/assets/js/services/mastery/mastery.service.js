@@ -12,9 +12,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var http_1 = require('angular2/http');
 var core_1 = require('angular2/core');
 var Page_1 = require('./Page');
+var tooltip_service_1 = require('../tooltip/tooltip.service');
 var MasteryService = (function () {
-    function MasteryService(http) {
+    function MasteryService(http, tooltipService) {
         this.http = http;
+        this.tooltipService = tooltipService;
         this.page = [new Page_1.Page(this.name + "1")];
         this.name = 'Mastery Page #';
         this.active = 0;
@@ -64,6 +66,13 @@ var MasteryService = (function () {
         var row = parseInt(id.slice(2, 3), 10);
         if (this.masteryCheck(id, category, row)) {
             this.page[this.active].addMastery(id, category, row);
+            this.tooltipService.show({
+                type: 'mastery',
+                data: {
+                    mastery: this.masteries[id],
+                    rank: this.getRank(id)
+                }
+            });
         }
         else {
             console.log('sorry, you can not do that!');
@@ -90,14 +99,13 @@ var MasteryService = (function () {
         return even ? rowSum === 1 : rowSum === 5;
     };
     MasteryService.prototype.isMasteryMaxed = function (id) {
-        var mastery = this.page[this.active].masteries.filter(function (mastery) { return mastery.id === id; })[0] || 0;
-        var row = parseInt(id.slice(2, 3), 10);
-        return this.masteries[id].ranks === mastery.rank;
+        return (this.page[this.active].rank[id] || 0) === this.masteries[id].ranks;
     };
     MasteryService.prototype.isMasteryActive = function (id) {
-        var mastery = this.page[this.active].masteries.filter(function (mastery) { return mastery.id === id; })[0] || 0;
-        var row = parseInt(id.slice(2, 3), 10);
-        return this.masteries[id].ranks > mastery.rank && mastery.rank > 0;
+        return (this.page[this.active].rank[id] || 0) > 0;
+    };
+    MasteryService.prototype.getRank = function (id) {
+        return this.page[this.active].rank[id];
     };
     MasteryService.prototype.rowSum = function (row, category) {
         return this.page[this.active].masteries
@@ -107,7 +115,7 @@ var MasteryService = (function () {
     };
     MasteryService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [http_1.Http, tooltip_service_1.TooltipService])
     ], MasteryService);
     return MasteryService;
 })();

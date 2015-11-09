@@ -2,6 +2,7 @@ import {Http} from 'angular2/http';
 import {Injectable} from 'angular2/core';
 
 import {Page} from './Page';
+import {TooltipService} from '../tooltip/tooltip.service';
 
 
 @Injectable()
@@ -16,7 +17,7 @@ export class MasteryService {
     'Cunning',
     'Ferocity'
   ];
-  constructor(public http: Http) { }
+  constructor(public http: Http, public tooltipService: TooltipService) { }
 
   getMasteries() {
     this.http.get('./app/data/en/masteries.json')
@@ -64,6 +65,13 @@ export class MasteryService {
 
     if (this.masteryCheck(id, category, row)) {
       this.page[this.active].addMastery(id, category, row);
+      this.tooltipService.show({
+        type: 'mastery',
+        data: {
+          mastery: this.masteries[id],
+          rank: this.getRank(id)
+        }
+      });
     } else {
       console.log('sorry, you can not do that!');
     }
@@ -93,15 +101,15 @@ export class MasteryService {
   }
 
   isMasteryMaxed(id: string) {
-    const mastery: any = this.page[this.active].masteries.filter(mastery => mastery.id === id)[0] || 0;
-    const row = parseInt(id.slice(2, 3), 10);
-    return this.masteries[id].ranks === mastery.rank;
+    return (this.page[this.active].rank[id] || 0) === this.masteries[id].ranks;
   }
 
   isMasteryActive(id: string) {
-    const mastery: any = this.page[this.active].masteries.filter(mastery => mastery.id === id)[0] || 0;
-    const row = parseInt(id.slice(2, 3), 10);
-    return this.masteries[id].ranks > mastery.rank && mastery.rank > 0;
+    return (this.page[this.active].rank[id] || 0) > 0;
+  }
+
+  getRank(id: string) {
+    return this.page[this.active].rank[id];
   }
 
   rowSum(row: number, category: number) {

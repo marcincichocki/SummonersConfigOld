@@ -22,14 +22,15 @@
 
   <!-- mastery -->
   <div class="tooltip-mastery" *ng-if="show('mastery')">
-    <h6>{{ tooltipService.tooltip.data.name }}</h6>
+    <h6>{{ tooltipService.tooltip.data.mastery.name }}</h6>
     <p>
       <!-- TODO: update with user data -->
-      <span>0</span>/
-      <span>{{ tooltipService.tooltip.data.ranks }}</span>
+      <span>{{ tooltipService.tooltip.data.rank || 0 }}</span>/
+      <span>{{ tooltipService.tooltip.data.mastery.ranks }}</span>
 
       <!-- TODO: display only current rank -->
-      <p *ng-for="#desc of tooltipService.tooltip.data.description">
+      <p *ng-for="#desc of tooltipService.tooltip.data.mastery.description, #i = index"
+        [ng-class]="{ hidden: !((i + 1) === tooltipService.tooltip.data.rank) }">
         {{ desc }}
       </p>
     </p>
