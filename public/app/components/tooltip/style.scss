@@ -5,8 +5,6 @@
   max-width: 250px;
   max-height: 200px;
 
-  text-align: center;
-
   color: #fff;
   border-radius: 5px;
   background-color: rgba(0,0,0, .9);
@@ -15,6 +13,8 @@
 
 .tooltip-rune {
   padding: 0 1rem;
+
+  text-align: center;
 }
 
 .rune-name {
@@ -46,28 +46,40 @@
 }
 
 
-.type-mark {
-  color: #a1161f;
-}
-.type-seal {
-  color: #c7da27;
-}
-.type-glyph {
-  color: #4fb0f9;
-}
-.type-quintessence {
-  color: #9f60eb;
+.type-mark { color: #a1161f; }
+.type-seal { color: #c7da27; }
+.type-glyph { color: #4fb0f9; }
+.type-quintessence { color: #9f60eb; }
+
+.translateX { transform: translateX(-100%); }
+.translateY { transform: translateY(-100%); }
+
+
+/* ==========================================================================
+   Masteries
+   ========================================================================== */
+
+.ferocity { color: #a1161f; }
+.cunning { color: #9f60eb; }
+.resolve { color: #4fb0f9; }
+
+.tooltip-mastery {
+  padding: .5rem;
 }
 
-.translateX {
-  transform: translateX(-100%);
+.mastery-name {
+  font-size: 1.2rem;
 }
-.translateY {
-  transform: translateY(-100%);
+
+.mastery-rank {
+  margin: 0;
+  font-size: .8rem;
 }
 
 .mastery-description {
   display: none;
+  margin: .3rem 0;
+  font-size: .8rem;
 
   &.current,
   &.next {
@@ -76,5 +88,10 @@
 
   &.next {
     color: #666;
+
+    &::before {
+      content: 'Next rank:\00a0';
+      color: #999;
+    }
   }
 }

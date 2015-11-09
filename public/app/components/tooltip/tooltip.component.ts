@@ -2,6 +2,7 @@ import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
 
 import {TooltipService} from '../../services/tooltip/tooltip.service';
 import {RuneService} from '../../services/rune/rune.service';
+import {MasteryService} from '../../services/mastery/mastery.service';
 
 
 @Component({
@@ -13,7 +14,8 @@ import {RuneService} from '../../services/rune/rune.service';
 export class TooltipComponent {
   constructor(
     public tooltipService: TooltipService,
-    public runeService: RuneService
+    public runeService: RuneService,
+    public masteryService: MasteryService
   ) { }
 
   show(type: string): boolean {

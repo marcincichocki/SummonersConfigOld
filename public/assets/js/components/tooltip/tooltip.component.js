@@ -12,10 +12,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var tooltip_service_1 = require('../../services/tooltip/tooltip.service');
 var rune_service_1 = require('../../services/rune/rune.service');
+var mastery_service_1 = require('../../services/mastery/mastery.service');
 var TooltipComponent = (function () {
-    function TooltipComponent(tooltipService, runeService) {
+    function TooltipComponent(tooltipService, runeService, masteryService) {
         this.tooltipService = tooltipService;
         this.runeService = runeService;
+        this.masteryService = masteryService;
     }
     TooltipComponent.prototype.show = function (type) {
         return this.tooltipService.tooltip.type === type;
@@ -27,7 +29,7 @@ var TooltipComponent = (function () {
             styleUrls: ['./app/components/tooltip/style.css'],
             directives: [angular2_1.CORE_DIRECTIVES]
         }), 
-        __metadata('design:paramtypes', [tooltip_service_1.TooltipService, rune_service_1.RuneService])
+        __metadata('design:paramtypes', [tooltip_service_1.TooltipService, rune_service_1.RuneService, mastery_service_1.MasteryService])
     ], TooltipComponent);
     return TooltipComponent;
 })();
