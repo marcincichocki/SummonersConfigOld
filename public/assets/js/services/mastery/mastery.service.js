@@ -58,6 +58,11 @@ var MasteryService = (function () {
             this.active = page;
         }
     };
+    MasteryService.prototype.isActive = function (page) {
+        if (this.isInRange(page)) {
+            return page === this.active;
+        }
+    };
     MasteryService.prototype.isInRange = function (page, max) {
         return page >= 0 && page < (max || this.page.length);
     };

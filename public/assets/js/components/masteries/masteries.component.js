@@ -11,16 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var masteryPage_component_1 = require('../masteryPage/masteryPage.component');
+var masteryPageGroup_component_1 = require('../masteryPageGroup/masteryPageGroup.component');
 var MasteriesComponent = (function () {
     function MasteriesComponent() {
     }
     MasteriesComponent = __decorate([
         angular2_1.Component({
             directives: [
-                masteryPage_component_1.MasteryPageComponent
+                masteryPage_component_1.MasteryPageComponent,
+                masteryPageGroup_component_1.MasteryPageGroupComponent
             ],
             selector: 'masteries-component',
-            template: "\n    <aside class=\"col-xs-4 main-aside\">\n    </aside>\n    <section class=\"col-xs-8 main-section\">\n      <mastery-page-component></mastery-page-component>\n    </section>\n  "
+            template: "\n    <aside class=\"col-xs-4 main-aside\">\n      <mastery-page-group-component></mastery-page-group-component>\n    </aside>\n    <section class=\"col-xs-8 main-section\">\n      <mastery-page-component></mastery-page-component>\n    </section>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], MasteriesComponent);

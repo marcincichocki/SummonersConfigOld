@@ -4,7 +4,7 @@ import {RuneSearchComponent} from '../runeSearch/runeSearch.component';
 import {RuneListComponent} from '../runeList/runeList.component';
 import {RuneStatComponent} from '../runeStat/runeStat.component';
 import {RunePageComponent} from '../runePage/runePage.component';
-import {RuneNameComponent} from '../runeName/runeName.component';
+import {RunePageNameComponent} from '../runePageName/runePageName.component';
 import {RuneIpTimeComponent} from '../runeIpTime/runeIpTime.component';
 import {RunePageGroupComponent} from '../runePageGroup/runePageGroup.component';
 
@@ -15,7 +15,7 @@ import {RunePageGroupComponent} from '../runePageGroup/runePageGroup.component';
     RuneListComponent,
     RuneStatComponent,
     RunePageComponent,
-    RuneNameComponent,
+    RunePageNameComponent,
     RuneIpTimeComponent,
     RunePageGroupComponent
   ],
@@ -23,7 +23,7 @@ import {RunePageGroupComponent} from '../runePageGroup/runePageGroup.component';
   template: `
     <aside class="col-xs-4 main-aside">
       <rune-page-group-component></rune-page-group-component>
-      <rune-name-component></rune-name-component>
+      <rune-page-name-component></rune-page-name-component>
       <rune-stat-component></rune-stat-component>
       <rune-ip-time-component></rune-ip-time-component>
     </aside>

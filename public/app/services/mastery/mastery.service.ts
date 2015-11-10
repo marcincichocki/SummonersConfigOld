@@ -55,6 +55,12 @@ export class MasteryService {
     }
   }
 
+  isActive(page: number) {
+    if (this.isInRange(page)) {
+      return page === this.active;
+    }
+  }
+
   isInRange(page: number, max?: number) {
     return page >= 0 && page < (max || this.page.length);
   }

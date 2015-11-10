@@ -3,11 +3,11 @@ import {Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
 import {RuneService} from '../../services/rune/rune.service';
 
 @Component({
-  selector: 'rune-name-component',
-  templateUrl: './app/components/runeName/runeName.component.html',
+  selector: 'rune-page-name-component',
+  templateUrl: './app/components/runePageName/runePageName.component.html',
   directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
-export class RuneNameComponent {
+export class RunePageNameComponent {
   private showInput: boolean = false;
   public model = {
     name: this.runeService.getName()
