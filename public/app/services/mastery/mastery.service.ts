@@ -7,8 +7,8 @@ import {TooltipService} from '../tooltip/tooltip.service';
 
 @Injectable()
 export class MasteryService {
-  public page: Page[] = [new Page(`${this.name}1`)];
   public name: string = 'Mastery Page #';
+  public page: Page[] = [new Page(`${this.name}1`)];
   public active: number = 0;
   public grid: any;
   public masteries: any;
@@ -167,5 +167,17 @@ export class MasteryService {
         rank: this.getRank(id)
       }
     });
+  }
+
+  getName(page: number = this.active) {
+    if (this.isInRange(page)) {
+      return this.page[page].name;
+    }
+  }
+
+  setName(name: string, page: number = this.active) {
+    if (this.isInRange(page)) {
+      this.page[page].name = name;
+    }
   }
 }

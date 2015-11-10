@@ -12,6 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var masteryPage_component_1 = require('../masteryPage/masteryPage.component');
 var masteryPageGroup_component_1 = require('../masteryPageGroup/masteryPageGroup.component');
+var masteryPageName_component_1 = require('../masteryPageName/masteryPageName.component');
 var MasteriesComponent = (function () {
     function MasteriesComponent() {
     }
@@ -19,10 +20,11 @@ var MasteriesComponent = (function () {
         angular2_1.Component({
             directives: [
                 masteryPage_component_1.MasteryPageComponent,
-                masteryPageGroup_component_1.MasteryPageGroupComponent
+                masteryPageGroup_component_1.MasteryPageGroupComponent,
+                masteryPageName_component_1.MasteryPageNameComponent
             ],
             selector: 'masteries-component',
-            template: "\n    <aside class=\"col-xs-4 main-aside\">\n      <mastery-page-group-component></mastery-page-group-component>\n    </aside>\n    <section class=\"col-xs-8 main-section\">\n      <mastery-page-component></mastery-page-component>\n    </section>\n  "
+            template: "\n    <aside class=\"col-xs-4 main-aside\">\n      <mastery-page-group-component></mastery-page-group-component>\n      <mastery-page-name-component></mastery-page-name-component>\n    </aside>\n    <section class=\"col-xs-8 main-section\">\n      <mastery-page-component></mastery-page-component>\n    </section>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], MasteriesComponent);

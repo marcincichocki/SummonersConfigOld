@@ -17,8 +17,8 @@ var MasteryService = (function () {
     function MasteryService(http, tooltipService) {
         this.http = http;
         this.tooltipService = tooltipService;
-        this.page = [new Page_1.Page(this.name + "1")];
         this.name = 'Mastery Page #';
+        this.page = [new Page_1.Page(this.name + "1")];
         this.active = 0;
         this.categories = [
             'Ferocity',
@@ -153,6 +153,18 @@ var MasteryService = (function () {
                 rank: this.getRank(id)
             }
         });
+    };
+    MasteryService.prototype.getName = function (page) {
+        if (page === void 0) { page = this.active; }
+        if (this.isInRange(page)) {
+            return this.page[page].name;
+        }
+    };
+    MasteryService.prototype.setName = function (name, page) {
+        if (page === void 0) { page = this.active; }
+        if (this.isInRange(page)) {
+            this.page[page].name = name;
+        }
     };
     MasteryService = __decorate([
         core_1.Injectable(), 
