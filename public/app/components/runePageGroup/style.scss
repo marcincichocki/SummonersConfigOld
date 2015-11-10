@@ -1,0 +1,10 @@
+.pages {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pages > button {
+  padding: .375rem 0;
+  width: calc(20% - 4px);
+  margin: 2px;
+}

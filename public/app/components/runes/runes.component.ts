@@ -6,7 +6,7 @@ import {RuneStatComponent} from '../runeStat/runeStat.component';
 import {RunePageComponent} from '../runePage/runePage.component';
 import {RuneNameComponent} from '../runeName/runeName.component';
 import {RuneIpTimeComponent} from '../runeIpTime/runeIpTime.component';
-import {PagesComponent} from '../pages/pages.component';
+import {RunePageGroupComponent} from '../runePageGroup/runePageGroup.component';
 
 
 @Component({
@@ -17,12 +17,12 @@ import {PagesComponent} from '../pages/pages.component';
     RunePageComponent,
     RuneNameComponent,
     RuneIpTimeComponent,
-    PagesComponent
+    RunePageGroupComponent
   ],
   selector: 'runes-component',
   template: `
     <aside class="col-xs-4 runes-aside">
-      <pages-component></pages-component>
+      <rune-page-group-component></rune-page-group-component>
       <rune-name-component></rune-name-component>
       <rune-stat-component></rune-stat-component>
       <rune-ip-time-component></rune-ip-time-component>
