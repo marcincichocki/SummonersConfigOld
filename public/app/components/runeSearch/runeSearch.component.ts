@@ -3,7 +3,7 @@ import {Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
 
 @Component({
   directives: [FORM_DIRECTIVES, CORE_DIRECTIVES],
-  selector: 'search-component',
+  selector: 'rune-search-component',
   template: `
     <label *ng-for="#tier of tiers">
       <input type="checkbox" [(ng-model)]="tier.selected">{{ tier.name }}
@@ -11,7 +11,7 @@ import {Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
     <input type="text" placeholder="Search" [(ng-model)]="query">
   `
 })
-export class SearchComponent {
+export class RuneSearchComponent {
   public query: string = '';
   public tiers: Tier[] = [
     new Tier(1, 'Tier 1', false),
