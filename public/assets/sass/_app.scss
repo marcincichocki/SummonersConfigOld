@@ -1,0 +1,74 @@
+/**
+ * This sheet will contain same styles for multiple
+ * routes like, for example: runes and masteries aside.
+ *
+ * Any style that is route dependent should be placed in
+ * suitable style sheet, or in component styles if and only
+ * if content may cause problems in general sheet. For
+ * example class .active for some component should be placed
+ * in component styles if cause trouble here(require creazy
+ * nesting etc.).
+ */
+
+
+body {
+  color: $font-color-primary !important;
+  font-family: 'Lato', sans-serif;
+}
+
+// Make site 100vw wide
+#container {
+  padding: 0;
+}
+
+// Remove margin from "main" rows
+#header,
+#main {
+  margin: 0;
+}
+
+// Styles for main header
+#header {
+  background-color: $header-background-color;
+  height: $header-height;
+}
+
+
+// Main aside
+// ==========================================================================
+.main-aside {
+  background: $aside-background-color;
+  height: calc(100vh - #{$header-height});
+  display: flex;
+  flex-direction: column;
+
+  .row {
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+// Group of buttons to change active page.
+.page-group {
+  display: flex;
+  flex-wrap: wrap;
+
+  > button {
+    padding: .375rem 0;
+    width: calc(20% - 4px);
+    margin: 2px;
+  }
+}
+
+
+// Main section
+// ==========================================================================
+.main-section {
+  background: $main-background-color;
+  height: calc(100vh - #{$header-height});
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -19,7 +19,6 @@ var RunePageGroupComponent = (function () {
     RunePageGroupComponent = __decorate([
         angular2_1.Component({
             selector: 'rune-page-group-component',
-            styleUrls: ['./app/components/runePageGroup/style.css'],
             templateUrl: './app/components/runePageGroup/runePageGroup.component.html',
             directives: [angular2_1.CORE_DIRECTIVES, tooltip_directive_1.TooltipDirective]
         }), 

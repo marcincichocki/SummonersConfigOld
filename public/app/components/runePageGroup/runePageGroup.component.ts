@@ -6,7 +6,6 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
 
 @Component({
   selector: 'rune-page-group-component',
-  styleUrls: ['./app/components/runePageGroup/style.css'],
   templateUrl: './app/components/runePageGroup/runePageGroup.component.html',
   directives: [CORE_DIRECTIVES, TooltipDirective]
 })

@@ -20,7 +20,7 @@ var MasteriesComponent = (function () {
                 masteryPage_component_1.MasteryPageComponent
             ],
             selector: 'masteries-component',
-            template: "\n    <aside class=\"col-xs-4 runes-aside\">\n    </aside>\n    <section class=\"col-xs-8 runes-section\">\n      <mastery-page-component></mastery-page-component>\n    </section>\n  "
+            template: "\n    <aside class=\"col-xs-4 main-aside\">\n    </aside>\n    <section class=\"col-xs-8 main-section\">\n      <mastery-page-component></mastery-page-component>\n    </section>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], MasteriesComponent);

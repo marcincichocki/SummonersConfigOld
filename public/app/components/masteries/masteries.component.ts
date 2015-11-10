@@ -9,9 +9,9 @@ import {MasteryPageComponent} from '../masteryPage/masteryPage.component';
   ],
   selector: 'masteries-component',
   template: `
-    <aside class="col-xs-4 runes-aside">
+    <aside class="col-xs-4 main-aside">
     </aside>
-    <section class="col-xs-8 runes-section">
+    <section class="col-xs-8 main-section">
       <mastery-page-component></mastery-page-component>
     </section>
   `

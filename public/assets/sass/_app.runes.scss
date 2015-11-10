@@ -1,24 +1,7 @@
-.runes-aside {
-  background: $aside-background-color;
-  height: calc(100vh - #{$header-height});
-  display: flex;
-  flex-direction: column;
-
-  .row {
-    margin-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-}
-
-.runes-section {
-  background: $main-background-color;
-  height: calc(100vh - #{$header-height});
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/**
+ * Style sheet for /runes route. Often used classes like
+ * .active etc. please put in component styles.
+ */
 
 .runes-wrapper {
   display: flex;
