@@ -39,4 +39,12 @@
       }">{{ description }}
     </p>
   </div>
+
+  <!-- mastery -->
+  <div class="tooltip-mastery-page" *ng-if="show('mastery-page')">
+    <h3 class="mastery-page-name">{{ masteryService.getName(tooltipService.tooltip.data.index) }}</h3>
+
+    <!-- temporary -->
+    <span *ng-for="#category of tooltipService.tooltip.data.counter">{{ category }}</span>
+  </div>
 </div>

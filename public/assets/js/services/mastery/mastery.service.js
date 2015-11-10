@@ -63,6 +63,18 @@ var MasteryService = (function () {
             return page === this.active;
         }
     };
+    MasteryService.prototype.clearPage = function (page) {
+        if (page === void 0) { page = this.active; }
+        if (this.isInRange(page)) {
+            this.page[page] = new Page_1.Page(this.getName());
+        }
+    };
+    MasteryService.prototype.isEmpty = function (page) {
+        if (page === void 0) { page = this.active; }
+        if (this.isInRange(page)) {
+            return !this.page[page].masteries.length;
+        }
+    };
     MasteryService.prototype.isInRange = function (page, max) {
         return page >= 0 && page < (max || this.page.length);
     };
@@ -165,6 +177,12 @@ var MasteryService = (function () {
         if (this.isInRange(page)) {
             this.page[page].name = name;
         }
+    };
+    MasteryService.prototype.getPointsOfCategory = function (category) {
+        return this.page[this.active].counter[category];
+    };
+    MasteryService.prototype.getPointsMax = function () {
+        return this.page[this.active].max;
     };
     MasteryService = __decorate([
         core_1.Injectable(), 

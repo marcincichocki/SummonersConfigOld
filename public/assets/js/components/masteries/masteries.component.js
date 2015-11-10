@@ -13,6 +13,7 @@ var angular2_1 = require('angular2/angular2');
 var masteryPage_component_1 = require('../masteryPage/masteryPage.component');
 var masteryPageGroup_component_1 = require('../masteryPageGroup/masteryPageGroup.component');
 var masteryPageName_component_1 = require('../masteryPageName/masteryPageName.component');
+var masteryPageStats_component_1 = require('../masteryPageStats/masteryPageStats.component');
 var MasteriesComponent = (function () {
     function MasteriesComponent() {
     }
@@ -21,10 +22,11 @@ var MasteriesComponent = (function () {
             directives: [
                 masteryPage_component_1.MasteryPageComponent,
                 masteryPageGroup_component_1.MasteryPageGroupComponent,
-                masteryPageName_component_1.MasteryPageNameComponent
+                masteryPageName_component_1.MasteryPageNameComponent,
+                masteryPageStats_component_1.MasteryPageStatsComponent
             ],
             selector: 'masteries-component',
-            template: "\n    <aside class=\"col-xs-4 main-aside\">\n      <mastery-page-group-component></mastery-page-group-component>\n      <mastery-page-name-component></mastery-page-name-component>\n    </aside>\n    <section class=\"col-xs-8 main-section\">\n      <mastery-page-component></mastery-page-component>\n    </section>\n  "
+            template: "\n    <aside class=\"col-xs-4 main-aside\">\n      <mastery-page-group-component></mastery-page-group-component>\n      <mastery-page-name-component></mastery-page-name-component>\n      <mastery-page-stats-component></mastery-page-stats-component>\n    </aside>\n    <section class=\"col-xs-8 main-section\">\n      <mastery-page-component></mastery-page-component>\n    </section>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], MasteriesComponent);

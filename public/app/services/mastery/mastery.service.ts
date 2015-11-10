@@ -61,6 +61,18 @@ export class MasteryService {
     }
   }
 
+  clearPage(page = this.active) {
+    if (this.isInRange(page)) {
+      this.page[page] = new Page(this.getName());
+    }
+  }
+
+  isEmpty(page = this.active) {
+    if (this.isInRange(page)) {
+      return !this.page[page].masteries.length;
+    }
+  }
+
   isInRange(page: number, max?: number) {
     return page >= 0 && page < (max || this.page.length);
   }
@@ -179,5 +191,13 @@ export class MasteryService {
     if (this.isInRange(page)) {
       this.page[page].name = name;
     }
+  }
+
+  getPointsOfCategory(category: number): number {
+    return this.page[this.active].counter[category];
+  }
+
+  getPointsMax(): number {
+    return this.page[this.active].max;
   }
 }
