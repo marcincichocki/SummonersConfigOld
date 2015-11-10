@@ -19,7 +19,7 @@
 .rune-page-wrapper {
   width: 644px;
   height: 100%;
-  background-image: url('../img/rune-page-background.jpg');
+  background-image: url('../img/runes/rune-page-background.jpg');
   background-repeat: no-repeat;
   position: relative;
 }
@@ -55,7 +55,7 @@
 
   .rune-image {
     background-color: transparent;
-    background-image: url('../img/runes-sprite-small.png');
+    background-image: url('../img/runes/runes-sprite-small.png');
     position: static;
   }
 
@@ -79,7 +79,7 @@
 }
 
 .rune-image {
-  background-image: url('../img/sprite.png');
+  background-image: url('../img/runes/runes-sprite.png');
   cursor: pointer;
   position: absolute;
 }
