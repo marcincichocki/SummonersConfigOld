@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var mastery_service_1 = require('../../services/mastery/mastery.service');
+var masteryPageStatsItem_component_1 = require('../masteryPageStatsItem/masteryPageStatsItem.component');
 var MasteryPageStatsComponent = (function () {
     function MasteryPageStatsComponent(masteryService) {
         this.masteryService = masteryService;
@@ -18,8 +19,8 @@ var MasteryPageStatsComponent = (function () {
     MasteryPageStatsComponent = __decorate([
         angular2_1.Component({
             selector: 'mastery-page-stats-component',
-            template: "\n      <div class=\"row\">\n        <div class=\"col-xs-8\">\n          <div class=\"mastery-category-points\">\n            <div class=\"mastery-category-point\"\n              *ng-for=\"#category of masteryService.categories, #i = index\">\n              <div class=\"{{ category | lowercase }}-image\"></div>\n              <span>{{ masteryService.getPointsOfCategory(i) }}</span>\n            </div>\n          </div>\n          <p>Points available: {{ masteryService.getPointsMax() }}</p>\n        </div>\n        <div class=\"col-xs-4\">\n          <button class=\"btn btn-block btn-primary\"\n            (click)=\"masteryService.clearPage()\"\n            [disabled]=\"masteryService.isEmpty()\">Clear</button>\n        </div>\n      </div>\n    ",
-            directives: [angular2_1.NgFor]
+            template: "\n      <div class=\"row\">\n        <div class=\"col-xs-8\">\n          <div class=\"mastery-category-points\">\n            <mastery-page-stats-item-component\n              *ng-for=\"#sum of masteryService.getSums(), #i = index\"\n              [sum]=\"sum\"\n              [index]=\"i + 1\">\n            </mastery-page-stats-item-component>\n          </div>\n          <p>Points available: {{ masteryService.getPointsMax() }}</p>\n        </div>\n        <div class=\"col-xs-4\">\n          <button class=\"btn btn-block btn-primary\"\n            (click)=\"masteryService.clearPage()\"\n            [disabled]=\"masteryService.isEmpty()\">Clear</button>\n        </div>\n      </div>\n    ",
+            directives: [angular2_1.NgFor, masteryPageStatsItem_component_1.MasteryPageStatsItemComponent]
         }), 
         __metadata('design:paramtypes', [mastery_service_1.MasteryService])
     ], MasteryPageStatsComponent);

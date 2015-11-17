@@ -184,6 +184,10 @@ var MasteryService = (function () {
     MasteryService.prototype.getPointsMax = function () {
         return this.page[this.active].max;
     };
+    MasteryService.prototype.getSums = function (page) {
+        if (page === void 0) { page = this.active; }
+        return this.page[page].sums;
+    };
     MasteryService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http, tooltip_service_1.TooltipService])

@@ -200,4 +200,8 @@ export class MasteryService {
   getPointsMax(): number {
     return this.page[this.active].max;
   }
+
+  getSums(page: number = this.active): number[] {
+    return this.page[page].sums;
+  }
 }
