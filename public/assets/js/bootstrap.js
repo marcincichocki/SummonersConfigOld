@@ -11,4 +11,4 @@ angular2_1.bootstrap(app_component_1.AppComponent, [
     rune_service_1.RuneService,
     mastery_service_1.MasteryService,
     tooltip_service_1.TooltipService
-]);
+]).catch(function (error) { return console.log(error); });

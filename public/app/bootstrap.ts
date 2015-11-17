@@ -14,4 +14,4 @@ bootstrap(AppComponent, [
   RuneService,
   MasteryService,
   TooltipService
-]);
+]).catch(error => console.log(error));
