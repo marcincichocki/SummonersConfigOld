@@ -11,26 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var rune_service_1 = require('../../services/rune/rune.service');
+var pageName_component_1 = require('../pageName/pageName.component');
 var RunePageNameComponent = (function () {
     function RunePageNameComponent(runeService) {
         this.runeService = runeService;
-        this.showInput = false;
-        this.model = {
-            name: this.runeService.getName()
-        };
+        this.placeholder = 'New rune page name';
     }
-    RunePageNameComponent.prototype.toggleInput = function () {
-        this.showInput = !this.showInput;
-    };
-    RunePageNameComponent.prototype.onSubmit = function () {
-        this.runeService.setName(this.model.name);
-        this.toggleInput();
-    };
     RunePageNameComponent = __decorate([
         angular2_1.Component({
             selector: 'rune-page-name-component',
-            templateUrl: './app/components/runePageName/runePageName.component.html',
-            directives: [angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES]
+            directives: [pageName_component_1.PageNameComponent],
+            template: "\n    <page-name-component\n      [service]=\"runeService\"\n      [placeholder]=\"placeholder\">\n    </page-name-component>\n  "
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])
     ], RunePageNameComponent);

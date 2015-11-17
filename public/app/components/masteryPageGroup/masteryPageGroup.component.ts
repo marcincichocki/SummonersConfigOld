@@ -1,14 +1,20 @@
-import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component} from 'angular2/angular2';
 
 import {MasteryService} from '../../services/mastery/mastery.service';
-import {TooltipDirective} from '../../directives/tooltip.directive';
+import {PageGroupComponent} from '../pageGroup/pageGroup.component';
 
 
 @Component({
   selector: 'mastery-page-group-component',
-  templateUrl: './app/components/masteryPageGroup/masteryPageGroup.component.html',
-  directives: [CORE_DIRECTIVES, TooltipDirective]
+  directives: [PageGroupComponent],
+  template: `
+    <page-group-component
+      [type]="type"
+      [service]="masteryService">
+    </page-group-component>
+  `
 })
 export class MasteryPageGroupComponent {
-  constructor(public masteryService: MasteryService) {}
+  public type: string = 'mastery-sums';
+  constructor(public masteryService: MasteryService) { }
 }

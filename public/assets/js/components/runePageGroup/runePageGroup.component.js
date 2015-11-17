@@ -11,16 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var rune_service_1 = require('../../services/rune/rune.service');
-var tooltip_directive_1 = require('../../directives/tooltip.directive');
+var pageGroup_component_1 = require('../pageGroup/pageGroup.component');
 var RunePageGroupComponent = (function () {
     function RunePageGroupComponent(runeService) {
         this.runeService = runeService;
+        this.type = 'rune-sums';
     }
     RunePageGroupComponent = __decorate([
         angular2_1.Component({
             selector: 'rune-page-group-component',
-            templateUrl: './app/components/runePageGroup/runePageGroup.component.html',
-            directives: [angular2_1.CORE_DIRECTIVES, tooltip_directive_1.TooltipDirective]
+            directives: [pageGroup_component_1.PageGroupComponent],
+            template: "\n    <page-group-component\n      [type]=\"type\"\n      [service]=\"runeService\">\n    </page-group-component>\n  "
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])
     ], RunePageGroupComponent);

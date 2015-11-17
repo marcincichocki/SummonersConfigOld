@@ -1,26 +1,20 @@
-import {Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
+import {Component} from 'angular2/angular2';
 
 import {RuneService} from '../../services/rune/rune.service';
+import {PageNameComponent} from '../pageName/pageName.component';
+
 
 @Component({
   selector: 'rune-page-name-component',
-  templateUrl: './app/components/runePageName/runePageName.component.html',
-  directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
+  directives: [PageNameComponent],
+  template: `
+    <page-name-component
+      [service]="runeService"
+      [placeholder]="placeholder">
+    </page-name-component>
+  `
 })
 export class RunePageNameComponent {
-  private showInput: boolean = false;
-  public model = {
-    name: this.runeService.getName()
-  };
-  constructor(public runeService: RuneService) {}
-
-
-  toggleInput() {
-    this.showInput = !this.showInput;
-  }
-
-  onSubmit() {
-    this.runeService.setName(this.model.name);
-    this.toggleInput();
-  }
+  private placeholder: string = 'New rune page name';
+  constructor(public runeService: RuneService) { }
 }

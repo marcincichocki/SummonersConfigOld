@@ -11,26 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var mastery_service_1 = require('../../services/mastery/mastery.service');
+var pageName_component_1 = require('../pageName/pageName.component');
 var MasteryPageNameComponent = (function () {
     function MasteryPageNameComponent(masteryService) {
         this.masteryService = masteryService;
-        this.showInput = false;
-        this.model = {
-            name: this.masteryService.getName()
-        };
+        this.placeholder = 'New mastery page name';
     }
-    MasteryPageNameComponent.prototype.toggleInput = function () {
-        this.showInput = !this.showInput;
-    };
-    MasteryPageNameComponent.prototype.onSubmit = function () {
-        this.masteryService.setName(this.model.name);
-        this.toggleInput();
-    };
     MasteryPageNameComponent = __decorate([
         angular2_1.Component({
             selector: 'mastery-page-name-component',
-            templateUrl: './app/components/masteryPageName/masteryPageName.component.html',
-            directives: [angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES]
+            directives: [pageName_component_1.PageNameComponent],
+            template: "\n    <page-name-component\n      [service]=\"masteryService\"\n      [placeholder]=\"placeholder\">\n    </page-name-component>\n  "
         }), 
         __metadata('design:paramtypes', [mastery_service_1.MasteryService])
     ], MasteryPageNameComponent);

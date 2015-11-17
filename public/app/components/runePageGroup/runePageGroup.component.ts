@@ -1,14 +1,20 @@
-import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component} from 'angular2/angular2';
 
 import {RuneService} from '../../services/rune/rune.service';
-import {TooltipDirective} from '../../directives/tooltip.directive';
+import {PageGroupComponent} from '../pageGroup/pageGroup.component';
 
 
 @Component({
   selector: 'rune-page-group-component',
-  templateUrl: './app/components/runePageGroup/runePageGroup.component.html',
-  directives: [CORE_DIRECTIVES, TooltipDirective]
+  directives: [PageGroupComponent],
+  template: `
+    <page-group-component
+      [type]="type"
+      [service]="runeService">
+    </page-group-component>
+  `
 })
 export class RunePageGroupComponent {
-  constructor(public runeService: RuneService) {}
+  public type: string = 'rune-sums';
+  constructor(public runeService: RuneService) { }
 }
