@@ -12,46 +12,6 @@
   z-index: 999;
 }
 
-.tooltip-rune {
-  padding: 0 1rem;
-
-  text-align: center;
-}
-
-.rune-name {
-  font-size: 1.1rem;
-
-  margin: 1.5rem 0 .5rem;
-}
-
-.rune-description {
-  font-size: .8rem;
-}
-
-.rune-tier,
-.rune-ip {
-  font-size: .7rem;
-
-  position: absolute;
-  top: 2px;
-}
-
-.rune-tier {
-  left: 3px;
-
-  color: orange;
-}
-
-.rune-ip {
-  right: 3px;
-}
-
-
-.type-mark { color: #a1161f; }
-.type-seal { color: #c7da27; }
-.type-glyph { color: #4fb0f9; }
-.type-quintessence { color: #9f60eb; }
-
 .translateX { transform: translateX(-100%); }
 .translateY { transform: translateY(-100%); }
 

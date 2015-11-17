@@ -11,7 +11,16 @@
         | search: 'description': searchComponent.query"
         [rune]="rune"
         (click)="runeService.addRune(rune.id)"
-        [tooltip]="{ type: 'rune', data: rune }">
+        [tooltip]="{
+          type: 'rune',
+          data: {
+            name: rune.name,
+            type: rune.type,
+            description: rune.description,
+            tier: rune.tier,
+            ip: rune.ip
+          }
+        }">
       </rune-list-item-component>
     </section>
   </div>

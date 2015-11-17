@@ -6,12 +6,10 @@
   [ng-switch]="tooltipService.tooltip.type">
 
   <!-- rune -->
-  <div class="tooltip-rune" *ng-switch-when="'rune'">
-    <h3 class="rune-name type-{{ tooltipService.tooltip.data.type }}">{{ tooltipService.tooltip.data.name }}</h3>
-    <p class="rune-description">{{ tooltipService.tooltip.data.description }}</p>
-    <span class="rune-tier">Tier {{ tooltipService.tooltip.data.tier }}</span>
-    <span class="rune-ip">{{ tooltipService.tooltip.data.ip }} ip</span>
-  </div>
+  <tooltip-rune-component
+    *ng-switch-when="'rune'"
+    [data]="tooltipService.tooltip.data">
+  </tooltip-rune-component>
 
   <!-- rune-sums -->
   <div class="tooltip-rune-sums" *ng-switch-when="'rune-sums'">
