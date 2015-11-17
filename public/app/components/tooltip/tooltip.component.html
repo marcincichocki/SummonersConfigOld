@@ -18,24 +18,10 @@
   </tooltip-rune-sums-component>
 
   <!-- mastery -->
-  <div class="tooltip-mastery" *ng-switch-when="'mastery'">
-    <h3 class="mastery-name {{ masteryService.categories[masteryService.getCategory(tooltipService.tooltip.data.mastery.id) - 1] | lowercase }}">{{ tooltipService.tooltip.data.mastery.name }}</h3>
-    <p class="mastery-rank"
-      [ng-class]="{
-        available: masteryService.masteryCheckUp(tooltipService.tooltip.data.mastery.id),
-        active: tooltipService.tooltip.data.rank > 0
-      }">Rank:
-      <span>{{ tooltipService.tooltip.data.rank || 0 }} /</span>
-      <span>{{ tooltipService.tooltip.data.mastery.ranks }}</span>
-    </p>
-    <p class="mastery-description"
-      *ng-for="#description of tooltipService.tooltip.data.mastery.description, #i = index"
-      [ng-class]="{
-        current: tooltipService.tooltip.data.rank - 1 === i,
-        next: (tooltipService.tooltip.data.rank || 0) === i
-      }">{{ description }}
-    </p>
-  </div>
+  <tooltip-mastery-component
+    *ng-switch-when="'mastery'"
+    [data]="tooltipService.tooltip.data">
+  </tooltip-mastery-component>
 
   <!-- mastery -->
   <div class="tooltip-mastery-page" *ng-switch-when="'mastery-sums'">
