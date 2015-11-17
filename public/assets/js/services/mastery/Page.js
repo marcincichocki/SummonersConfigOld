@@ -2,7 +2,7 @@ var Mastery_1 = require('./Mastery');
 var Page = (function () {
     function Page(name) {
         this.name = name;
-        this.counter = [0, 0, 0];
+        this.sums = [0, 0, 0];
         this.max = 30;
         this.masteries = [];
         this.rank = {};
@@ -17,7 +17,7 @@ var Page = (function () {
             mastery.rank += 1;
             this.rank[id] += 1;
         }
-        this.counter[category - 1] += 1;
+        this.sums[category - 1] += 1;
         this.max -= 1;
         console.log(this.masteries);
     };
@@ -33,7 +33,7 @@ var Page = (function () {
             this.masteries.splice(index, 1);
             delete this.rank[id];
         }
-        this.counter[category - 1] -= 1;
+        this.sums[category - 1] -= 1;
         this.max += 1;
         console.log(this.masteries);
     };

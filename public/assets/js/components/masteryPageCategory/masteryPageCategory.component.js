@@ -27,7 +27,7 @@ var MasteryPageCategoryComponent = (function () {
     MasteryPageCategoryComponent = __decorate([
         angular2_1.Component({
             selector: 'mastery-page-category-component',
-            template: "\n    <div class=\"category {{ category | lowercase }}\">\n      <mastery-page-row-component\n        *ng-for=\"#row of masteryService.grid[category], #j = index\"\n        [row]=\"row\"\n        [j]=\"j\">\n      </mastery-page-row-component>\n      <h3>{{ category }}: {{ masteryService.page[masteryService.active].counter[i] }}</h3>\n    </div>\n  ",
+            template: "\n    <div class=\"category {{ category | lowercase }}\">\n      <mastery-page-row-component\n        *ng-for=\"#row of masteryService.grid[category], #j = index\"\n        [row]=\"row\"\n        [j]=\"j\">\n      </mastery-page-row-component>\n      <h3>{{ category }}: {{ masteryService.page[masteryService.active].sums[i] }}</h3>\n    </div>\n  ",
             directives: [masteryPageRow_component_1.MasteryPageRowComponent, angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [mastery_service_1.MasteryService])

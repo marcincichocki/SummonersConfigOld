@@ -2,7 +2,7 @@ import {Mastery} from './Mastery';
 
 
 export class Page {
-  public counter: number[] = [0, 0, 0];
+  public sums: number[] = [0, 0, 0];
   public max: number = 30;
   public masteries: Mastery[] = [];
   public rank: any = {};
@@ -19,7 +19,7 @@ export class Page {
       mastery.rank += 1;
       this.rank[id] += 1;
     }
-    this.counter[category - 1] += 1;
+    this.sums[category - 1] += 1;
     this.max -= 1;
     console.log(this.masteries);
   }
@@ -36,7 +36,7 @@ export class Page {
       this.masteries.splice(index, 1);
       delete this.rank[id];
     }
-    this.counter[category - 1] -= 1;
+    this.sums[category - 1] -= 1;
     this.max += 1;
     console.log(this.masteries);
   }

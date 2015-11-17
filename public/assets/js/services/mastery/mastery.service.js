@@ -179,7 +179,7 @@ var MasteryService = (function () {
         }
     };
     MasteryService.prototype.getPointsOfCategory = function (category) {
-        return this.page[this.active].counter[category];
+        return this.page[this.active].sums[category];
     };
     MasteryService.prototype.getPointsMax = function () {
         return this.page[this.active].max;

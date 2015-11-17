@@ -41,10 +41,10 @@
   </div>
 
   <!-- mastery -->
-  <div class="tooltip-mastery-page" *ng-if="show('mastery-page')">
+  <div class="tooltip-mastery-page" *ng-if="show('mastery-sums')">
     <h3 class="mastery-page-name">{{ masteryService.getName(tooltipService.tooltip.data.index) }}</h3>
 
     <!-- temporary -->
-    <span *ng-for="#category of tooltipService.tooltip.data.counter">{{ category }}</span>
+    <span *ng-for="#category of tooltipService.tooltip.data.sums">{{ category }}</span>
   </div>
 </div>

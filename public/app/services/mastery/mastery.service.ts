@@ -194,7 +194,7 @@ export class MasteryService {
   }
 
   getPointsOfCategory(category: number): number {
-    return this.page[this.active].counter[category];
+    return this.page[this.active].sums[category];
   }
 
   getPointsMax(): number {
