@@ -17,8 +17,4 @@ export class TooltipComponent {
     public runeService: RuneService,
     public masteryService: MasteryService
   ) { }
-
-  show(type: string): boolean {
-    return this.tooltipService.tooltip.type === type;
-  }
 }

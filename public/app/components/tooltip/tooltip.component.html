@@ -1,10 +1,12 @@
+<!-- TODO: Move each case to separate component -->
 <div id="tooltip" *ng-if="tooltipService.tooltip"
   style.top="{{tooltipService.y}}px"
   style.left="{{tooltipService.x}}px"
-  [ng-class]="{translateX: tooltipService.translateX, translateY: tooltipService.translateY}">
+  [ng-class]="{translateX: tooltipService.translateX, translateY: tooltipService.translateY}"
+  [ng-switch]="tooltipService.tooltip.type">
 
   <!-- rune -->
-  <div class="tooltip-rune" *ng-if="show('rune')">
+  <div class="tooltip-rune" *ng-switch-when="'rune'">
     <h3 class="rune-name type-{{ tooltipService.tooltip.data.type }}">{{ tooltipService.tooltip.data.name }}</h3>
     <p class="rune-description">{{ tooltipService.tooltip.data.description }}</p>
     <span class="rune-tier">Tier {{ tooltipService.tooltip.data.tier }}</span>
@@ -12,7 +14,7 @@
   </div>
 
   <!-- rune-sums -->
-  <div class="tooltip-rune-sums" *ng-if="show('rune-sums')">
+  <div class="tooltip-rune-sums" *ng-switch-when="'rune-sums'">
     <h3 class="rune-page-name">{{ runeService.page[tooltipService.tooltip.data.index].name }}</h3>
     <p *ng-for="#sum of tooltipService.tooltip.data.sums">
       <span>{{ sum.value }}{{ runeService.isPercentage(sum.unitId) }}</span>
@@ -21,7 +23,7 @@
   </div>
 
   <!-- mastery -->
-  <div class="tooltip-mastery" *ng-if="show('mastery')">
+  <div class="tooltip-mastery" *ng-switch-when="'mastery'">
     <h3 class="mastery-name {{ masteryService.categories[masteryService.getCategory(tooltipService.tooltip.data.mastery.id) - 1] | lowercase }}">{{ tooltipService.tooltip.data.mastery.name }}</h3>
     <p class="mastery-rank"
       [ng-class]="{
@@ -41,10 +43,15 @@
   </div>
 
   <!-- mastery -->
-  <div class="tooltip-mastery-page" *ng-if="show('mastery-sums')">
+  <div class="tooltip-mastery-page" *ng-switch-when="'mastery-sums'">
     <h3 class="mastery-page-name">{{ masteryService.getName(tooltipService.tooltip.data.index) }}</h3>
 
     <!-- temporary -->
     <span *ng-for="#category of tooltipService.tooltip.data.sums">{{ category }}</span>
+  </div>
+
+  <!-- TODO: logic and layout for defualt tooltip(plain text) -->
+  <div *ng-when-default>
+    <p>Error!</p>
   </div>
 </div>

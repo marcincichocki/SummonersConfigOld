@@ -19,9 +19,6 @@ var TooltipComponent = (function () {
         this.runeService = runeService;
         this.masteryService = masteryService;
     }
-    TooltipComponent.prototype.show = function (type) {
-        return this.tooltipService.tooltip.type === type;
-    };
     TooltipComponent = __decorate([
         angular2_1.Component({
             selector: 'tooltip-component',
