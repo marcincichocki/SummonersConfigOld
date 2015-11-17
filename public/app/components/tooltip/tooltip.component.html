@@ -12,6 +12,11 @@
   </tooltip-rune-component>
 
   <!-- rune-sums -->
+  <tooltip-rune-sums-component
+    *ng-switch-when="'rune-sums'"
+    [data]="tooltipService.tooltip.data">
+  </tooltip-rune-sums-component>
+
   <div class="tooltip-rune-sums" *ng-switch-when="'rune-sums'">
     <h3 class="rune-page-name">{{ runeService.page[tooltipService.tooltip.data.index].name }}</h3>
     <p *ng-for="#sum of tooltipService.tooltip.data.sums">
