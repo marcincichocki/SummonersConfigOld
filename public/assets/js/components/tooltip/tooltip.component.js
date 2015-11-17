@@ -11,16 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var tooltip_service_1 = require('../../services/tooltip/tooltip.service');
-var rune_service_1 = require('../../services/rune/rune.service');
-var mastery_service_1 = require('../../services/mastery/mastery.service');
 var tooltipRune_component_1 = require('../tooltipRune/tooltipRune.component');
 var tooltipRuneSums_component_1 = require('../tooltipRuneSums/tooltipRuneSums.component');
 var tooltipMastery_component_1 = require('../tooltipMastery/tooltipMastery.component');
+var tooltipMasterySums_component_1 = require('../tooltipMasterySums/tooltipMasterySums.component');
 var TooltipComponent = (function () {
-    function TooltipComponent(tooltipService, runeService, masteryService) {
+    function TooltipComponent(tooltipService) {
         this.tooltipService = tooltipService;
-        this.runeService = runeService;
-        this.masteryService = masteryService;
     }
     TooltipComponent = __decorate([
         angular2_1.Component({
@@ -31,10 +28,11 @@ var TooltipComponent = (function () {
                 angular2_1.CORE_DIRECTIVES,
                 tooltipRune_component_1.TooltipRuneComponent,
                 tooltipRuneSums_component_1.TooltipRuneSumsComponent,
-                tooltipMastery_component_1.TooltipMasteryComponent
+                tooltipMastery_component_1.TooltipMasteryComponent,
+                tooltipMasterySums_component_1.TooltipMasterySumsComponent
             ]
         }), 
-        __metadata('design:paramtypes', [tooltip_service_1.TooltipService, rune_service_1.RuneService, mastery_service_1.MasteryService])
+        __metadata('design:paramtypes', [tooltip_service_1.TooltipService])
     ], TooltipComponent);
     return TooltipComponent;
 })();

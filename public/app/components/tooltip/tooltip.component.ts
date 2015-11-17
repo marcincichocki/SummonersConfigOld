@@ -1,11 +1,10 @@
 import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
 
 import {TooltipService} from '../../services/tooltip/tooltip.service';
-import {RuneService} from '../../services/rune/rune.service';
-import {MasteryService} from '../../services/mastery/mastery.service';
 import {TooltipRuneComponent} from '../tooltipRune/tooltipRune.component';
 import {TooltipRuneSumsComponent} from '../tooltipRuneSums/tooltipRuneSums.component';
 import {TooltipMasteryComponent} from '../tooltipMastery/tooltipMastery.component';
+import {TooltipMasterySumsComponent} from '../tooltipMasterySums/tooltipMasterySums.component';
 
 
 @Component({
@@ -16,13 +15,10 @@ import {TooltipMasteryComponent} from '../tooltipMastery/tooltipMastery.componen
     CORE_DIRECTIVES,
     TooltipRuneComponent,
     TooltipRuneSumsComponent,
-    TooltipMasteryComponent
+    TooltipMasteryComponent,
+    TooltipMasterySumsComponent
   ]
 })
 export class TooltipComponent {
-  constructor(
-    public tooltipService: TooltipService,
-    public runeService: RuneService,
-    public masteryService: MasteryService
-  ) { }
+  constructor(public tooltipService: TooltipService) { }
 }
