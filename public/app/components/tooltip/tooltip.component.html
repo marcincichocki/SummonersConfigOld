@@ -17,14 +17,6 @@
     [data]="tooltipService.tooltip.data">
   </tooltip-rune-sums-component>
 
-  <div class="tooltip-rune-sums" *ng-switch-when="'rune-sums'">
-    <h3 class="rune-page-name">{{ runeService.page[tooltipService.tooltip.data.index].name }}</h3>
-    <p *ng-for="#sum of tooltipService.tooltip.data.sums">
-      <span>{{ sum.value }}{{ runeService.isPercentage(sum.unitId) }}</span>
-      <span>{{ runeService.stats[sum.unitId] }}</span>
-    </p>
-  </div>
-
   <!-- mastery -->
   <div class="tooltip-mastery" *ng-switch-when="'mastery'">
     <h3 class="mastery-name {{ masteryService.categories[masteryService.getCategory(tooltipService.tooltip.data.mastery.id) - 1] | lowercase }}">{{ tooltipService.tooltip.data.mastery.name }}</h3>

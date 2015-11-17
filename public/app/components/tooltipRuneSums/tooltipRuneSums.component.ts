@@ -1,4 +1,4 @@
-import {Component, Input} from 'angular2/angular2';
+import {Component, Input, NgFor} from 'angular2/angular2';
 
 import {RuneService} from '../../services/rune/rune.service';
 
@@ -13,7 +13,8 @@ import {RuneService} from '../../services/rune/rune.service';
         <span>{{ runeService.stats[sum.unitId] }}</span>
       </p>
     </div>
-  `
+  `,
+  directives: [NgFor]
 })
 export class TooltipRuneSumsComponent {
   @Input() data;

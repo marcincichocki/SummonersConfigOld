@@ -14,6 +14,7 @@ var tooltip_service_1 = require('../../services/tooltip/tooltip.service');
 var rune_service_1 = require('../../services/rune/rune.service');
 var mastery_service_1 = require('../../services/mastery/mastery.service');
 var tooltipRune_component_1 = require('../tooltipRune/tooltipRune.component');
+var tooltipRuneSums_component_1 = require('../tooltipRuneSums/tooltipRuneSums.component');
 var TooltipComponent = (function () {
     function TooltipComponent(tooltipService, runeService, masteryService) {
         this.tooltipService = tooltipService;
@@ -25,7 +26,7 @@ var TooltipComponent = (function () {
             selector: 'tooltip-component',
             templateUrl: './app/components/tooltip/tooltip.component.html',
             styleUrls: ['./app/components/tooltip/style.css'],
-            directives: [angular2_1.CORE_DIRECTIVES, tooltipRune_component_1.TooltipRuneComponent]
+            directives: [angular2_1.CORE_DIRECTIVES, tooltipRune_component_1.TooltipRuneComponent, tooltipRuneSums_component_1.TooltipRuneSumsComponent]
         }), 
         __metadata('design:paramtypes', [tooltip_service_1.TooltipService, rune_service_1.RuneService, mastery_service_1.MasteryService])
     ], TooltipComponent);
