@@ -17,13 +17,14 @@ var runeListItem_component_1 = require('../runeListItem/runeListItem.component')
 var tooltip_directive_1 = require('../../directives/tooltip.directive');
 var RuneListComponent = (function () {
     function RuneListComponent(runeService) {
+        var _this = this;
         this.runeService = runeService;
-        this.show = [
-            false,
-            false,
-            false,
-            false
-        ];
+        this.show = [false, false, false, false];
+        this.types = [];
+        var runes = Object.keys(this.runeService.runes).map(function (key) { return _this.runeService.runes[key]; });
+        this.runeService.types.forEach(function (type, index) {
+            _this.types.push(new RunesByType(type, runes.filter(function (rune) { return rune.type === type; })));
+        });
     }
     ;
     RuneListComponent.prototype.toggle = function (id) {
@@ -39,10 +40,17 @@ var RuneListComponent = (function () {
             pipes: [search_pipe_1.SearchPipe, filter_pipe_1.Filter],
             templateUrl: './app/components/runeList/runeList.component.html',
             styleUrls: ["./app/components/runeList/style.css"],
-            directives: [angular2_1.CORE_DIRECTIVES, runeListItem_component_1.RuneListItemComponent, tooltip_directive_1.TooltipDirective]
+            directives: [angular2_1.NgFor, angular2_1.NgClass, runeListItem_component_1.RuneListItemComponent, tooltip_directive_1.TooltipDirective]
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])
     ], RuneListComponent);
     return RuneListComponent;
 })();
 exports.RuneListComponent = RuneListComponent;
+var RunesByType = (function () {
+    function RunesByType(name, runes) {
+        this.name = name;
+        this.runes = runes;
+    }
+    return RunesByType;
+})();

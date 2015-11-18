@@ -17,7 +17,6 @@ var RuneService = (function () {
         this.http = http;
         this.types = ['mark', 'seal', 'glyph', 'quintessence'];
         this.name = 'Rune Page #';
-        this.runesArray = [];
         this.page = [new Page_1.Page(this.name + "1")];
         this.active = 0;
     }
@@ -28,7 +27,6 @@ var RuneService = (function () {
             .subscribe(function (data) {
             _this.stats = data.stats;
             _this.runes = data.runes;
-            _this.runesArray = Object.keys(data.runes).map(function (key) { return data.runes[key]; });
         }, function (error) { return console.log(error); });
     };
     RuneService.prototype.addPage = function (name) {

@@ -1,25 +1,18 @@
 <div id="runes-list">
-  <div *ng-for="#type of runeService.types, #i = index">
-    <header class="type-{{ type }}" (click)="toggle(i)">
-      <h1 [ng-class]="{active: show[i]}">{{ type }}</h1>
+  <div *ng-for="#type of types, #i = index">
+    <header class="type-{{ type.name }}" (click)="toggle(i)">
+      <h1 [ng-class]="{active: show[i]}">{{ type.name }}</h1>
     </header>
     <section [hidden]="!show[i]">
       <rune-list-item-component
-        *ng-for="#rune of ((runeService.runesArray
-        | filter: 'type': type)
+        *ng-for="#rune of (type.runes
         | filter: 'tier': searchComponent.getTiers())
         | search: 'description': searchComponent.query"
         [rune]="rune"
         (click)="runeService.addRune(rune.id)"
         [tooltip]="{
           type: 'rune',
-          data: {
-            name: rune.name,
-            type: rune.type,
-            description: rune.description,
-            tier: rune.tier,
-            ip: rune.ip
-          }
+          data: rune
         }">
       </rune-list-item-component>
     </section>

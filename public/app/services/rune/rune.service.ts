@@ -2,7 +2,6 @@ import {Http} from 'angular2/http';
 import {Injectable} from 'angular2/core';
 
 import {Page} from './Page';
-import {Rune} from './Rune';
 
 
 @Injectable()
@@ -12,7 +11,6 @@ export class RuneService {
 
   public stats: Object;
   public runes: Object;
-  public runesArray: Rune[] = [];
   public page: Page[] = [new Page(`${this.name}1`)];
   public active: number = 0;
   constructor(public http: Http) { }
@@ -24,7 +22,6 @@ export class RuneService {
         data => {
           this.stats = data.stats;
           this.runes = data.runes;
-          this.runesArray = Object.keys(data.runes).map(key => data.runes[key]);
         },
         error => console.log(error)
       );
