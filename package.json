@@ -1,6 +1,6 @@
 {
   "name": "summonersconfig",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Be prepared for everything!",
   "main": "index.js",
   "scripts": {
