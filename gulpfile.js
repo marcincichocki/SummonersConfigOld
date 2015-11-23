@@ -28,11 +28,9 @@ gulp.task('styles', function() {
 
 gulp.task('styles.app', function() {
   return gulp.src('./public/app/**/*.scss')
-    .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({ browsers: ['last 2 versions'] }))
     .pipe(minifyCss())
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest(function(file) {
       return file.base;
     }));
