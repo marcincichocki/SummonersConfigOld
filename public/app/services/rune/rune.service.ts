@@ -2,6 +2,8 @@ import {Http} from 'angular2/http';
 import {Injectable} from 'angular2/core';
 
 import {Page} from './Page';
+import {Rune} from './Rune';
+import {UniqueRune} from './UniqueRune';
 
 
 @Injectable()
@@ -9,8 +11,8 @@ export class RuneService {
   public types: string[] = ['mark', 'seal', 'glyph', 'quintessence'];
   private name: string = 'Rune Page #';
 
-  public stats: Object;
-  public runes: Object;
+  public stats: any;
+  public runes: any;
   public page: Page[] = [new Page(`${this.name}1`)];
   public active: number = 0;
   constructor(public http: Http) { }
@@ -87,20 +89,26 @@ export class RuneService {
     }
   }
 
-  addRune(id) {
-    const rune = this.runes[id];
-    const typeId: number = this.types.indexOf(rune.type);
+  getTypeId(id: string): number {
+    return this.types.indexOf(this.runes[id].type);
+  }
+
+  addRune(id: string, count = true): void {
+    const typeId: number = this.getTypeId(id);
 
     if (this.page[this.active].counter[typeId] > 0) {
-      this.page[this.active].addRune(rune, typeId);
-      this.count();
-    } else {
-      console.log(`Reached maximum of ${rune.type}`);
+
+      // Add new rune
+      this.page[this.active].addRune(new Rune(id), typeId);
+
+      // update sums
+      if (count) this.count();
     }
   }
 
   removeRune(rune) {
-    const typeId: number = this.types.indexOf(rune.type);
+    const typeId: number = this.getTypeId(rune.id);
+
     if (this.page[this.active].runes.length) {
       this.page[this.active].removeRune(rune, typeId);
 
@@ -109,7 +117,37 @@ export class RuneService {
   }
 
   count() {
-    this.page[this.active].count();
+
+    // Get list of unique ids.
+    const uniqueIds: string[] = this.page[this.active].runes
+      .map(rune => rune.id)
+      .filter((id, index, self) => self.indexOf(id) === index);
+
+    // Prepare array to store unique runes.
+    const runes: UniqueRune[] = [];
+
+
+    // For each unique id add new unique rune.
+    uniqueIds.forEach(id => {
+      const rune = new UniqueRune(
+
+        // Ip cost of specyfic rune.
+        this.runes[id].ip,
+
+        // Stats of specyfic rune.
+        this.runes[id].stats,
+
+        // quantity of exactly same runes.
+        this.page[this.active].runes.filter(rune => rune.id === id).reduce(a => a + 1, 0)
+      );
+
+
+      runes.push(rune);
+    });
+
+
+    // Call specyfic method to generate sums.
+    this.page[this.active].count(runes);
   }
 
   isPercentage(unit: string) {

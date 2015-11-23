@@ -1,75 +1,154 @@
-import {RuneSingle} from './RuneSingle';
 import {Sum} from './Sum';
 import {Rune} from './Rune';
+import {UniqueRune} from './UniqueRune';
 
-
+/** Class representing a rune page. */
 export class Page {
+
+  /**
+   * TODO: Change(or not) class properties to public/private/static
+   */
+
+  // Store ip sum of all runes in the current page.
+  // RuneService.count() updates this property.
   public ip: number = 0;
+
+  // Store every rune in page(Rune instances).
   public runes: Rune[] = [];
+
+  // Store calculated values with unitIds of all runes in page.
   public sums: Sum[] = [];
+
+  // FIXME: This should be private property.
+  //
+  // Store ammount of maximum available runes to add in respective types.
+  //
+  // this.counter[0] => "mark", max 9
+  // this.counter[1] => "seal", max 9
+  // this.counter[2] => "glyph", max 9
+  // this.counter[3] => "quintessence", max 3
   public counter: number[] = [9, 9, 9, 3];
+
+  // FIXME: This should be static property.
+  //
+  // Store runes first slot information for respective types. Slot is 1-based.
+  //
+  // this.slotStart[0] => "mark" starts at slot number 1
+  // this.slotStart[0] => "seal" starts at slot number 10, and so on..
   private slotStart: number[] = [1, 10, 19, 28];
-  constructor(public name: string) {}
 
-  getSlot(typeId) {
-    const from = this.slotStart[typeId];
+
+  /**
+   * Create a page.
+   * @constructor
+   * @param {string} name - Name of rune page.
+   */
+  constructor(public name: string) { }
+
+
+  /**
+   * Get first available slot for given typeId
+   * @param {number} typeId - Number representing type.
+   * @returns {(number | boolean)} Slot number 1-based
+   */
+  getSlot(typeId: number): number {
+
+    // Get starting position.
+    const from: number = this.slotStart[typeId];
+
+    // Get finishing position.
     const to = from + 9 < 30 ? from + 9 : 30;
-    const runes = this.runes.map(obj => obj.position);
 
+    // Get array of taken rune slots.
+    const runes: number[] = this.runes.map(rune => rune.runeSlot);
+
+
+    // Loop through all slots for specyfic typeId.
     for (let i = from; i <= to; i += 1) {
+
+      // If slot does not exist in array, return slot.
       if (runes.indexOf(i) === -1) return i;
     }
   }
 
-  addRune(rune, typeId) {
-    this.counter[typeId] -= 1;
-    rune.position = this.getSlot(typeId);
 
-    // We don't like references here.
-    this.runes.push(JSON.parse(JSON.stringify(rune)));
+  /**
+   * Update counter and add rune to this.runes array.
+   * @param {Rune} rune - Rune which will be added.
+   * @param {string} rune.id - Rune unique id.
+   * @param {number | null} [rune.runeSlot=null] - Unique slot which
+   * rune will be placed in.
+   * @param {number} typeId - Number representing type.
+   */
+  addRune(rune: Rune, typeId: number): void {
+
+    // Decrease counter.
+    this.counter[typeId] -= 1;
+
+    // Set rune slot if null.
+    if (rune.runeSlot === null) rune.runeSlot = this.getSlot(typeId);
+
+    // Add new rune.
+    this.runes.push(rune);
   }
 
-  removeRune(rune, typeId) {
-    const index = this.runes.indexOf(rune);
 
+  /**
+   * Update counter and remove rune from this.runes array.
+   * @param {Rune} rune - Rune which will be removed.
+   * @param {string} rune.id - Rune unique id.
+   * @param {number} rune.runeSlot - Unique slot of given rune.
+   * @param {number} typeId - Number representing type.
+   */
+  removeRune(rune: Rune, typeId: number): void {
+
+    // Get first index of given rune in array.
+    const index: number = this.runes.indexOf(rune);
+
+    // Increase counter.
     this.counter[typeId] += 1;
+
+    // Remove rune from array.
     this.runes.splice(index, 1);
   }
 
-  count() {
-    let runes: RuneSingle[] = [];
 
-    this.runes.forEach(rune => {
-      Object.keys(rune.stats).forEach(stat => {
-        runes.push(new RuneSingle(
-          rune.ip,
-          stat,
-          rune.stats[stat]
-        ));
-      });
-    });
+  /**
+   * Generate sums of current page.
+   * @param {UniqueRune[]} runes [description]
+   * @param {number} runes[].ip - Ip const of single rune
+   * @param {*} runes[].stats - Object which contain unit: <Number>value paris.
+   * @param {number} runes[].ammount - Quantity of exactly same runes.
+   */
+  count(runes: UniqueRune[]): void {
 
-    // get sum of ip
-    this.ip = runes.map(obj => obj.ip).reduce((a, b) => a + b, 0);
-
-    // reset array
+    // Reset array.
     this.sums = [];
 
+    // Get sum of ip.
+    this.ip = runes.reduce((sum, rune) => sum + (rune.ip * rune.ammount), 0);
 
-    // store unique unit ids of all runes in page
-    const unitIds = runes.map(obj => obj.unitId).filter((unit, index, self) => self.indexOf(unit) === index);
+    runes.forEach(rune => {
 
-    // get sum of every unique unit id and save to array
-    unitIds.forEach(unitId => {
+      // Some runes may give more then one stat. For example
+      // Greater Mark of Hybrid Penetration gives both Armor Penetration and
+      // Magic Penetration.
+      Object.keys(rune.stats).forEach(unitId => {
 
-      // get array of object with same unit
-      let sameUnit = runes.filter(obj => obj.unitId === unitId);
+        // FIXME: Regeneration stats are in fact per second, not per 5 seconds
+        // like description says. Should multiply value times 5 if unitId
+        // contains 'Regeneration' string.
+        const value: number = parseFloat((rune.stats[unitId] * rune.ammount).toFixed(2));
+        const index: number = this.sums.map(sum => sum.unitId).indexOf(unitId);
 
-      // push unit and sum of values to sums array
-      this.sums.push(new Sum(
-        unitId,
-        parseFloat(sameUnit.map(obj => obj.value).reduce((a, b) => a + b, 0).toFixed(2))
-      ));
+        // If stat alredy is in array then add values, otherwise create new
+        // sum with new stat and initial value.
+        if (index > -1) {
+          this.sums[index].value += value;
+        } else {
+          this.sums.push(new Sum(unitId, value));
+        }
+      });
     });
   }
 }

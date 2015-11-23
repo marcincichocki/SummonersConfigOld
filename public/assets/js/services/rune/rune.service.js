@@ -12,6 +12,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var http_1 = require('angular2/http');
 var core_1 = require('angular2/core');
 var Page_1 = require('./Page');
+var Rune_1 = require('./Rune');
+var UniqueRune_1 = require('./UniqueRune');
 var RuneService = (function () {
     function RuneService(http) {
         this.http = http;
@@ -87,26 +89,48 @@ var RuneService = (function () {
             return this.page[page].ip;
         }
     };
-    RuneService.prototype.addRune = function (id) {
-        var rune = this.runes[id];
-        var typeId = this.types.indexOf(rune.type);
+    RuneService.prototype.getTypeId = function (id) {
+        return this.types.indexOf(this.runes[id].type);
+    };
+    RuneService.prototype.addRune = function (id, count) {
+        if (count === void 0) { count = true; }
+        var typeId = this.getTypeId(id);
         if (this.page[this.active].counter[typeId] > 0) {
-            this.page[this.active].addRune(rune, typeId);
-            this.count();
-        }
-        else {
-            console.log("Reached maximum of " + rune.type);
+            // Add new rune
+            this.page[this.active].addRune(new Rune_1.Rune(id), typeId);
+            // update sums
+            if (count)
+                this.count();
         }
     };
     RuneService.prototype.removeRune = function (rune) {
-        var typeId = this.types.indexOf(rune.type);
+        var typeId = this.getTypeId(rune.id);
         if (this.page[this.active].runes.length) {
             this.page[this.active].removeRune(rune, typeId);
             this.count();
         }
     };
     RuneService.prototype.count = function () {
-        this.page[this.active].count();
+        var _this = this;
+        // Get list of unique ids.
+        var uniqueIds = this.page[this.active].runes
+            .map(function (rune) { return rune.id; })
+            .filter(function (id, index, self) { return self.indexOf(id) === index; });
+        // Prepare array to store unique runes.
+        var runes = [];
+        // For each unique id add new unique rune.
+        uniqueIds.forEach(function (id) {
+            var rune = new UniqueRune_1.UniqueRune(
+            // Ip cost of specyfic rune.
+            _this.runes[id].ip, 
+            // Stats of specyfic rune.
+            _this.runes[id].stats, 
+            // quantity of exactly same runes.
+            _this.page[_this.active].runes.filter(function (rune) { return rune.id === id; }).reduce(function (a) { return a + 1; }, 0));
+            runes.push(rune);
+        });
+        // Call specyfic method to generate sums.
+        this.page[this.active].count(runes);
     };
     RuneService.prototype.isPercentage = function (unit) {
         return unit.indexOf('Percent') > -1 ? '%' : '';
