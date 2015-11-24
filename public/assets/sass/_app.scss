@@ -38,12 +38,29 @@
   margin: 0 -1rem;
 }
 
-.center {
+
+/* center */
+.center,
+.center-x,
+.center-y {
   display: flex;
+}
+
+.center {
   align-items: center;
   justify-content: center;
 }
 
+.center-x {
+  justify-content: center;
+}
+
+.center-y {
+  align-items: center;
+}
+
+
+/* autoscroll */
 .scrollable {
   flex: 1 1 auto;
   overflow-y: auto;
@@ -54,20 +71,23 @@
 @each $column in $columns {
   .col-#{$column} {
     width: #{$column / 12 * 100%};
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     padding: 0 1rem;
   }
 }
 
 
-// html
+// html and separate classes
 // ==========================================================================
 html {
   font-size: $base-font-size;
   font-family: 'Lato', sans-serif;
   color: #fff;
 }
+
+@include btn;
+@include header(1, 4rem);
 
 
 // Main header
@@ -78,16 +98,12 @@ html {
   background-color: $header-background-color;
 }
 
-
-
 // wrapper for content of the app(aside and section)
 .main-content {
 
   // fill empty space(up to 100vh(it is a column!))
   flex: 1;
 }
-
-
 
 
 // Main aside

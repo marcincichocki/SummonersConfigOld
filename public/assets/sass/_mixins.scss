@@ -1,0 +1,45 @@
+@mixin fill-color($bg, $border, $color) {
+  color: $color;
+  border-color: $border;
+  background-color: $bg;
+}
+
+
+@mixin btn {
+  .btn {
+    @include fill-color(transparent, $font-color-secondary, $font-color-secondary);
+
+    font-size: 2rem;
+
+    display: inline-flex;
+
+    padding: .5rem 1rem;
+
+    cursor: pointer;
+    transition: all .2s ease;
+    text-decoration: none;
+
+    border: 2px solid;
+    border-radius: .2rem;
+
+    align-items: center;
+    justify-content: center;
+
+    &[class$="active"] {
+      @include fill-color($color-special, $color-special, #fff);
+    }
+
+    &:hover:not([class$="active"]) {
+      @include fill-color(transparent, #fff, #fff);
+    }
+  }
+}
+
+@mixin header($type, $font-size) {
+  h#{$type} {
+    font-size: $font-size;
+
+    margin: 0;
+    @content;
+  }
+}

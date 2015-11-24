@@ -1,10 +1,14 @@
 <div class="container">
-  <header class="row main-header">
-    <div class="col-12">
+  <header class="row main-header center-y">
+    <div class="col-4">
       <h1>Summoner's Config</h1>
-      <a [router-link]="['/' + routes.home.as]">Home</a>
-      <a [router-link]="['/' + routes.runes.as]">Runes</a>
-      <a [router-link]="['/' + routes.masteries.as]">Masteries</a>
+    </div>
+    <div class="col-8">
+      <nav>
+        <a class="btn" [router-link]="['/' + routes.home.as]">Home</a>
+        <a class="btn" [router-link]="['/' + routes.runes.as]">Runes</a>
+        <a class="btn" [router-link]="['/' + routes.masteries.as]">Masteries</a>
+      </nav>
     </div>
   </header>
   <main class="row main-content">
