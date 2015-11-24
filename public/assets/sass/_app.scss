@@ -97,8 +97,10 @@ html {
 
 @include btn;
 
-h1 {
-  @include header(4rem);
+@each $selector, $font-size in (h1, 4rem), (h2, 3rem), (h3, 2rem), (p, 1.5rem) {
+  #{$selector} {
+    @include header($font-size);
+  }
 }
 
 form {
@@ -126,7 +128,6 @@ form {
 // Main header
 // ==========================================================================
 .main-header {
-  font-size: 1.5rem;
   height: $header-height;
   background-color: $header-background-color;
 }
@@ -174,11 +175,9 @@ form {
 }
 
 .page-name {
-  @include header(3rem) {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 
