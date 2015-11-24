@@ -39,7 +39,7 @@ var RuneIpTimeComponent = (function () {
     RuneIpTimeComponent = __decorate([
         angular2_1.Component({
             selector: 'rune-ip-time-component',
-            template: "\n    <div class=\"row\" *ng-if=\"!runeService.isEmpty()\">\n      <div class=\"col-xs-6\">\n        <h3>Average time</h3>\n        <p>{{ countTime() }}</p>\n      </div>\n      <div class=\"col-xs-6\">\n        <h3>Overall ip</h3>\n        <p>{{ ip }}</p>\n      </div>\n    </div>\n  ",
+            template: "\n    <div class=\"row\">\n      <div class=\"col-6\">\n        <h3>Average time</h3>\n        <p>{{ countTime() }}</p>\n      </div>\n      <div class=\"col-6\">\n        <h3>Overall ip</h3>\n        <p>{{ ip }}</p>\n      </div>\n    </div>\n  ",
             directives: [angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])

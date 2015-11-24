@@ -6,12 +6,12 @@ import {RuneService} from '../../services/rune/rune.service';
 @Component({
   selector: 'rune-ip-time-component',
   template: `
-    <div class="row" *ng-if="!runeService.isEmpty()">
-      <div class="col-xs-6">
+    <div class="row">
+      <div class="col-6">
         <h3>Average time</h3>
         <p>{{ countTime() }}</p>
       </div>
-      <div class="col-xs-6">
+      <div class="col-6">
         <h3>Overall ip</h3>
         <p>{{ ip }}</p>
       </div>
