@@ -38,6 +38,12 @@ import {RunePageGroupComponent} from '../runePageGroup/runePageGroup.component';
         </div>
       </div>
     </section>
-  `
+  `,
+  styles: [`
+    :host {
+      display: flex;
+      width: 100%;
+    }
+  `]
 })
 export class RunesComponent {}

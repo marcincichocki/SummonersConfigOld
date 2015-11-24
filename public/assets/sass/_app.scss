@@ -11,42 +11,104 @@
  */
 
 
-body {
-  color: $font-color-primary !important;
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+// wrapper for app
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.row {
+  display: flex;
+  max-width: 100%;
+
+  // wrap columns if more than 12
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrollable {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0px;
+}
+
+// create columns
+@each $column in $columns {
+  .col-#{$column} {
+    width: #{$column / 12 * 100%};
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+}
+
+
+// html
+// ==========================================================================
+html {
+  font-size: $base-font-size;
   font-family: 'Lato', sans-serif;
+  color: #fff;
 }
 
-// Make site 100vw wide
-#container {
-  padding: 0;
-}
 
-// Remove margin from "main" rows
-#header,
-#main {
-  margin: 0;
-}
-
-// Styles for main header
-#header {
-  background-color: $header-background-color;
+// Main header
+// ==========================================================================
+.main-header {
+  font-size: 1.5rem;
   height: $header-height;
+  background-color: $header-background-color;
 }
+
+
+
+// wrapper for content of the app(aside and section)
+.main-content {
+
+  // fill empty space(up to 100vh(it is a column!))
+  flex: 1;
+}
+
+
 
 
 // Main aside
 // ==========================================================================
 .main-aside {
-  background: $aside-background-color;
-  height: calc(100vh - #{$header-height});
-  display: flex;
-  flex-direction: column;
 
-  .row {
-    margin-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 20px;
-    padding-bottom: 20px;
+  // fixed width of aside
+  width: 50rem !important;
+  background-color: $aside-background-color;
+
+  > .row {
+    overflow-y: hidden;
+
+    // make some space between rows
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    + .row {
+      // visual break
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
   }
 }
 
@@ -55,20 +117,20 @@ body {
   display: flex;
   flex-wrap: wrap;
 
-  > button {
+  // TODO: button mixin
+  /* > button {
     padding: .375rem 0;
     width: calc(20% - 4px);
     margin: 2px;
-  }
+   }*/
 }
 
 
 // Main section
 // ==========================================================================
 .main-section {
-  background: $main-background-color;
-  height: calc(100vh - #{$header-height});
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: $section-background-color;
+
+  // fill empty space(width)
+  flex: 1;
 }

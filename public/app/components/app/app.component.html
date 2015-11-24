@@ -1,13 +1,13 @@
-<div class="container-fluid" id="container">
-  <header class="row" id="header">
-    <div class="col-xs-12">
+<div class="container">
+  <header class="row main-header">
+    <div class="col-12">
       <h1>Summoner's Config</h1>
       <a [router-link]="['/' + routes.home.as]">Home</a>
       <a [router-link]="['/' + routes.runes.as]">Runes</a>
       <a [router-link]="['/' + routes.masteries.as]">Masteries</a>
     </div>
   </header>
-  <main class="row" id="main">
+  <main class="row main-content">
     <router-outlet></router-outlet>
   </main>
   <tooltip-component></tooltip-component>

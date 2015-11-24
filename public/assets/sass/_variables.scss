@@ -1,8 +1,21 @@
+// define 1rem
+$base-font-size: 10px;
+
+// column layout
+$columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+
+// base font color
 $font-color-primary: #fff;
 
 
+/* main header */
 $header-background-color: #2e3340;
-$header-height: 100px;
+$header-height: 5rem;
 
+
+/* main aside */
 $aside-background-color: #232936;
-$main-background-color: #4f535e;
+
+
+/* main section */
+$section-background-color: #4f535e;
