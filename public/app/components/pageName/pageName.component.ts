@@ -11,22 +11,22 @@ import {SelectDirective} from '../../directives/select.directive';
       border-left: 5px solid #42A948;
     }
     .ng-invalid {
-      border-left: 5px solid #a94442;
+      border-left: 5px solid #a94442 !important;
     }
   `],
   template: `
     <div class="row" *ng-if="!showInput">
-      <div class="col-xs-8">
-        <h1>{{ service.getName() }}</h1>
+      <div class="col-8 center-y">
+        <h2 class="page-name">{{ service.getName() }}</h2>
       </div>
-      <div class="col-xs-4">
+      <div class="col-4">
         <button class="btn btn-block btn-primary"
           (click)="toggleInput()">Change</button>
       </div>
     </div>
-    <div class="row" *ng-if="showInput">
-      <form (ng-submit)="onSubmit()" #nf="form">
-        <div class="col-xs-8 form-group">
+    <div *ng-if="showInput">
+      <form class="row" (ng-submit)="onSubmit()" #nf="form">
+        <div class="col-8 form-group">
           <input class="form-control"
             type="text"
             [placeholder]="placeholder"
@@ -36,15 +36,17 @@ import {SelectDirective} from '../../directives/select.directive';
             #name="form"
             required>
         </div>
-        <div class="col-xs-4 form-group">
+        <div class="col-4 form-group">
           <input class="btn btn-block btn-primary" type="submit" value="Save"
             [disabled]="!nf.form.valid">
         </div>
       </form>
-      <div class="col-xs-offset-8 col-xs-4">
-        <button class="btn btn-block btn-primary"
-          (click)="toggleInput()">Close
-        </button>
+      <div class="row">
+        <div class="col-offset-8 col-4">
+          <button class="btn btn-block"
+            (click)="toggleInput()">Close
+          </button>
+        </div>
       </div>
     </div>
   `

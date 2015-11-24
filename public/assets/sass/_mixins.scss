@@ -4,23 +4,27 @@
   background-color: $bg;
 }
 
+@mixin control {
+  font-size: 2rem;
+  padding: .5rem 1rem;
+  border: 2px solid;
+  border-radius: .2rem;
+
+  @content;
+}
+
 
 @mixin btn {
   .btn {
+    @include control;
     @include fill-color(transparent, $font-color-secondary, $font-color-secondary);
 
-    font-size: 2rem;
 
     display: inline-flex;
-
-    padding: .5rem 1rem;
 
     cursor: pointer;
     transition: all .2s ease;
     text-decoration: none;
-
-    border: 2px solid;
-    border-radius: .2rem;
 
     align-items: center;
     justify-content: center;
@@ -29,7 +33,7 @@
       @include fill-color($color-special, $color-special, #fff);
     }
 
-    &:hover:not([class$="active"]) {
+    &:hover:not([class$="active"]):not([disabled]) {
       @include fill-color(transparent, #fff, #fff);
     }
 
@@ -39,19 +43,18 @@
 
     &.btn-block {
       width: 100%;
+      margin-bottom: .4rem;
     }
 
-    &.gap {
-      margin: .2rem;
+    &[disabled] {
+      background-color: $disabled;
     }
   }
 }
 
-@mixin header($type, $font-size) {
-  h#{$type} {
-    font-size: $font-size;
+@mixin header($font-size) {
+  font-size: $font-size;
 
-    margin: 0;
-    @content;
-  }
+  margin: 0;
+  @content;
 }

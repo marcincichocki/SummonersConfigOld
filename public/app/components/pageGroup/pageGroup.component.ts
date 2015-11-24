@@ -17,11 +17,11 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
         </button>
       </div>
       <div class="col-4">
-        <button class="btn btn-block gap"
+        <button class="btn btn-block"
           (click)="service.addPage()"
           [disabled]="service.page.length >= 20">Add
         </button>
-        <button class="btn btn-block gap"
+        <button class="btn btn-block"
           (click)="service.removePage()"
           [disabled]="service.page.length <= 1">Remove
         </button>

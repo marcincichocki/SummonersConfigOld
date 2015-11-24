@@ -73,11 +73,15 @@
 
 // create columns
 @each $column in $columns {
+  $width: $column / 12 * 100%;
+
   .col-#{$column} {
-    width: #{$column / 12 * 100%};
-    // display: flex;
-    // flex-direction: column;
+    width: $width;
     padding: 0 1rem;
+  }
+
+  .col-offset-#{$column} {
+    margin-left: $width;
   }
 }
 
@@ -91,8 +95,32 @@ html {
 }
 
 @include btn;
-@include header(1, 4rem);
 
+h1 {
+  @include header(4rem);
+}
+
+form {
+  input[type="text"] {
+    @include control {
+      border-color: $font-color-secondary;
+    }
+
+    color: #000;
+    width: 100%;
+    background-color: #dedede;
+
+    &:focus {
+      border-color: $color-special;
+      outline: none;
+      background-color: #fff;
+    }
+  }
+}
+
+[disabled] {
+  cursor: not-allowed !important;
+}
 
 // Main header
 // ==========================================================================
@@ -135,10 +163,19 @@ html {
 // Group of buttons to change active page.
 .page-group {
 
-   > .btn {
+  > .btn {
     width: calc(20% - .4rem);
-    margin: .2rem;
-   }
+    margin-right: .4rem;
+    margin-bottom: .4rem;
+  }
+}
+
+.page-name {
+  @include header(3rem) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 
