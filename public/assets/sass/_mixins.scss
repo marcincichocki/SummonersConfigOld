@@ -32,6 +32,18 @@
     &:hover:not([class$="active"]) {
       @include fill-color(transparent, #fff, #fff);
     }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.btn-block {
+      width: 100%;
+    }
+
+    &.gap {
+      margin: .2rem;
+    }
   }
 }
 

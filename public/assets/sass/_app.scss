@@ -38,6 +38,10 @@
   margin: 0 -1rem;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+}
 
 /* center */
 .center,
@@ -114,14 +118,14 @@ html {
   width: 50rem !important;
   background-color: $aside-background-color;
 
-  > .row {
+  > .component {
     overflow-y: hidden;
 
     // make some space between rows
     padding-top: 1rem;
     padding-bottom: 1rem;
 
-    + .row {
+    + .component {
       // visual break
       border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
@@ -130,15 +134,11 @@ html {
 
 // Group of buttons to change active page.
 .page-group {
-  display: flex;
-  flex-wrap: wrap;
 
-  // TODO: button mixin
-  /* > button {
-    padding: .375rem 0;
-    width: calc(20% - 4px);
-    margin: 2px;
-   }*/
+   > .btn {
+    width: calc(20% - .4rem);
+    margin: .2rem;
+   }
 }
 
 

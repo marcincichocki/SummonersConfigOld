@@ -21,13 +21,13 @@ import {RunePageGroupComponent} from '../runePageGroup/runePageGroup.component';
   ],
   selector: 'runes-component',
   template: `
-    <aside class="col-xs-4 main-aside">
-      <rune-page-group-component></rune-page-group-component>
-      <rune-page-name-component></rune-page-name-component>
-      <rune-stat-component></rune-stat-component>
-      <rune-ip-time-component></rune-ip-time-component>
+    <aside class="col-4 main-aside column">
+      <rune-page-group-component class="component"></rune-page-group-component>
+      <rune-page-name-component class="component"></rune-page-name-component>
+      <rune-stat-component class="component"></rune-stat-component>
+      <rune-ip-time-component class="component"></rune-ip-time-component>
     </aside>
-    <section class="col-xs-8 main-section">
+    <section class="col-8 main-section">
       <div class="runes-wrapper">
         <div class="rune-list-wrapper">
           <rune-search-component #search-component></rune-search-component>
