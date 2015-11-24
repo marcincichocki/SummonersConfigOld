@@ -49,9 +49,11 @@ export class Page {
   /**
    * Get first available slot for given typeId
    * @param {number} typeId - Number representing type.
+   * @param {number[]} [unofficial=[]] - Array of rune slots that will
+   * be added, but are not yet in this.runes.
    * @returns {(number | boolean)} Slot number 1-based
    */
-  getSlot(typeId: number): number {
+  getSlot(typeId: number, unofficial: number[] = []): number {
 
     // Get starting position.
     const from: number = this.slotStart[typeId];
@@ -60,7 +62,7 @@ export class Page {
     const to = from + 9 < 30 ? from + 9 : 30;
 
     // Get array of taken rune slots.
-    const runes: number[] = this.runes.map(rune => rune.runeSlot);
+    const runes: number[] = this.runes.map(rune => rune.runeSlot).concat(unofficial);
 
 
     // Loop through all slots for specyfic typeId.
@@ -71,25 +73,56 @@ export class Page {
     }
   }
 
+  /**
+   * Check if rune slot in null.
+   * @param  {number | void} slot - Slot of rune.
+   * @return {boolean} Value describing if slot is null.
+   */
+  checkSlot(slot: number | void): boolean {
+    return slot === null;
+  }
 
   /**
    * Update counter and add rune to this.runes array.
    * @param {Rune} rune - Rune which will be added.
    * @param {string} rune.id - Rune unique id.
-   * @param {number | null} [rune.runeSlot=null] - Unique slot which
+   * @param {number | void} [rune.runeSlot=null] - Unique slot which
    * rune will be placed in.
    * @param {number} typeId - Number representing type.
+   * @param {number} [ammount=1] - Ammount of runes to add.
    */
-  addRune(rune: Rune, typeId: number): void {
+  addRune(rune: Rune, typeId: number, ammount: number = 1, slots: number[]): void {
 
-    // Decrease counter.
-    this.counter[typeId] -= 1;
+    // Decrease counter by ammount of runes to add.
+    this.counter[typeId] -= ammount;
 
-    // Set rune slot if null.
-    if (rune.runeSlot === null) rune.runeSlot = this.getSlot(typeId);
+    // Adding multiple runes at once.
+    if (ammount > 1) {
 
-    // Add new rune.
-    this.runes.push(rune);
+      // create array of runes to add.
+      const runes = new Array(ammount).fill(rune);
+
+      // Update each rune slot if null.
+      if (this.checkSlot(rune.runeSlot)) {
+        runes.forEach((rune, index, thisArr) => {
+           thisArr[index] = new Rune(
+             rune.id,
+             slots[index] || this.getSlot(typeId, thisArr.map(rune => rune.runeSlot).filter(Boolean))
+           );
+        });
+      }
+
+      // Add new runes.
+      Array.prototype.push.apply(this.runes, runes);
+    } else {
+      // Add just one rune.
+
+      // Set rune slot if null.
+      if (this.checkSlot(rune.runeSlot)) rune.runeSlot = this.getSlot(typeId);
+
+      // Add new rune.
+      this.runes.push(rune);
+    }
   }
 
 

@@ -35,6 +35,16 @@ export class RuneListComponent {
   toggle(id: number) {
     this.show[id] = !this.show[id];
   }
+
+  addRune(event: MouseEvent, id: string): void {
+    if (event.ctrlKey) {
+      this.runeService.addRune(id, {
+        max: true
+      });
+    } else {
+      this.runeService.addRune(id);
+    }
+  }
 }
 
 class RunesByType {

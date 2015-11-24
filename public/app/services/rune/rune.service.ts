@@ -93,16 +93,29 @@ export class RuneService {
     return this.types.indexOf(this.runes[id].type);
   }
 
-  addRune(id: string, count = true): void {
-    const typeId: number = this.getTypeId(id);
+  getCounterOfTypeId(typeId: number) {
+    return this.page[this.active].counter[typeId];
+  }
 
-    if (this.page[this.active].counter[typeId] > 0) {
+  addRune(id: string, options?: {count?: boolean, ammount?: number, max?: boolean, slots?: number[]}): void {
+    const typeId: number = this.getTypeId(id);
+    const maxCounter = this.getCounterOfTypeId(typeId);
+    const defaults: {count: boolean, ammount: number, max: boolean, slots: number[]} = Object.assign({
+      count: true,
+      ammount: 1,
+      max: false,
+      slots: []
+    }, options);
+
+    if (defaults.max) defaults.ammount = maxCounter;
+
+    if (maxCounter - defaults.ammount >= 0) {
 
       // Add new rune
-      this.page[this.active].addRune(new Rune(id), typeId);
+      this.page[this.active].addRune(new Rune(id), typeId, defaults.ammount, defaults.slots);
 
       // update sums
-      if (count) this.count();
+      if (defaults.count) this.count();
     }
   }
 

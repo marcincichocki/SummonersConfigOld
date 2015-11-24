@@ -1,4 +1,5 @@
 var Sum_1 = require('./Sum');
+var Rune_1 = require('./Rune');
 /** Class representing a rune page. */
 var Page = (function () {
     /**
@@ -38,15 +39,18 @@ var Page = (function () {
     /**
      * Get first available slot for given typeId
      * @param {number} typeId - Number representing type.
+     * @param {number[]} [unofficial=[]] - Array of rune slots that will
+     * be added, but are not yet in this.runes.
      * @returns {(number | boolean)} Slot number 1-based
      */
-    Page.prototype.getSlot = function (typeId) {
+    Page.prototype.getSlot = function (typeId, unofficial) {
+        if (unofficial === void 0) { unofficial = []; }
         // Get starting position.
         var from = this.slotStart[typeId];
         // Get finishing position.
         var to = from + 9 < 30 ? from + 9 : 30;
         // Get array of taken rune slots.
-        var runes = this.runes.map(function (rune) { return rune.runeSlot; });
+        var runes = this.runes.map(function (rune) { return rune.runeSlot; }).concat(unofficial);
         // Loop through all slots for specyfic typeId.
         for (var i = from; i <= to; i += 1) {
             // If slot does not exist in array, return slot.
@@ -55,21 +59,48 @@ var Page = (function () {
         }
     };
     /**
+     * Check if rune slot in null.
+     * @param  {number | void} slot - Slot of rune.
+     * @return {boolean} Value describing if slot is null.
+     */
+    Page.prototype.checkSlot = function (slot) {
+        return slot === null;
+    };
+    /**
      * Update counter and add rune to this.runes array.
      * @param {Rune} rune - Rune which will be added.
      * @param {string} rune.id - Rune unique id.
-     * @param {number | null} [rune.runeSlot=null] - Unique slot which
+     * @param {number | void} [rune.runeSlot=null] - Unique slot which
      * rune will be placed in.
      * @param {number} typeId - Number representing type.
+     * @param {number} [ammount=1] - Ammount of runes to add.
      */
-    Page.prototype.addRune = function (rune, typeId) {
-        // Decrease counter.
-        this.counter[typeId] -= 1;
-        // Set rune slot if null.
-        if (rune.runeSlot === null)
-            rune.runeSlot = this.getSlot(typeId);
-        // Add new rune.
-        this.runes.push(rune);
+    Page.prototype.addRune = function (rune, typeId, ammount, slots) {
+        var _this = this;
+        if (ammount === void 0) { ammount = 1; }
+        // Decrease counter by ammount of runes to add.
+        this.counter[typeId] -= ammount;
+        // Adding multiple runes at once.
+        if (ammount > 1) {
+            // create array of runes to add.
+            var runes = new Array(ammount).fill(rune);
+            // Update each rune slot if null.
+            if (this.checkSlot(rune.runeSlot)) {
+                runes.forEach(function (rune, index, thisArr) {
+                    thisArr[index] = new Rune_1.Rune(rune.id, slots[index] || _this.getSlot(typeId, thisArr.map(function (rune) { return rune.runeSlot; }).filter(Boolean)));
+                });
+            }
+            // Add new runes.
+            Array.prototype.push.apply(this.runes, runes);
+        }
+        else {
+            // Add just one rune.
+            // Set rune slot if null.
+            if (this.checkSlot(rune.runeSlot))
+                rune.runeSlot = this.getSlot(typeId);
+            // Add new rune.
+            this.runes.push(rune);
+        }
     };
     /**
      * Update counter and remove rune from this.runes array.

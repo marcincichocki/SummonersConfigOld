@@ -9,7 +9,7 @@
         | filter: 'tier': searchComponent.getTiers())
         | search: 'description': searchComponent.query"
         [rune]="rune"
-        (click)="runeService.addRune(rune.id)"
+        (click)="addRune($event, rune.id)"
         [tooltip]="{
           type: 'rune',
           data: rune

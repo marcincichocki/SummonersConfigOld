@@ -92,14 +92,25 @@ var RuneService = (function () {
     RuneService.prototype.getTypeId = function (id) {
         return this.types.indexOf(this.runes[id].type);
     };
-    RuneService.prototype.addRune = function (id, count) {
-        if (count === void 0) { count = true; }
+    RuneService.prototype.getCounterOfTypeId = function (typeId) {
+        return this.page[this.active].counter[typeId];
+    };
+    RuneService.prototype.addRune = function (id, options) {
         var typeId = this.getTypeId(id);
-        if (this.page[this.active].counter[typeId] > 0) {
+        var maxCounter = this.getCounterOfTypeId(typeId);
+        var defaults = Object.assign({
+            count: true,
+            ammount: 1,
+            max: false,
+            slots: []
+        }, options);
+        if (defaults.max)
+            defaults.ammount = maxCounter;
+        if (maxCounter - defaults.ammount >= 0) {
             // Add new rune
-            this.page[this.active].addRune(new Rune_1.Rune(id), typeId);
+            this.page[this.active].addRune(new Rune_1.Rune(id), typeId, defaults.ammount, defaults.slots);
             // update sums
-            if (count)
+            if (defaults.count)
                 this.count();
         }
     };

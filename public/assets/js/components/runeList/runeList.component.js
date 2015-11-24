@@ -30,6 +30,16 @@ var RuneListComponent = (function () {
     RuneListComponent.prototype.toggle = function (id) {
         this.show[id] = !this.show[id];
     };
+    RuneListComponent.prototype.addRune = function (event, id) {
+        if (event.ctrlKey) {
+            this.runeService.addRune(id, {
+                max: true
+            });
+        }
+        else {
+            this.runeService.addRune(id);
+        }
+    };
     __decorate([
         angular2_1.Input(), 
         __metadata('design:type', Object)
