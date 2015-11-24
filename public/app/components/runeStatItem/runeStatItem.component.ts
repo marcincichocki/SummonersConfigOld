@@ -5,15 +5,10 @@ import {RuneService} from '../../services/rune/rune.service';
 
 @Component({
   selector: 'rune-stat-item-component',
-  styles: [`
-    h5 {
-      font-weight: bold;
-    }
-  `],
   template: `
     <div>
-      <h5>{{ runeService.stats[sum.unitId] }}</h5>
-      <p>{{ sum.value }}{{ runeService.isPercentage(sum.unitId) }}</p>
+      <h3 class="rune-stat-unit">{{ runeService.stats[sum.unitId] }}</h3>
+      <p class="rune-stat-value">{{ sum.value }}{{ runeService.isPercentage(sum.unitId) }}</p>
     </div>
   `
 })

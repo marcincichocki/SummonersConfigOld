@@ -7,20 +7,26 @@ import {RuneStatItemComponent} from '../runeStatItem/runeStatItem.component';
 @Component({
   selector: 'rune-stat-component',
   template: `
-    <div class="row">
-      <div class="col-xs-8">
+    <div class="row grow">
+      <div class="col-8 column scrollable">
         <rune-stat-item-component
           *ng-for="#sum of runeService.page[runeService.active].sums, #i = index"
           [sum]="sum">
         </rune-stat-item-component>
       </div>
-      <div class="col-xs-4">
-        <button class="btn btn-block btn-primary"
+      <div class="col-4">
+        <button class="btn btn-block"
           (click)="runeService.clearPage()"
           [disabled]="runeService.isEmpty()">Clear</button>
       </div>
     </div>
   `,
+  styles: [`
+    :host {
+      display: flex;
+      flex-shrink: 1 !important;
+    }
+  `],
   directives: [CORE_DIRECTIVES, RuneStatItemComponent]
 })
 export class RuneStatComponent {

@@ -3,6 +3,16 @@
  * .active etc. please put in component styles.
  */
 
+.rune-stat-unit {
+  @include header(2rem);
+}
+
+.rune-stat-value {
+  @include header(1.5rem) {
+    margin-bottom: 1rem;
+  }
+}
+
 .runes-wrapper {
   display: flex;
   height: 428px;

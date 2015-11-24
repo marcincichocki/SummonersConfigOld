@@ -43,6 +43,10 @@
   flex-direction: column;
 }
 
+.grow {
+  flex-grow: 1;
+}
+
 /* center */
 .center,
 .center-x,
@@ -63,12 +67,9 @@
   align-items: center;
 }
 
-
 /* autoscroll */
 .scrollable {
-  flex: 1 1 auto;
   overflow-y: auto;
-  min-height: 0px;
 }
 
 // create columns
@@ -132,6 +133,7 @@ form {
 
 // wrapper for content of the app(aside and section)
 .main-content {
+  overflow: hidden;
 
   // fill empty space(up to 100vh(it is a column!))
   flex: 1;
@@ -148,6 +150,7 @@ form {
 
   > .component {
     overflow-y: hidden;
+    flex-shrink: 0;
 
     // make some space between rows
     padding-top: 1rem;

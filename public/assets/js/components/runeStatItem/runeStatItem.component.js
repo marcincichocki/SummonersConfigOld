@@ -22,8 +22,7 @@ var RuneStatItemComponent = (function () {
     RuneStatItemComponent = __decorate([
         angular2_1.Component({
             selector: 'rune-stat-item-component',
-            styles: ["\n    h5 {\n      font-weight: bold;\n    }\n  "],
-            template: "\n    <div>\n      <h5>{{ runeService.stats[sum.unitId] }}</h5>\n      <p>{{ sum.value }}{{ runeService.isPercentage(sum.unitId) }}</p>\n    </div>\n  "
+            template: "\n    <div>\n      <h3 class=\"rune-stat-unit\">{{ runeService.stats[sum.unitId] }}</h3>\n      <p class=\"rune-stat-value\">{{ sum.value }}{{ runeService.isPercentage(sum.unitId) }}</p>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])
     ], RuneStatItemComponent);
