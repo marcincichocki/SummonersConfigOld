@@ -19,6 +19,7 @@
   "homepage": "https://github.com/marcincichocki/SummonersConfig#readme",
   "dependencies": {
     "angular2": "2.0.0-alpha.44",
+    "normalize.css": "^3.0.3",
     "systemjs": "0.19.2"
   },
   "devDependencies": {
