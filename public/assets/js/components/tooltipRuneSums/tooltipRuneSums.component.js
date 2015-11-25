@@ -22,7 +22,7 @@ var TooltipRuneSumsComponent = (function () {
     TooltipRuneSumsComponent = __decorate([
         angular2_1.Component({
             selector: 'tooltip-rune-sums-component',
-            template: "\n    <div class=\"tooltip-rune-sums\">\n      <h3 class=\"rune-page-name\">{{ runeService.getName(data.index) }}</h3>\n      <p *ng-for=\"#sum of data.sums\">\n        <span>{{ sum.value }}{{ runeService.isPercentage(sum.unitId) }}</span>\n        <span>{{ runeService.stats[sum.unitId] }}</span>\n      </p>\n    </div>\n  ",
+            template: "\n    <div class=\"tooltip-rune-sums\">\n      <h3 class=\"name\">#{{data.index + 1}} - {{ runeService.getName(data.index) }}</h3>\n      <p class=\"sum\" *ng-for=\"#sum of data.sums\">\n        <span class=\"value\">{{ sum.value }}{{ runeService.isPercentage(sum.unitId) }}</span>\n        <span class=\"unit\">{{ runeService.stats[sum.unitId] }}</span>\n      </p>\n    </div>\n  ",
             directives: [angular2_1.NgFor]
         }), 
         __metadata('design:paramtypes', [rune_service_1.RuneService])

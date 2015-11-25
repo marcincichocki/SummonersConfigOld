@@ -175,6 +175,60 @@ html {
 .translateY { transform: translateY(-100%); }
 
 
+// Tooltip rune
+// ==========================================================================
+.tooltip-rune {
+  padding: 0 1rem;
+
+  text-align: center;
+  > .name {
+    margin: 1.5rem 0 .5rem;
+    @each $type, $color in $rune-colors {
+      &.#{$type} {
+        color: $color;
+      }
+    }
+  }
+  > .description {
+    font-size: 1.4rem;
+
+    margin-bottom: 1rem;
+  }
+  > .tier, > .ip {
+    font-size: 1.2rem;
+
+    position: absolute;
+    top: 2px;
+  }
+  > .tier {
+    left: 3px;
+
+    color: orange;
+  }
+  > .ip {
+    right: 3px;
+  }
+}
+
+
+// Tooltip rune sums
+// ==========================================================================
+.tooltip-rune-sums {
+  padding: 1rem;
+
+  text-align: center;
+  > .name {
+    margin-bottom: .5rem;
+  }
+  > .sum {
+    margin-bottom: .2rem;
+    > .unit {
+      font-weight: bold;
+    }
+  }
+}
+
+
 // Tooltip mastery
 // ==========================================================================
 .tooltip-mastery {
@@ -215,6 +269,19 @@ html {
     }
   }
 }
+
+
+// Tooltip mastery sums
+// ==========================================================================
+.tooltip-mastery-sums {
+  padding: 1rem;
+
+  text-align: center;
+  > .name {
+    margin-bottom: .5rem;
+  }
+}
+
 
 // Main header
 // ==========================================================================

@@ -23,7 +23,7 @@ var TooltipMasterySumsComponent = (function () {
     TooltipMasterySumsComponent = __decorate([
         angular2_1.Component({
             selector: 'tooltip-mastery-sums-component',
-            template: "\n    <h3 class=\"mastery-page-name\">{{ masteryService.getName(data.index) }}</h3>\n    <div class=\"mastery-category-points\">\n      <mastery-page-stats-item-component\n        *ng-for=\"#sum of data.sums, #i = index\"\n        [sum]=\"sum\"\n        [index]=\"i + 1\">\n      </mastery-page-stats-item-component>\n    </div>\n  ",
+            template: "\n    <div class=\"tooltip-mastery-sums\">\n      <h3 class=\"name\">#{{ data.index + 1 }} - {{ masteryService.getName(data.index) }}</h3>\n      <div class=\"mastery-category-points\">\n        <mastery-page-stats-item-component\n          *ng-for=\"#sum of data.sums, #i = index\"\n          [sum]=\"sum\"\n          [index]=\"i + 1\">\n        </mastery-page-stats-item-component>\n      </div>\n    </div>\n  ",
             directives: [angular2_1.NgFor, masteryPageStatsItem_component_1.MasteryPageStatsItemComponent]
         }), 
         __metadata('design:paramtypes', [mastery_service_1.MasteryService])

@@ -7,13 +7,15 @@ import {MasteryPageStatsItemComponent} from '../masteryPageStatsItem/masteryPage
 @Component({
   selector: 'tooltip-mastery-sums-component',
   template: `
-    <h3 class="mastery-page-name">{{ masteryService.getName(data.index) }}</h3>
-    <div class="mastery-category-points">
-      <mastery-page-stats-item-component
-        *ng-for="#sum of data.sums, #i = index"
-        [sum]="sum"
-        [index]="i + 1">
-      </mastery-page-stats-item-component>
+    <div class="tooltip-mastery-sums">
+      <h3 class="name">#{{ data.index + 1 }} - {{ masteryService.getName(data.index) }}</h3>
+      <div class="mastery-category-points">
+        <mastery-page-stats-item-component
+          *ng-for="#sum of data.sums, #i = index"
+          [sum]="sum"
+          [index]="i + 1">
+        </mastery-page-stats-item-component>
+      </div>
     </div>
   `,
   directives: [NgFor, MasteryPageStatsItemComponent]

@@ -7,10 +7,10 @@ import {RuneService} from '../../services/rune/rune.service';
   selector: 'tooltip-rune-sums-component',
   template: `
     <div class="tooltip-rune-sums">
-      <h3 class="rune-page-name">{{ runeService.getName(data.index) }}</h3>
-      <p *ng-for="#sum of data.sums">
-        <span>{{ sum.value }}{{ runeService.isPercentage(sum.unitId) }}</span>
-        <span>{{ runeService.stats[sum.unitId] }}</span>
+      <h3 class="name">#{{data.index + 1}} - {{ runeService.getName(data.index) }}</h3>
+      <p class="sum" *ng-for="#sum of data.sums">
+        <span class="value">{{ sum.value }}{{ runeService.isPercentage(sum.unitId) }}</span>
+        <span class="unit">{{ runeService.stats[sum.unitId] }}</span>
       </p>
     </div>
   `,
