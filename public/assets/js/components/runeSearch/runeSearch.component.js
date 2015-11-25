@@ -13,6 +13,7 @@ var angular2_1 = require('angular2/angular2');
 var RuneSearchComponent = (function () {
     function RuneSearchComponent() {
         this.query = '';
+        this.unavailable = false;
         this.tiers = [
             new Tier(1, 'Tier 1', false),
             new Tier(2, 'Tier 2', false),
@@ -26,7 +27,7 @@ var RuneSearchComponent = (function () {
         angular2_1.Component({
             directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES],
             selector: 'rune-search-component',
-            template: "\n    <div class=\"form-inline\">\n      <div class=\"form-group\">\n        <input class=\"form-control\" type=\"text\" placeholder=\"Search\" [(ng-model)]=\"query\">\n      </div>\n      <div class=\"form-group\">\n        <label class=\"checkbox\" *ng-for=\"#tier of tiers\">\n          <input type=\"checkbox\" [(ng-model)]=\"tier.selected\">{{ tier.name }}\n        </label>\n      </div>\n    </div>\n  "
+            template: "\n    <div class=\"form-inline\">\n      <div class=\"form-group\">\n        <input class=\"form-control\" type=\"text\" placeholder=\"Search\" [(ng-model)]=\"query\">\n      </div>\n      <div class=\"form-group\">\n        <label class=\"checkbox\" *ng-for=\"#tier of tiers\">\n          <input type=\"checkbox\" [(ng-model)]=\"tier.selected\">{{ tier.name }}\n        </label>\n      </div>\n      <div class=\"form-group\">\n        <label class=\"checkbox\">\n          <input type=\"checkbox\" [(ng-model)]=\"unavailable\">Unavailable\n        </label>\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], RuneSearchComponent);

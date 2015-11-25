@@ -15,7 +15,7 @@ var Filter = (function () {
     }
     Filter.prototype.transform = function (arr, _a) {
         var prop = _a[0], value = _a[1];
-        if (typeof value === 'string') {
+        if ((typeof value === 'string') || (typeof value === 'boolean')) {
             return arr.filter(function (obj) { return obj[prop] === value; });
         }
         else if (Array.isArray(value)) {

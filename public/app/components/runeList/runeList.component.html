@@ -5,8 +5,9 @@
     </header>
     <section [hidden]="!show[i]">
       <rune-list-item-component
-        *ng-for="#rune of (type.runes
+        *ng-for="#rune of ((type.runes
         | filter: 'tier': searchComponent.getTiers())
+        | filter: 'available': !searchComponent.unavailable)
         | search: 'description': searchComponent.query"
         [rune]="rune"
         (click)="addRune($event, rune.id)"

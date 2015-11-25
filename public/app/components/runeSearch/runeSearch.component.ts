@@ -14,11 +14,17 @@ import {Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
           <input type="checkbox" [(ng-model)]="tier.selected">{{ tier.name }}
         </label>
       </div>
+      <div class="form-group">
+        <label class="checkbox">
+          <input type="checkbox" [(ng-model)]="unavailable">Unavailable
+        </label>
+      </div>
     </div>
   `
 })
 export class RuneSearchComponent {
   public query: string = '';
+  public unavailable: boolean = false;
   public tiers: Tier[] = [
     new Tier(1, 'Tier 1', false),
     new Tier(2, 'Tier 2', false),
