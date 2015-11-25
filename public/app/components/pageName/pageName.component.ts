@@ -1,11 +1,12 @@
 import {Component, CORE_DIRECTIVES, FORM_DIRECTIVES, Input} from 'angular2/angular2';
 
 import {SelectDirective} from '../../directives/select.directive';
+import {TooltipDirective} from '../../directives/tooltip.directive';
 
 
 @Component({
   selector: 'page-name-component',
-  directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, SelectDirective],
+  directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, SelectDirective, TooltipDirective],
   styles: [`
     .ng-valid[required] {
       border-left: 5px solid #42A948;
@@ -17,7 +18,11 @@ import {SelectDirective} from '../../directives/select.directive';
   template: `
     <div class="row" *ng-if="!showInput">
       <div class="col-8 center-y">
-        <h2 class="page-name">{{ service.getName() }}</h2>
+        <h2 class="page-name"
+          [tooltip]="{
+            type: 'text',
+            data: service.getName()
+          }">{{ service.getName() }}</h2>
       </div>
       <div class="col-4">
         <button class="btn btn-block btn-primary"

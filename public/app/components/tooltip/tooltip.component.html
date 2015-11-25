@@ -28,8 +28,7 @@
     [data]="tooltipService.tooltip.data">
   </tooltip-mastery-sums-component>
 
-  <!-- TODO: logic and layout for defualt tooltip(plain text) -->
-  <div *ng-when-default>
-    <p>Error!</p>
+  <div class="tooltip-default" *ng-switch-default>
+    <p>{{ tooltipService.tooltip.data }}</p>
   </div>
 </div>

@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var select_directive_1 = require('../../directives/select.directive');
+var tooltip_directive_1 = require('../../directives/tooltip.directive');
 var PageNameComponent = (function () {
     function PageNameComponent() {
         this.showInput = false;
@@ -35,9 +36,9 @@ var PageNameComponent = (function () {
     PageNameComponent = __decorate([
         angular2_1.Component({
             selector: 'page-name-component',
-            directives: [angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES, select_directive_1.SelectDirective],
+            directives: [angular2_1.CORE_DIRECTIVES, angular2_1.FORM_DIRECTIVES, select_directive_1.SelectDirective, tooltip_directive_1.TooltipDirective],
             styles: ["\n    .ng-valid[required] {\n      border-left: 5px solid #42A948;\n    }\n    .ng-invalid {\n      border-left: 5px solid #a94442 !important;\n    }\n  "],
-            template: "\n    <div class=\"row\" *ng-if=\"!showInput\">\n      <div class=\"col-8 center-y\">\n        <h2 class=\"page-name\">{{ service.getName() }}</h2>\n      </div>\n      <div class=\"col-4\">\n        <button class=\"btn btn-block btn-primary\"\n          (click)=\"toggleInput()\">Change</button>\n      </div>\n    </div>\n    <div *ng-if=\"showInput\">\n      <form class=\"row\" (ng-submit)=\"onSubmit()\" #nf=\"form\">\n        <div class=\"col-8 form-group\">\n          <input class=\"form-control\"\n            type=\"text\"\n            [placeholder]=\"placeholder\"\n            [(ng-model)]=\"model.name\"\n            select\n            ng-control=\"name\"\n            #name=\"form\"\n            required>\n        </div>\n        <div class=\"col-4 form-group\">\n          <input class=\"btn btn-block btn-primary\" type=\"submit\" value=\"Save\"\n            [disabled]=\"!nf.form.valid\">\n        </div>\n      </form>\n      <div class=\"row\">\n        <div class=\"col-offset-8 col-4\">\n          <button class=\"btn btn-block\"\n            (click)=\"toggleInput()\">Close\n          </button>\n        </div>\n      </div>\n    </div>\n  "
+            template: "\n    <div class=\"row\" *ng-if=\"!showInput\">\n      <div class=\"col-8 center-y\">\n        <h2 class=\"page-name\"\n          [tooltip]=\"{\n            type: 'text',\n            data: service.getName()\n          }\">{{ service.getName() }}</h2>\n      </div>\n      <div class=\"col-4\">\n        <button class=\"btn btn-block btn-primary\"\n          (click)=\"toggleInput()\">Change</button>\n      </div>\n    </div>\n    <div *ng-if=\"showInput\">\n      <form class=\"row\" (ng-submit)=\"onSubmit()\" #nf=\"form\">\n        <div class=\"col-8 form-group\">\n          <input class=\"form-control\"\n            type=\"text\"\n            [placeholder]=\"placeholder\"\n            [(ng-model)]=\"model.name\"\n            select\n            ng-control=\"name\"\n            #name=\"form\"\n            required>\n        </div>\n        <div class=\"col-4 form-group\">\n          <input class=\"btn btn-block btn-primary\" type=\"submit\" value=\"Save\"\n            [disabled]=\"!nf.form.valid\">\n        </div>\n      </form>\n      <div class=\"row\">\n        <div class=\"col-offset-8 col-4\">\n          <button class=\"btn btn-block\"\n            (click)=\"toggleInput()\">Close\n          </button>\n        </div>\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], PageNameComponent);
