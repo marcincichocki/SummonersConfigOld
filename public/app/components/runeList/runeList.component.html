@@ -1,7 +1,7 @@
-<div id="runes-list">
-  <div *ng-for="#type of types, #i = index">
-    <header class="type-{{ type.name }}" (click)="toggle(i)">
-      <h1 [ng-class]="{active: show[i]}">{{ type.name }}</h1>
+<div id="rune-list">
+  <div class="rune-list-type" *ng-for="#type of types, #i = index">
+    <header class="center-y" (click)="toggle(i)">
+      <h3 [class]="type.name" [ng-class]="{active: show[i]}">{{ type.name }}</h3>
     </header>
     <section [hidden]="!show[i]">
       <rune-list-item-component

@@ -12,7 +12,6 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
   selector: 'rune-list-component',
   pipes: [SearchPipe, Filter],
   templateUrl: './app/components/runeList/runeList.component.html',
-  styleUrls: [`./app/components/runeList/style.css`],
   directives: [NgFor, NgClass, RuneListItemComponent, TooltipDirective]
 })
 export class RuneListComponent {
