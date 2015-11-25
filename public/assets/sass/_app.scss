@@ -151,6 +151,70 @@ html {
 }
 
 
+/* ==========================================================================
+   Tooltip
+
+   TODO: Update logic to accept auto height.
+   ========================================================================== */
+#tooltip {
+  position: absolute;
+  z-index: 999;
+
+  overflow: hidden;
+
+  width: 250px;
+  max-width: 250px;
+  max-height: 200px;
+
+  border-radius: 5px;
+  background-color: rgba(0,0,0, .9);
+  box-shadow: 0 0 10px 0 #000;
+}
+
+.translateX { transform: translateX(-100%); }
+.translateY { transform: translateY(-100%); }
+
+
+// Tooltip mastery
+// ==========================================================================
+.tooltip-mastery {
+  padding: .5rem;
+  @each $index, $color in $mastery-colors {
+    > .c#{$index} {
+      color: $color;
+    }
+  }
+  > .rank {
+    font-size: 1.6rem;
+
+    color: map-get($ranks, "unavailable");
+    &.available {
+      color: map-get($ranks, "available");
+    }
+    &.active {
+      color: map-get($ranks, "active");
+    }
+  }
+  > .description {
+    font-size: 1.4rem;
+
+    display: none;
+
+    margin: .3rem 0;
+    &.current,
+    &.next {
+      display: block;
+    }
+    &.next {
+      color: #666;
+      &::before {
+        content: "Next rank:\00a0";
+
+        color: #999;
+      }
+    }
+  }
+}
 
 // Main header
 // ==========================================================================

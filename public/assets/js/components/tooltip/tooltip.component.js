@@ -23,7 +23,6 @@ var TooltipComponent = (function () {
         angular2_1.Component({
             selector: 'tooltip-component',
             templateUrl: './app/components/tooltip/tooltip.component.html',
-            styleUrls: ['./app/components/tooltip/style.css'],
             directives: [
                 angular2_1.CORE_DIRECTIVES,
                 tooltipRune_component_1.TooltipRuneComponent,

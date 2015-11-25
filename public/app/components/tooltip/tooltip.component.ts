@@ -10,7 +10,6 @@ import {TooltipMasterySumsComponent} from '../tooltipMasterySums/tooltipMasteryS
 @Component({
   selector: 'tooltip-component',
   templateUrl: './app/components/tooltip/tooltip.component.html',
-  styleUrls: ['./app/components/tooltip/style.css'],
   directives: [
     CORE_DIRECTIVES,
     TooltipRuneComponent,

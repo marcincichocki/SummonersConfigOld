@@ -32,3 +32,24 @@ $rune-colors: (
   "glyph": #4fb0f9,
   "quintessence": #9f60eb
 );
+
+
+/* Masteries */
+$mastery-colors: (
+
+  // ferocity
+  "1": #a1161f,
+
+  // cunning
+  "2": #9f60eb,
+
+  // resolve
+  "3": #4fb0f9
+);
+
+
+$ranks: (
+  "unavailable": #999,
+  "available": #478fca,
+  "active": #ffd700
+);
