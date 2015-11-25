@@ -14,12 +14,11 @@
 }
 
 .category {
-  display: flex;
-  flex-direction: column;
+  @include column;
 
-  padding: 1rem 2.5rem;
+  padding: 1.5rem 4.2rem;
 
-  flex: 1 1 33.333333%;
+  flex: 1 0;
   &.ferocity {
     order: -1;
   }
@@ -35,44 +34,44 @@
   &.even {
     justify-content: center;
   }
+
+  &:not(.even) .mastery {
+    transform: scale(.85);
+    transform-origin: 0 0;
+  }
 }
-
-
 
 .mastery {
   position: relative;
 
   width: 54px;
   height: 54px;
-  margin: 7px 5px;
+  margin: .7rem .5rem;
 
   user-select: none;
 
   color: #999;
 
   box-shadow: 0 0 10px 0 #000;
-  &::before {
+  &::before,
+  &::after {
     width: 100%;
     height: 100%;
     content: "";
     position: absolute;
-    background-image: url("../img/masteries/masteries-sprite.jpg");
     background-repeat: no-repeat;
+  }
+  &::before {
+    background-image: url("../img/masteries/masteries-sprite.jpg");
     filter: grayscale(100%);
   }
   &::after {
-    position: absolute;
     top: 50%;
     left: 50%;
 
-    width: 100%;
-    height: 100%;
-
-    content: "";
     transform: translate(-50%, -50%);
 
     background-image: url("../img/masteries/mastery-assets-sprite.png");
-    background-repeat: no-repeat;
     background-position: 0 0;
   }
   &.available {
@@ -85,30 +84,21 @@
     }
   }
   > .rank {
-    font-size: .7rem;
+    @include center;
+
+    font-size: 1.2rem;
 
     position: absolute;
     z-index: 1;
-    right: -10px;
-    bottom: -10px;
+    right: -1rem;
+    bottom: -1rem;
 
-    display: flex;
-
-    width: 30px;
-    height: 20px;
-    margin: 0;
+    width: 3rem;
+    height: 2rem;
 
     border: 2px solid;
     background: #000;
-
-    align-items: center;
-    justify-content: center;
   }
-}
-
-.mastery-row:not(.even) .mastery {
-  transform: scale(.85);
-  transform-origin: 0 0;
 }
 
 .row2 .max::after {

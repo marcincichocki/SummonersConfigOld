@@ -7,14 +7,12 @@ import {MasteryService} from '../../services/mastery/mastery.service';
 @Component({
   selector: 'mastery-page-category-component',
   template: `
-    <div class="category {{ category | lowercase }}">
-      <mastery-page-row-component
-        *ng-for="#row of masteryService.grid[category], #j = index"
-        [row]="row"
-        [j]="j">
-      </mastery-page-row-component>
-      <h3>{{ category }}: {{ masteryService.page[masteryService.active].sums[i] }}</h3>
-    </div>
+    <mastery-page-row-component
+      *ng-for="#row of masteryService.grid[category], #j = index"
+      [row]="row"
+      [j]="j">
+    </mastery-page-row-component>
+    <h2>{{ category }}: {{ masteryService.page[masteryService.active].sums[i] }}</h2>
   `,
   directives: [MasteryPageRowComponent, CORE_DIRECTIVES]
 })
