@@ -59,39 +59,36 @@
 }
 
 .rune {
-  height: 80px;
-  width: 100%;
-  background: linear-gradient(#f1ebd5, #e0ce9f);
-  border: 1px #987b2d solid;
-  border-right: 1px #c6b37f solid;
   position: relative;
-  overflow: hidden;
+
+  min-height: 6rem;
+
   cursor: pointer;
-  color: #000;
-  font-size: .9rem;
-  display: flex;
   user-select: none;
 
-  .rune-description {
-    width: 120px;
-    display: flex;
-    align-items: center;
-  }
-
-  .rune-image {
-    background-color: transparent;
-    background-image: url('../img/runes/runes-sprite-small.png');
+  color: #000;
+  border-bottom: 1px solid #ceb576;
+  background: linear-gradient(#f1ebd5, #e0ce9f);
+  > .rune-image {
     position: static;
-  }
 
+    margin: 0 .3rem;
+
+    background-image: url("../img/runes/runes-sprite-small.png");
+  }
+  > .rune-description {
+    font-size: 1.4rem;
+
+    flex: 1;
+  }
   .rune-ip {
+    font-size: 1.1rem;
+
     position: absolute;
     top: 0;
-    font-size: .8rem;
     right: 0;
-
     &::after {
-      content: 'ip';
+      content: "ip";
     }
   }
 }
