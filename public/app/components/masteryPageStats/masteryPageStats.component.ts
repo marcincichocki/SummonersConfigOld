@@ -8,7 +8,7 @@ import {MasteryPageStatsItemComponent} from '../masteryPageStatsItem/masteryPage
     selector: 'mastery-page-stats-component',
     template: `
       <div class="row">
-        <div class="col-xs-8">
+        <div class="col-8">
           <div class="mastery-category-points">
             <mastery-page-stats-item-component
               *ng-for="#sum of masteryService.getSums(), #i = index"
@@ -16,12 +16,16 @@ import {MasteryPageStatsItemComponent} from '../masteryPageStatsItem/masteryPage
               [index]="i + 1">
             </mastery-page-stats-item-component>
           </div>
-          <p>Points available: {{ masteryService.getPointsMax() }}</p>
         </div>
-        <div class="col-xs-4">
-          <button class="btn btn-block btn-primary"
+        <div class="col-4">
+          <button class="btn btn-block"
             (click)="masteryService.clearPage()"
             [disabled]="masteryService.isEmpty()">Clear</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h2>Points available: {{ masteryService.getPointsMax() }}</h2>
         </div>
       </div>
     `,

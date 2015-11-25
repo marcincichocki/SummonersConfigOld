@@ -132,15 +132,15 @@
   background-position: 0 -180px;
 }
 
-.mastery-category-points,
-.mastery-category-point {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.mastery-category-points {
+  @include center;
 }
 
 .mastery-category-point {
-  flex-direction: column;
+  @include column;
+
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .c1-image,
@@ -150,10 +150,6 @@
   height: 50px;
   background-image: url("../img/masteries/mastery-assets-sprite.png");
   background-repeat: no-repeat;
-}
-
-.mastery-keystones {
-  display: flex;
 }
 
 .c1-image {background-position: -68px 0; }

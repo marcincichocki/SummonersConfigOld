@@ -15,14 +15,20 @@ import {MasteryPageStatsComponent} from '../masteryPageStats/masteryPageStats.co
   ],
   selector: 'masteries-component',
   template: `
-    <aside class="col-xs-4 main-aside">
-      <mastery-page-group-component></mastery-page-group-component>
-      <mastery-page-name-component></mastery-page-name-component>
-      <mastery-page-stats-component></mastery-page-stats-component>
+    <aside class="col-4 main-aside column">
+      <mastery-page-group-component class="component"></mastery-page-group-component>
+      <mastery-page-name-component class="component"></mastery-page-name-component>
+      <mastery-page-stats-component class="component"></mastery-page-stats-component>
     </aside>
-    <section class="col-xs-8 main-section">
+    <section class="col-8 main-section center">
       <mastery-page-component></mastery-page-component>
     </section>
-  `
+  `,
+  styles: [`
+    :host {
+      display: flex;
+      width: 100%;
+    }
+  `]
 })
 export class MasteriesComponent {}

@@ -26,7 +26,8 @@ var MasteriesComponent = (function () {
                 masteryPageStats_component_1.MasteryPageStatsComponent
             ],
             selector: 'masteries-component',
-            template: "\n    <aside class=\"col-xs-4 main-aside\">\n      <mastery-page-group-component></mastery-page-group-component>\n      <mastery-page-name-component></mastery-page-name-component>\n      <mastery-page-stats-component></mastery-page-stats-component>\n    </aside>\n    <section class=\"col-xs-8 main-section\">\n      <mastery-page-component></mastery-page-component>\n    </section>\n  "
+            template: "\n    <aside class=\"col-4 main-aside column\">\n      <mastery-page-group-component class=\"component\"></mastery-page-group-component>\n      <mastery-page-name-component class=\"component\"></mastery-page-name-component>\n      <mastery-page-stats-component class=\"component\"></mastery-page-stats-component>\n    </aside>\n    <section class=\"col-8 main-section center\">\n      <mastery-page-component></mastery-page-component>\n    </section>\n  ",
+            styles: ["\n    :host {\n      display: flex;\n      width: 100%;\n    }\n  "]
         }), 
         __metadata('design:paramtypes', [])
     ], MasteriesComponent);
