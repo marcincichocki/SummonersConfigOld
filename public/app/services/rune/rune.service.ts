@@ -100,16 +100,18 @@ export class RuneService {
   addRune(id: string, options?: {count?: boolean, ammount?: number, max?: boolean, slots?: number[]}): void {
     const typeId: number = this.getTypeId(id);
     const maxCounter = this.getCounterOfTypeId(typeId);
-    const defaults: {count: boolean, ammount: number, max: boolean, slots: number[]} = Object.assign({
-      count: true,
-      ammount: 1,
-      max: false,
-      slots: []
-    }, options);
 
-    if (defaults.max) defaults.ammount = maxCounter;
+    // Is there a room for this rune?
+    if (maxCounter > 0) {
 
-    if (maxCounter - defaults.ammount >= 0) {
+      const defaults: {count: boolean, ammount: number, max: boolean, slots: number[]} = Object.assign({
+        count: true,
+        ammount: 1,
+        max: false,
+        slots: []
+      }, options);
+
+      if (defaults.max) defaults.ammount = maxCounter;
 
       // Add new rune
       this.page[this.active].addRune(new Rune(id), typeId, defaults.ammount, defaults.slots);

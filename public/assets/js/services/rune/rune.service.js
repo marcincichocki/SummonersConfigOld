@@ -98,15 +98,16 @@ var RuneService = (function () {
     RuneService.prototype.addRune = function (id, options) {
         var typeId = this.getTypeId(id);
         var maxCounter = this.getCounterOfTypeId(typeId);
-        var defaults = Object.assign({
-            count: true,
-            ammount: 1,
-            max: false,
-            slots: []
-        }, options);
-        if (defaults.max)
-            defaults.ammount = maxCounter;
-        if (maxCounter - defaults.ammount >= 0) {
+        // Is there a room for this rune?
+        if (maxCounter > 0) {
+            var defaults = Object.assign({
+                count: true,
+                ammount: 1,
+                max: false,
+                slots: []
+            }, options);
+            if (defaults.max)
+                defaults.ammount = maxCounter;
             // Add new rune
             this.page[this.active].addRune(new Rune_1.Rune(id), typeId, defaults.ammount, defaults.slots);
             // update sums
