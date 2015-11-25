@@ -5,10 +5,16 @@ import {Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
   directives: [FORM_DIRECTIVES, CORE_DIRECTIVES],
   selector: 'rune-search-component',
   template: `
-    <label *ng-for="#tier of tiers">
-      <input type="checkbox" [(ng-model)]="tier.selected">{{ tier.name }}
-    </label>
-    <input type="text" placeholder="Search" [(ng-model)]="query">
+    <div class="form-inline">
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Search" [(ng-model)]="query">
+      </div>
+      <div class="form-group">
+        <label class="checkbox" *ng-for="#tier of tiers">
+          <input type="checkbox" [(ng-model)]="tier.selected">{{ tier.name }}
+        </label>
+      </div>
+    </div>
   `
 })
 export class RuneSearchComponent {

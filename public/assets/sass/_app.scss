@@ -39,8 +39,7 @@
 }
 
 .column {
-  display: flex;
-  flex-direction: column;
+  @include column;
 }
 
 .grow {
@@ -48,23 +47,16 @@
 }
 
 /* center */
-.center,
-.center-x,
-.center-y {
-  display: flex;
-}
-
 .center {
-  align-items: center;
-  justify-content: center;
+  @include center;
 }
 
 .center-x {
-  justify-content: center;
+  @include center("x");
 }
 
 .center-y {
-  align-items: center;
+  @include center("y");
 }
 
 /* autoscroll */
@@ -103,27 +95,62 @@ html {
   }
 }
 
-form {
-  input[type="text"] {
-    @include control {
-      border-color: $font-color-secondary;
-    }
-
-    color: #000;
-    width: 100%;
-    background-color: #dedede;
-
-    &:focus {
-      border-color: $color-special;
-      outline: none;
-      background-color: #fff;
-    }
-  }
-}
-
 [disabled] {
   cursor: not-allowed !important;
 }
+
+
+// Forms
+// ==========================================================================
+.form {
+  @include column;
+
+  > .form-group {
+    margin-bottom: 1rem;
+  }
+}
+
+.form-inline {
+  @include center("y");
+
+  > .form-group {
+    margin-right: 1rem;
+    display: flex;
+  }
+
+  .form-control {
+    width: 200px;
+  }
+
+  input[type="checkbox"] {
+    margin: 0 .3rem;
+  }
+}
+
+.form-control {
+  @include control {
+    border-color: $font-color-secondary;
+  }
+
+  color: #000;
+  width: 100%;
+  background-color: #dedede;
+
+  &:focus {
+    border-color: $color-special;
+    outline: none;
+    background-color: #fff;
+  }
+}
+
+.checkbox {
+  @include center("y");
+
+  font-size: 1.4rem;
+  margin-right: .5rem;
+}
+
+
 
 // Main header
 // ==========================================================================

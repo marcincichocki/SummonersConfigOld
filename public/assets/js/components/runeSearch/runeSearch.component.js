@@ -26,7 +26,7 @@ var RuneSearchComponent = (function () {
         angular2_1.Component({
             directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES],
             selector: 'rune-search-component',
-            template: "\n    <label *ng-for=\"#tier of tiers\">\n      <input type=\"checkbox\" [(ng-model)]=\"tier.selected\">{{ tier.name }}\n    </label>\n    <input type=\"text\" placeholder=\"Search\" [(ng-model)]=\"query\">\n  "
+            template: "\n    <div class=\"form-inline\">\n      <div class=\"form-group\">\n        <input class=\"form-control\" type=\"text\" placeholder=\"Search\" [(ng-model)]=\"query\">\n      </div>\n      <div class=\"form-group\">\n        <label class=\"checkbox\" *ng-for=\"#tier of tiers\">\n          <input type=\"checkbox\" [(ng-model)]=\"tier.selected\">{{ tier.name }}\n        </label>\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], RuneSearchComponent);
