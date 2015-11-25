@@ -32,8 +32,8 @@ var RunesComponent = (function () {
                 runePageGroup_component_1.RunePageGroupComponent
             ],
             selector: 'runes-component',
-            template: "\n    <aside class=\"col-4 main-aside column\">\n      <rune-page-group-component class=\"component\"></rune-page-group-component>\n      <rune-page-name-component class=\"component\"></rune-page-name-component>\n      <rune-ip-time-component class=\"component\"></rune-ip-time-component>\n      <rune-stat-component class=\"component\"></rune-stat-component>\n    </aside>\n    <section class=\"col-8 main-section\">\n      <div class=\"runes-wrapper\">\n        <div class=\"rune-list-wrapper\">\n          <rune-search-component #search-component></rune-search-component>\n          <rune-list-component [search-component]=\"searchComponent\"></rune-list-component>\n        </div>\n        <div class=\"rune-page-wrapper\">\n          <rune-page-component></rune-page-component>\n        </div>\n      </div>\n    </section>\n  ",
-            styles: ["\n    :host {\n      display: flex;\n      width: 100%;\n    }\n  "]
+            template: "\n    <aside class=\"col-4 main-aside column\">\n      <rune-page-group-component class=\"component\"></rune-page-group-component>\n      <rune-page-name-component class=\"component\"></rune-page-name-component>\n      <rune-ip-time-component class=\"component\"></rune-ip-time-component>\n      <rune-stat-component class=\"component\"></rune-stat-component>\n    </aside>\n    <section class=\"col-8 main-section center\">\n      <div class=\"column\">\n        <rune-search-component #search-component></rune-search-component>\n        <div class=\"runes-wrapper\">\n          <rune-list-component [search-component]=\"searchComponent\"></rune-list-component>\n          <rune-page-component></rune-page-component>\n        </div>\n      </div>\n\n    </section>\n  ",
+            styles: ["\n    :host {\n      display: flex;\n      width: 100%;\n    }\n\n    rune-list-component,\n    rune-page-component {\n      display: flex;\n    }\n  "]
         }), 
         __metadata('design:paramtypes', [])
     ], RunesComponent);

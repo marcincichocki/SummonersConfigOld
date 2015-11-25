@@ -12,25 +12,16 @@
   height: 428px;
 }
 
-.rune-list-wrapper {
-  height: 100%;
-  width: 200px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.rune-page-wrapper {
+#rune-page {
   width: 644px;
-  height: 100%;
   background-image: url('../img/runes/rune-page-background.jpg');
   background-repeat: no-repeat;
   position: relative;
 }
 
 #runes-list {
+  width: 200px;
   overflow-y: auto;
-  height: calc(428px - 30px);
 }
 
 .rune {

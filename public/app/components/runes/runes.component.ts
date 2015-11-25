@@ -27,22 +27,26 @@ import {RunePageGroupComponent} from '../runePageGroup/runePageGroup.component';
       <rune-ip-time-component class="component"></rune-ip-time-component>
       <rune-stat-component class="component"></rune-stat-component>
     </aside>
-    <section class="col-8 main-section">
-      <div class="runes-wrapper">
-        <div class="rune-list-wrapper">
-          <rune-search-component #search-component></rune-search-component>
+    <section class="col-8 main-section center">
+      <div class="column">
+        <rune-search-component #search-component></rune-search-component>
+        <div class="runes-wrapper">
           <rune-list-component [search-component]="searchComponent"></rune-list-component>
-        </div>
-        <div class="rune-page-wrapper">
           <rune-page-component></rune-page-component>
         </div>
       </div>
+
     </section>
   `,
   styles: [`
     :host {
       display: flex;
       width: 100%;
+    }
+
+    rune-list-component,
+    rune-page-component {
+      display: flex;
     }
   `]
 })
