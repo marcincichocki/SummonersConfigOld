@@ -7,7 +7,14 @@ import {Pipe} from 'angular2/angular2';
   pure: true
 })
 export class SearchPipe {
-  transform(value, [field, query]: [string, string]) {
-    return value.filter(item => new RegExp(query, 'i').test(item[field]));
+  transform(value, [fields, query]: [string[], string]) {
+    const rx = new RegExp(query, 'i');
+
+    // RegExp.prototype.test converts everything to sting
+    // including arrays. For example: ['asd', 1, 'foo'] -> 'asd,1,foo'.
+    //
+    // This is why array does not break this code. Need to refactor if comas
+    // will be a problem.
+    return value.filter(item => fields.some(field => rx.test(item[field])));
   }
 }

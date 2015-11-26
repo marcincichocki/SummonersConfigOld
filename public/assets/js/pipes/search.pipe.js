@@ -15,8 +15,14 @@ var SearchPipe = (function () {
     function SearchPipe() {
     }
     SearchPipe.prototype.transform = function (value, _a) {
-        var field = _a[0], query = _a[1];
-        return value.filter(function (item) { return new RegExp(query, 'i').test(item[field]); });
+        var fields = _a[0], query = _a[1];
+        var rx = new RegExp(query, 'i');
+        // RegExp.prototype.test converts everything to sting
+        // including arrays. For example: ['asd', 1, 'foo'] -> 'asd,1,foo'.
+        //
+        // This is why array does not break this code. Need to refactor if comas
+        // will be a problem.
+        return value.filter(function (item) { return fields.some(function (field) { return rx.test(item[field]); }); });
     };
     SearchPipe = __decorate([
         angular2_1.Pipe({

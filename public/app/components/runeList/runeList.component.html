@@ -8,7 +8,7 @@
         *ng-for="#rune of ((type.runes
         | filter: 'tier': searchComponent.getTiers())
         | filter: 'available': !searchComponent.unavailable)
-        | search: 'description': searchComponent.query"
+        | search: ['name', 'description', 'tags']: searchComponent.query"
         [rune]="rune"
         (click)="addRune($event, rune.id)"
         [tooltip]="{
