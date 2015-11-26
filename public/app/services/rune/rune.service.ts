@@ -17,8 +17,8 @@ export class RuneService {
   public active: number = 0;
 
   /**
-   * Store reference to active page.
-   * @return {Page} Active page.
+   * Store active page.
+   * @return {Page}
    */
   get current(): Page {
     return this.page[this.active];
@@ -133,7 +133,7 @@ export class RuneService {
   removeRune(rune: Rune, max: boolean = false): void {
     const typeId: number = this.getTypeId(rune.id);
 
-    if (this.current.runes.length) {
+    if (this.current.slots.length) {
       this.current.removeRune(rune, typeId, max);
 
       this.count();
@@ -143,7 +143,7 @@ export class RuneService {
   count() {
 
     // Get list of unique ids.
-    const uniqueIds: string[] = this.current.runes
+    const uniqueIds: string[] = this.current.slots
       .map(rune => rune.id)
       .filter((id, index, self) => self.indexOf(id) === index);
 
@@ -162,7 +162,7 @@ export class RuneService {
         this.runes[id].stats,
 
         // quantity of exactly same runes.
-        this.current.runes.filter(rune => rune.id === id).reduce(a => a + 1, 0)
+        this.current.slots.filter(rune => rune.id === id).reduce(a => a + 1, 0)
       );
 
 

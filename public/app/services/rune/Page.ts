@@ -14,7 +14,7 @@ export class Page {
   public ip: number = 0;
 
   // Store every rune in page(Rune instances).
-  public runes: Rune[] = [];
+  public slots: Rune[] = [];
 
   // Store calculated values with unitIds of all runes in page.
   public sums: Sum[] = [];
@@ -62,7 +62,7 @@ export class Page {
     const to = from + 9 < 30 ? from + 9 : 30;
 
     // Get array of taken rune slots.
-    const runes: number[] = this.runes.map(rune => rune.runeSlot).concat(unofficial);
+    const runes: number[] = this.slots.map(rune => rune.runeSlot).concat(unofficial);
 
 
     // Loop through all slots for specyfic typeId.
@@ -113,7 +113,7 @@ export class Page {
       }
 
       // Add new runes.
-      Array.prototype.push.apply(this.runes, runes);
+      Array.prototype.push.apply(this.slots, runes);
     } else {
       // Add just one rune.
 
@@ -121,7 +121,7 @@ export class Page {
       if (this.checkSlot(rune.runeSlot)) rune.runeSlot = this.getSlot(typeId);
 
       // Add new rune.
-      this.runes.push(rune);
+      this.slots.push(rune);
     }
   }
 
@@ -135,10 +135,10 @@ export class Page {
    * @param {boolean} max - Remove all runes with given id.
    */
   removeRune(rune: Rune, typeId: number, max: boolean): void {
-    const runes = max ? this.runes.filter(r => r.id !== rune.id) : this.runes.filter(r => r !== rune);
+    const runes = max ? this.slots.filter(r => r.id !== rune.id) : this.slots.filter(r => r !== rune);
 
-    this.counter[typeId] += this.runes.length - runes.length;
-    this.runes = runes;
+    this.counter[typeId] += this.slots.length - runes.length;
+    this.slots = runes;
   }
 
 
