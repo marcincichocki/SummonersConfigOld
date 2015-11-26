@@ -98,7 +98,7 @@ export class RuneService {
     }
   }
 
-  getTypeId(id: string): number {
+  getTypeId(id: number): number {
     return this.types.indexOf(this.runes[id].type);
   }
 
@@ -106,7 +106,7 @@ export class RuneService {
     return this.current.counter[typeId];
   }
 
-  addRune(id: string, options?: {count?: boolean, ammount?: number, max?: boolean, slotIds?: number[]}): void {
+  addRune(id: number, options?: {count?: boolean, ammount?: number, max?: boolean, slotIds?: number[]}): void {
     const typeId: number = this.getTypeId(id);
     const maxCounter = this.getCounterOfTypeId(typeId);
 
@@ -143,7 +143,7 @@ export class RuneService {
   count() {
 
     // Get list of unique ids.
-    const uniqueIds: string[] = this.current.slots
+    const uniqueIds: number[] = this.current.slots
       .map(slot => slot.runeId)
       .filter((id, index, self) => self.indexOf(id) === index);
 

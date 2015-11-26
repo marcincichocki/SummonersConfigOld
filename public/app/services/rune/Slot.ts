@@ -1,6 +1,6 @@
 export class Slot {
   constructor(
-    public runeId: string,
+    public runeId: number,
     public runeSlotId: number = null
   ) { }
 }
