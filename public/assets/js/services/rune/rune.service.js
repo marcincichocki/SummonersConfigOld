@@ -22,6 +22,17 @@ var RuneService = (function () {
         this.page = [new Page_1.Page(this.name + "1")];
         this.active = 0;
     }
+    Object.defineProperty(RuneService.prototype, "current", {
+        /**
+         * Store reference to active page.
+         * @return {Page} Active page.
+         */
+        get: function () {
+            return this.page[this.active];
+        },
+        enumerable: true,
+        configurable: true
+    });
     RuneService.prototype.getRunes = function () {
         var _this = this;
         this.http.get('./app/data/en/runes.json')
@@ -93,7 +104,7 @@ var RuneService = (function () {
         return this.types.indexOf(this.runes[id].type);
     };
     RuneService.prototype.getCounterOfTypeId = function (typeId) {
-        return this.page[this.active].counter[typeId];
+        return this.current.counter[typeId];
     };
     RuneService.prototype.addRune = function (id, options) {
         var typeId = this.getTypeId(id);
@@ -109,7 +120,7 @@ var RuneService = (function () {
             if (defaults.max)
                 defaults.ammount = maxCounter;
             // Add new rune
-            this.page[this.active].addRune(new Rune_1.Rune(id), typeId, defaults.ammount, defaults.slots);
+            this.current.addRune(new Rune_1.Rune(id), typeId, defaults.ammount, defaults.slots);
             // update sums
             if (defaults.count)
                 this.count();
@@ -118,15 +129,15 @@ var RuneService = (function () {
     RuneService.prototype.removeRune = function (rune, max) {
         if (max === void 0) { max = false; }
         var typeId = this.getTypeId(rune.id);
-        if (this.page[this.active].runes.length) {
-            this.page[this.active].removeRune(rune, typeId, max);
+        if (this.current.runes.length) {
+            this.current.removeRune(rune, typeId, max);
             this.count();
         }
     };
     RuneService.prototype.count = function () {
         var _this = this;
         // Get list of unique ids.
-        var uniqueIds = this.page[this.active].runes
+        var uniqueIds = this.current.runes
             .map(function (rune) { return rune.id; })
             .filter(function (id, index, self) { return self.indexOf(id) === index; });
         // Prepare array to store unique runes.
@@ -139,11 +150,11 @@ var RuneService = (function () {
             // Stats of specyfic rune.
             _this.runes[id].stats, 
             // quantity of exactly same runes.
-            _this.page[_this.active].runes.filter(function (rune) { return rune.id === id; }).reduce(function (a) { return a + 1; }, 0));
+            _this.current.runes.filter(function (rune) { return rune.id === id; }).reduce(function (a) { return a + 1; }, 0));
             runes.push(rune);
         });
         // Call specyfic method to generate sums.
-        this.page[this.active].count(runes);
+        this.current.count(runes);
     };
     RuneService.prototype.isPercentage = function (unit) {
         return unit.indexOf('Percent') > -1 ? '%' : '';

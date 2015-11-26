@@ -15,6 +15,15 @@ export class RuneService {
   public runes: any;
   public page: Page[] = [new Page(`${this.name}1`)];
   public active: number = 0;
+
+  /**
+   * Store reference to active page.
+   * @return {Page} Active page.
+   */
+  get current(): Page {
+    return this.page[this.active];
+  }
+
   constructor(public http: Http) { }
 
   getRunes() {
@@ -94,7 +103,7 @@ export class RuneService {
   }
 
   getCounterOfTypeId(typeId: number) {
-    return this.page[this.active].counter[typeId];
+    return this.current.counter[typeId];
   }
 
   addRune(id: string, options?: {count?: boolean, ammount?: number, max?: boolean, slots?: number[]}): void {
@@ -114,7 +123,7 @@ export class RuneService {
       if (defaults.max) defaults.ammount = maxCounter;
 
       // Add new rune
-      this.page[this.active].addRune(new Rune(id), typeId, defaults.ammount, defaults.slots);
+      this.current.addRune(new Rune(id), typeId, defaults.ammount, defaults.slots);
 
       // update sums
       if (defaults.count) this.count();
@@ -124,8 +133,8 @@ export class RuneService {
   removeRune(rune: Rune, max: boolean = false): void {
     const typeId: number = this.getTypeId(rune.id);
 
-    if (this.page[this.active].runes.length) {
-      this.page[this.active].removeRune(rune, typeId, max);
+    if (this.current.runes.length) {
+      this.current.removeRune(rune, typeId, max);
 
       this.count();
     }
@@ -134,7 +143,7 @@ export class RuneService {
   count() {
 
     // Get list of unique ids.
-    const uniqueIds: string[] = this.page[this.active].runes
+    const uniqueIds: string[] = this.current.runes
       .map(rune => rune.id)
       .filter((id, index, self) => self.indexOf(id) === index);
 
@@ -153,7 +162,7 @@ export class RuneService {
         this.runes[id].stats,
 
         // quantity of exactly same runes.
-        this.page[this.active].runes.filter(rune => rune.id === id).reduce(a => a + 1, 0)
+        this.current.runes.filter(rune => rune.id === id).reduce(a => a + 1, 0)
       );
 
 
@@ -162,7 +171,7 @@ export class RuneService {
 
 
     // Call specyfic method to generate sums.
-    this.page[this.active].count(runes);
+    this.current.count(runes);
   }
 
   isPercentage(unit: string) {
