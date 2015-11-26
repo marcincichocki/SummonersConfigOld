@@ -164,16 +164,16 @@ export class Page {
       // Magic Penetration.
       Object.keys(rune.stats).forEach(unitId => {
 
-        // FIXME: Regeneration stats are in fact per second, not per 5 seconds
-        // like description says. Should multiply value times 5 if unitId
-        // contains 'Regeneration' string.
-        const value: number = parseFloat((rune.stats[unitId] * rune.ammount).toFixed(2));
+        // Regeneration stats are in fact per second, not per 5 seconds
+        // like description says.
+        const fix = /Regeneration/.test(unitId) ? 5 : 1;
+        const value: number = parseFloat((rune.stats[unitId] * rune.ammount * fix).toFixed(2));
         const index: number = this.sums.map(sum => sum.unitId).indexOf(unitId);
 
         // If stat alredy is in array then add values, otherwise create new
         // sum with new stat and initial value.
         if (index > -1) {
-          this.sums[index].value += value;
+          this.sums[index].value = parseFloat((this.sums[index].value + value).toFixed(2));
         } else {
           this.sums.push(new Sum(unitId, value));
         }
