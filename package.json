@@ -4,8 +4,9 @@
   "description": "Be prepared for everything!",
   "main": "index.js",
   "scripts": {
+    "build": "tsc -p public && gulp styles",
     "tsc": "tsc -p public -w",
-    "server": "http-server ./ -p 3000"
+    "start": "http-server ./ -p 3000"
   },
   "repository": {
     "type": "git",
