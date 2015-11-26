@@ -115,10 +115,11 @@ var RuneService = (function () {
                 this.count();
         }
     };
-    RuneService.prototype.removeRune = function (rune) {
+    RuneService.prototype.removeRune = function (rune, max) {
+        if (max === void 0) { max = false; }
         var typeId = this.getTypeId(rune.id);
         if (this.page[this.active].runes.length) {
-            this.page[this.active].removeRune(rune, typeId);
+            this.page[this.active].removeRune(rune, typeId, max);
             this.count();
         }
     };

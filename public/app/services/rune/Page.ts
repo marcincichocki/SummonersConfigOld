@@ -132,17 +132,13 @@ export class Page {
    * @param {string} rune.id - Rune unique id.
    * @param {number} rune.runeSlot - Unique slot of given rune.
    * @param {number} typeId - Number representing type.
+   * @param {boolean} max - Remove all runes with given id.
    */
-  removeRune(rune: Rune, typeId: number): void {
+  removeRune(rune: Rune, typeId: number, max: boolean): void {
+    const runes = max ? this.runes.filter(r => r.id !== rune.id) : this.runes.filter(r => r !== rune);
 
-    // Get first index of given rune in array.
-    const index: number = this.runes.indexOf(rune);
-
-    // Increase counter.
-    this.counter[typeId] += 1;
-
-    // Remove rune from array.
-    this.runes.splice(index, 1);
+    this.counter[typeId] += this.runes.length - runes.length;
+    this.runes = runes;
   }
 
 

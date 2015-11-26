@@ -2,7 +2,7 @@
   <rune-page-item-component
     *ng-for="#rune of runeService.page[runeService.active].runes"
     [rune]="{ data: rune, image: runeService.runes[rune.id].image }"
-    (click)="removeRune(rune)"
+    (click)="removeRune($event, rune)"
     [tooltip]="{ type: 'rune', data: runeService.runes[rune.id] }">
   </rune-page-item-component>
 </div>

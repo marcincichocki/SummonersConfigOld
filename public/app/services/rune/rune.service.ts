@@ -121,11 +121,11 @@ export class RuneService {
     }
   }
 
-  removeRune(rune) {
+  removeRune(rune: Rune, max: boolean = false): void {
     const typeId: number = this.getTypeId(rune.id);
 
     if (this.page[this.active].runes.length) {
-      this.page[this.active].removeRune(rune, typeId);
+      this.page[this.active].removeRune(rune, typeId, max);
 
       this.count();
     }

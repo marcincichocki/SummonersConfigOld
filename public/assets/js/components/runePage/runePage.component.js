@@ -20,9 +20,14 @@ var RunePageComponent = (function () {
         this.tooltipService = tooltipService;
     }
     ;
-    RunePageComponent.prototype.removeRune = function (rune) {
+    RunePageComponent.prototype.removeRune = function (event, rune) {
         this.tooltipService.hide();
-        this.runeService.removeRune(rune);
+        if (event.ctrlKey) {
+            this.runeService.removeRune(rune, true);
+        }
+        else {
+            this.runeService.removeRune(rune);
+        }
     };
     RunePageComponent = __decorate([
         angular2_1.Component({

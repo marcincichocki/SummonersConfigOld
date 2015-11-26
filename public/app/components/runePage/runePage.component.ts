@@ -4,6 +4,7 @@ import {RuneService} from '../../services/rune/rune.service';
 import {RunePageItemComponent} from '../runePageItem/runePageItem.component';
 import {TooltipDirective} from '../../directives/tooltip.directive';
 import {TooltipService} from '../../services/tooltip/tooltip.service';
+import {Rune} from '../../services/rune/Rune';
 
 
 @Component({
@@ -12,10 +13,18 @@ import {TooltipService} from '../../services/tooltip/tooltip.service';
   directives: [CORE_DIRECTIVES, RunePageItemComponent, TooltipDirective]
 })
 export class RunePageComponent {
-  constructor(public runeService: RuneService, public tooltipService: TooltipService) {};
+  constructor(
+    public runeService: RuneService,
+    public tooltipService: TooltipService
+  ) { };
 
-  removeRune(rune) {
+  removeRune(event: MouseEvent, rune: Rune): void {
     this.tooltipService.hide();
-    this.runeService.removeRune(rune);
+
+    if (event.ctrlKey) {
+      this.runeService.removeRune(rune, true);
+    } else {
+      this.runeService.removeRune(rune);
+    }
   }
 }

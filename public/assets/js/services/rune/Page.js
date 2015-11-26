@@ -108,14 +108,12 @@ var Page = (function () {
      * @param {string} rune.id - Rune unique id.
      * @param {number} rune.runeSlot - Unique slot of given rune.
      * @param {number} typeId - Number representing type.
+     * @param {boolean} max - Remove all runes with given id.
      */
-    Page.prototype.removeRune = function (rune, typeId) {
-        // Get first index of given rune in array.
-        var index = this.runes.indexOf(rune);
-        // Increase counter.
-        this.counter[typeId] += 1;
-        // Remove rune from array.
-        this.runes.splice(index, 1);
+    Page.prototype.removeRune = function (rune, typeId, max) {
+        var runes = max ? this.runes.filter(function (r) { return r.id !== rune.id; }) : this.runes.filter(function (r) { return r !== rune; });
+        this.counter[typeId] += this.runes.length - runes.length;
+        this.runes = runes;
     };
     /**
      * Generate sums of current page.
