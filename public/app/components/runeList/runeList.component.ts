@@ -14,7 +14,7 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
   directives: [NgFor, NgClass, RuneListItemComponent, TooltipDirective]
 })
 export class RuneListComponent {
-  @Input() searchComponent;
+  @Input('searchComponent') search;
 
   private show: boolean[] = [false, false, false, false];
   private types: RunesByType[] = [];
