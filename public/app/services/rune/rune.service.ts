@@ -2,7 +2,7 @@ import {Http} from 'angular2/http';
 import {Injectable} from 'angular2/core';
 
 import {Page} from './Page';
-import {Rune} from './Rune';
+import {Slot} from './Slot';
 import {UniqueRune} from './UniqueRune';
 
 
@@ -106,35 +106,35 @@ export class RuneService {
     return this.current.counter[typeId];
   }
 
-  addRune(id: string, options?: {count?: boolean, ammount?: number, max?: boolean, slots?: number[]}): void {
+  addRune(id: string, options?: {count?: boolean, ammount?: number, max?: boolean, slotIds?: number[]}): void {
     const typeId: number = this.getTypeId(id);
     const maxCounter = this.getCounterOfTypeId(typeId);
 
     // Is there a room for this rune?
     if (maxCounter > 0) {
 
-      const defaults: {count: boolean, ammount: number, max: boolean, slots: number[]} = Object.assign({
+      const defaults: {count: boolean, ammount: number, max: boolean, slotIds: number[]} = Object.assign({
         count: true,
         ammount: 1,
         max: false,
-        slots: []
+        slotIds: []
       }, options);
 
       if (defaults.max) defaults.ammount = maxCounter;
 
       // Add new rune
-      this.current.addRune(new Rune(id), typeId, defaults.ammount, defaults.slots);
+      this.current.addRune(new Slot(id), typeId, defaults.ammount, defaults.slotIds);
 
       // update sums
       if (defaults.count) this.count();
     }
   }
 
-  removeRune(rune: Rune, max: boolean = false): void {
-    const typeId: number = this.getTypeId(rune.id);
+  removeRune(slot: Slot, max: boolean = false): void {
+    const typeId: number = this.getTypeId(slot.runeId);
 
     if (this.current.slots.length) {
-      this.current.removeRune(rune, typeId, max);
+      this.current.removeRune(slot, typeId, max);
 
       this.count();
     }
@@ -144,7 +144,7 @@ export class RuneService {
 
     // Get list of unique ids.
     const uniqueIds: string[] = this.current.slots
-      .map(rune => rune.id)
+      .map(slot => slot.runeId)
       .filter((id, index, self) => self.indexOf(id) === index);
 
     // Prepare array to store unique runes.
@@ -162,7 +162,7 @@ export class RuneService {
         this.runes[id].stats,
 
         // quantity of exactly same runes.
-        this.current.slots.filter(rune => rune.id === id).reduce(a => a + 1, 0)
+        this.current.slots.filter(slot => slot.runeId === id).reduce(a => a + 1, 0)
       );
 
 

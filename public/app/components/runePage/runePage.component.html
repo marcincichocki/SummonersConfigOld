@@ -1,8 +1,8 @@
 <div id="rune-page">
   <rune-page-item-component
-    *ng-for="#rune of runeService.current.slots"
-    [rune]="{ data: rune, image: runeService.runes[rune.id].image }"
-    (click)="removeRune($event, rune)"
-    [tooltip]="{ type: 'rune', data: runeService.runes[rune.id] }">
+    *ng-for="#slot of runeService.current.slots"
+    [rune]="{ slot: slot, image: runeService.runes[slot.runeId].image }"
+    (click)="removeRune($event, slot)"
+    [tooltip]="{ type: 'rune', data: runeService.runes[slot.runeId] }">
   </rune-page-item-component>
 </div>
