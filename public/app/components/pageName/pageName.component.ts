@@ -67,8 +67,12 @@ export class PageNameComponent {
     this.showInput = !this.showInput;
   }
 
+  setName(name: string): void {
+    this.service.page[this.service.active].name = name;
+  }
+
   onSubmit() {
-    this.service.setName(this.model.name);
+    this.setName(this.model.name);
     this.model.reset();
     this.toggleInput();
   }

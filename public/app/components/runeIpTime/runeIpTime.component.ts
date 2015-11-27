@@ -36,7 +36,7 @@ export class RuneIpTimeComponent {
   }
 
   countTime() {
-    this.ip = this.runeService.getIp();
+    this.ip = this.runeService.current.ip;
     const ipPerGame = parseFloat((((this.ipPerWin * this.winRatio) + (this.ipPerLose * this.loseRatio)) / 100).toFixed(2));
     const gamesQuantity = this.ip / ipPerGame;
 

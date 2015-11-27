@@ -17,7 +17,7 @@ import {RuneStatItemComponent} from '../runeStatItem/runeStatItem.component';
       <div class="col-4">
         <button class="btn btn-block"
           (click)="runeService.clearPage()"
-          [disabled]="runeService.isEmpty()">Clear</button>
+          [disabled]="!runeService.current.sums.length">Clear</button>
       </div>
     </div>
   `,

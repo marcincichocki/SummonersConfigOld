@@ -12,7 +12,7 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
         <button class="btn"
           *ng-for="#page of service.page, #i = index"
           (click)="service.changePage(i)"
-          [ng-class]="{active: service.isActive(i)}"
+          [ng-class]="{active: isActive(i)}"
           [tooltip]="{ type: type, data: { sums: page.sums, index: i } }">{{ i + 1 }}
         </button>
       </div>
@@ -32,4 +32,13 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
 export class PageGroupComponent {
   @Input() service;
   @Input() type;
+
+
+  /**
+   * Check if given page id is active.
+   * @param {number} page - Rune page id. Zero-based.
+   */
+  isActive(page: number) {
+    return page === this.service.active;
+  }
 }
