@@ -1,20 +1,14 @@
 import {Http} from 'angular2/http';
 import {Injectable} from 'angular2/core';
 
+import {Pages} from '../Pages';
 import {Page} from './Page';
 import {Slot} from './Slot';
 import {UniqueRune} from './UniqueRune';
 
 
 @Injectable()
-export class RuneService {
-
-  // Default name for each page.
-  private name: string = 'Rune Page #';
-
-  // Determines which page is displayed. Zero-based.
-  private active: number = 0;
-
+export class RuneService extends Pages<Page> {
 
   // types of runes.
   public types: string[] = [
@@ -30,28 +24,11 @@ export class RuneService {
   // Object which contains every rune.
   public runes: any;
 
-  // TODO: rename to "pages" after masteries cleanup.
-  //
-  // Store information about each page.
-  // By default, there is one empty page.
-  public page: Page[] = [
-    new Page(this.name + 1)
-  ];
 
-  // Min and max quantity of pages.
-  public pageMin: number = 1;
-  public pageMax: number = 20;
-
-  /**
-   * Store active page.
-   * @return {Page}
-   */
-  get current(): Page {
-    return this.page[this.active];
+  constructor(public http: Http) {
+    super(Page, 'Rune Page');
+    this.addPage();
   }
-
-
-  constructor(public http: Http) { }
 
 
   /**
@@ -67,68 +44,6 @@ export class RuneService {
         },
         error => console.log(error)
       );
-  }
-
-
-  /**
-   * Check if given page exist.
-   * @param  {number} page - Rune page id. Zero-based.
-   * @return {boolean}
-   */
-  exist(page: number): boolean {
-    return (page >= 0) && (page < this.page.length);
-  }
-
-
-  /**
-   * Add new rune page.
-   * @param {string} [name=this.name + (this.page.length + 1)] - Name of rune
-   * page.
-   */
-  addPage(name: string = this.name + (this.page.length + 1)): void {
-
-    // Continue only if there is a space for new rune page.
-    if (this.page.length < this.pageMax) {
-
-      // Add new page.
-      this.page.push(new Page(name));
-
-      // Change page to just created.
-      this.changePage(this.page.length - 1);
-    }
-  }
-
-
-  /**
-   * Remove rune page.
-   * @param {number} [page=this.active] - Rune page id. Zero-based.
-   */
-  removePage(page: number = this.active): void {
-
-    // Continue only if there is page to be removed.
-    if (this.page.length > this.pageMin) {
-      this.page.splice(page, 1);
-      this.changePage();
-    }
-  }
-
-
-  /**
-   * Change active rune page to given id.
-   * @param {number} [page=0] - Rune page id. Zero-based.
-   */
-  changePage(page: number = 0): void {
-    if (this.exist(page)) {
-      this.active = page;
-    }
-  }
-
-
-  /**
-   * Clear entire active page.
-   */
-  clearPage(): void {
-    this.page[this.active] = new Page(this.getName());
   }
 
 
@@ -221,16 +136,6 @@ export class RuneService {
 
     // Call specyfic method to generate sums.
     this.current.count(runes);
-  }
-
-
-  /**
-   * Get name of rune page.
-   * @param  {numbe} [page=this.active] - Rune page id. Zero-based.
-   * @return {string} Rune page name.
-   */
-  getName(page: number = this.active): string {
-    return this.page[page].name;
   }
 
 

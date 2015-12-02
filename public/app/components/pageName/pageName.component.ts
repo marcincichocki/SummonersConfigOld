@@ -68,7 +68,7 @@ export class PageNameComponent {
   }
 
   setName(name: string): void {
-    this.service.page[this.service.active].name = name;
+    this.service.pages[this.service.active].name = name;
   }
 
   onSubmit() {

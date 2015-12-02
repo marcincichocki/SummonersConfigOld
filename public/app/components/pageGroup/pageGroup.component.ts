@@ -10,20 +10,26 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
     <div class="row">
       <div class="col-8 page-group">
         <button class="btn"
-          *ng-for="#page of service.page, #i = index"
-          (click)="service.changePage(i)"
-          [ng-class]="{active: isActive(i)}"
-          [tooltip]="{ type: type, data: { sums: page.sums, index: i } }">{{ i + 1 }}
+          *ng-for="#page of service.pages, #index = index"
+          (click)="service.changePage(index)"
+          [ng-class]="{active: isActive(index)}"
+          [tooltip]="{
+            type: type,
+            data: {
+              sums: page.sums,
+              index: index
+            }
+          }">{{ index + 1 }}
         </button>
       </div>
       <div class="col-4">
         <button class="btn btn-block"
           (click)="service.addPage()"
-          [disabled]="service.page.length >= 20">Add
+          [disabled]="service.size >= 20">Add
         </button>
         <button class="btn btn-block"
           (click)="service.removePage()"
-          [disabled]="service.page.length <= 1">Remove
+          [disabled]="service.size <= 1">Remove
         </button>
       </div>
     </div>
