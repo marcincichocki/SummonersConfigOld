@@ -12,7 +12,7 @@ import {MasteryService} from '../../services/mastery/mastery.service';
       [row]="row"
       [j]="j">
     </mastery-page-row-component>
-    <h2>{{ category }}: {{ masteryService.page[masteryService.active].sums[i] }}</h2>
+    <h2>{{ category }}: {{ masteryService.current.sums[i] }}</h2>
   `,
   directives: [MasteryPageRowComponent, CORE_DIRECTIVES]
 })

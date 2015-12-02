@@ -1,15 +1,13 @@
 import {Http} from 'angular2/http';
 import {Injectable} from 'angular2/core';
 
+import {Pages} from '../Pages';
 import {Page} from './Page';
 import {TooltipService} from '../tooltip/tooltip.service';
 
 
 @Injectable()
-export class MasteryService {
-  public name: string = 'Mastery Page #';
-  public page: Page[] = [new Page(`${this.name}1`)];
-  public active: number = 0;
+export class MasteryService extends Pages<Page> {
   public grid: any;
   public masteries: any;
   public categories: string[] = [
@@ -17,7 +15,14 @@ export class MasteryService {
     'Cunning',
     'Resolve'
   ];
-  constructor(public http: Http, public tooltipService: TooltipService) { }
+
+  constructor(
+    public http: Http,
+    public tooltipService: TooltipService
+  ) {
+    super(Page, 'Mastery Page');
+    this.addPage();
+  }
 
   getMasteries() {
     this.http.get('./app/data/en/masteries.json')
@@ -35,54 +40,12 @@ export class MasteryService {
     return n % 2 === 0;
   }
 
-  addPage(name: string = this.name + (this.page.length + 1)) {
-    if (this.page.length < 20) {
-      this.page.push(new Page(name));
-      this.changePage(this.page.length - 1)
-    }
-  }
-
-  removePage(page: number = this.active) {
-    if (this.page.length > 1) {
-      this.page.splice(page, 1);
-      this.changePage();
-    }
-  }
-
-  changePage(page: number = 0) {
-    if (this.isInRange(page)) {
-      this.active = page;
-    }
-  }
-
-  isActive(page: number) {
-    if (this.isInRange(page)) {
-      return page === this.active;
-    }
-  }
-
-  clearPage(page = this.active) {
-    if (this.isInRange(page)) {
-      this.page[page] = new Page(this.getName());
-    }
-  }
-
-  isEmpty(page = this.active) {
-    if (this.isInRange(page)) {
-      return !this.page[page].masteries.length;
-    }
-  }
-
-  isInRange(page: number, max?: number) {
-    return page >= 0 && page < (max || this.page.length);
-  }
-
   addMastery(id: string, event: MouseEvent): void {
     const category = parseInt(id.slice(1, 2), 10);
     const row = parseInt(id.slice(2, 3), 10);
 
     if (this.masteryCheckUp(id, category, row)) {
-      this.page[this.active].addMastery(id, category, row);
+      this.pages[this.active].addMastery(id, category, row);
       this.updateTooltip(id);
     } else {
       console.log('sorry, you can not do that!');
@@ -98,7 +61,7 @@ export class MasteryService {
     const row = parseInt(id.slice(2, 3), 10);
 
     if (this.masteryCheckDown(id, row, category)) {
-      this.page[this.active].removeMastery(id);
+      this.pages[this.active].removeMastery(id);
       this.updateTooltip(id);
     } else {
       console.log('stop that!');
@@ -111,7 +74,7 @@ export class MasteryService {
       var row = parseInt(id.slice(2, 3), 10);
     }
 
-    if (this.page[this.active].max > 0 && !this.isMaxed(row, category)) {
+    if (this.pages[this.active].max > 0 && !this.isMaxed(row, category)) {
       if (row !== 1 && this.isMaxed(row - 1, category)) {
         return true;
       } else if (row === 1) {
@@ -132,7 +95,7 @@ export class MasteryService {
 
   masteryCheckDown(id: string, row: number, category: number): boolean {
     if (
-      this.page[this.active].max < 30
+      this.pages[this.active].max < 30
       && this.getRank(id) > 0
       && this.rowSum(row + 1, category) === 0
     ) {
@@ -157,7 +120,7 @@ export class MasteryService {
   }
 
   getRank(id: string): number {
-    return this.page[this.active].rank[id];
+    return this.pages[this.active].rank[id];
   }
 
   getCategory(id: string): number {
@@ -165,7 +128,7 @@ export class MasteryService {
   }
 
   rowSum(row: number, category: number): number {
-    return this.page[this.active].masteries
+    return this.pages[this.active].masteries
       .filter(mastery => mastery.row === row && mastery.category === category)
       .map(mastery => mastery.rank)
       .reduce((a, b) => a + b, 0);
@@ -181,27 +144,15 @@ export class MasteryService {
     });
   }
 
-  getName(page: number = this.active) {
-    if (this.isInRange(page)) {
-      return this.page[page].name;
-    }
-  }
-
-  setName(name: string, page: number = this.active) {
-    if (this.isInRange(page)) {
-      this.page[page].name = name;
-    }
-  }
-
   getPointsOfCategory(category: number): number {
-    return this.page[this.active].sums[category];
+    return this.pages[this.active].sums[category];
   }
 
   getPointsMax(): number {
-    return this.page[this.active].max;
+    return this.pages[this.active].max;
   }
 
   getSums(page: number = this.active): number[] {
-    return this.page[page].sums;
+    return this.pages[page].sums;
   }
 }

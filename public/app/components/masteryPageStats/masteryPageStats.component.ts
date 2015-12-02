@@ -20,7 +20,7 @@ import {MasteryPageStatsItemComponent} from '../masteryPageStatsItem/masteryPage
         <div class="col-4">
           <button class="btn btn-block"
             (click)="masteryService.clearPage()"
-            [disabled]="masteryService.isEmpty()">Clear</button>
+            [disabled]="!masteryService.current.masteries.length">Clear</button>
         </div>
       </div>
       <div class="row">
