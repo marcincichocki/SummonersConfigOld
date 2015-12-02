@@ -8,17 +8,16 @@ import {MasteryService} from '../../services/mastery/mastery.service';
   selector: 'mastery-page-category-component',
   template: `
     <mastery-page-row-component
-      *ng-for="#row of masteryService.grid[category], #j = index"
+      *ng-for="#row of masteryService.grid[category.name], #index = index"
       [row]="row"
-      [j]="j">
+      [index]="index">
     </mastery-page-row-component>
-    <h2>{{ category }}: {{ masteryService.current.sums[i] }}</h2>
+    <h2>{{ category.name }}: {{ masteryService.current.sums[category.index] }}</h2>
   `,
   directives: [MasteryPageRowComponent, CORE_DIRECTIVES]
 })
 export class MasteryPageCategoryComponent {
   @Input() category;
-  @Input() i;
 
   constructor(public masteryService: MasteryService) { }
 }

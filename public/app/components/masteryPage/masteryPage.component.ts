@@ -9,9 +9,8 @@ import {MasteryPageCategoryComponent} from '../masteryPageCategory/masteryPageCa
   template: `
     <div id="mastery-page">
       <mastery-page-category-component class="category {{ category | lowercase }}"
-        *ng-for="#category of masteryService.categories, #i = index"
-        [category]="category"
-        [i]="i">
+        *ng-for="#category of masteryService.categories, #index = index"
+        [category]="{ name: category, index: index }">
       </mastery-page-category-component>
     </div>
   `,
