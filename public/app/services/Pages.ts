@@ -11,7 +11,7 @@ interface BasePage {
 /**
  * Data structure for runes and mastery services.
  */
-class Pages<Page extends BasePage> {
+export class Pages<Page extends BasePage> {
 
   // Store active page
   private _active: number = 0;
