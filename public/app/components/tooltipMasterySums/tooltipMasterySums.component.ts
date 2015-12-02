@@ -10,7 +10,7 @@ import {MasteryPageStatsItemComponent} from '../masteryPageStatsItem/masteryPage
     <div class="tooltip-mastery-sums">
       <h3 class="name">#{{ data.index + 1 }} - {{ masteryService.getName(data.index) }}</h3>
       <div class="mastery-category-points">
-        <mastery-page-stats-item-component
+        <mastery-page-stats-item-component class="{{ masteryService.categories[i] | lowercase }}"
           *ng-for="#sum of data.sums, #i = index"
           [sum]="sum"
           [index]="i + 1">
