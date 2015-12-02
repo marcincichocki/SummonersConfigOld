@@ -178,7 +178,7 @@ export class MasteryService extends Pages<Page> {
     if (
       this.current.max < 30
       && this.current.rank[id] > 0
-      && this.rowSum(row + 1, category) === 0
+      && this.rowSum(category, row + 1) === 0
     ) {
       return true;
     }
