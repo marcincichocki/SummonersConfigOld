@@ -10,7 +10,7 @@ import {MasteryPageStatsItemComponent} from '../masteryPageStatsItem/masteryPage
       <div class="row">
         <div class="col-8">
           <div class="mastery-category-points">
-            <mastery-page-stats-item-component
+            <mastery-page-stats-item-component class="{{ masteryService.categories[i] | lowercase }}"
               *ng-for="#sum of masteryService.getSums(), #i = index"
               [sum]="sum"
               [index]="i + 1">
@@ -25,7 +25,7 @@ import {MasteryPageStatsItemComponent} from '../masteryPageStatsItem/masteryPage
       </div>
       <div class="row">
         <div class="col-12">
-          <h2>Points available: {{ masteryService.getPointsMax() }}</h2>
+          <h2>Points available: {{ masteryService.current.max }}</h2>
         </div>
       </div>
     `,

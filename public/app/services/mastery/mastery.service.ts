@@ -12,9 +12,10 @@ export class MasteryService extends Pages<Page> {
   public masteries: any;
   public categories: string[] = [
     'Ferocity',
-    'Cunning',
-    'Resolve'
+    'Resolve',
+    'Cunning'
   ];
+
 
   constructor(
     public http: Http,
@@ -29,8 +30,8 @@ export class MasteryService extends Pages<Page> {
       .map(res => res.json())
       .subscribe(
         data => {
-          this.grid = data.masteries;
-          this.masteries = data.data;
+          this.grid = data.grid;
+          this.masteries = data.masteries;
         },
         error => console.log(error)
       );
@@ -70,8 +71,8 @@ export class MasteryService extends Pages<Page> {
 
   masteryCheckUp(id: string, category?: number, row?: number): boolean {
     if (isNaN(category) || isNaN(row)) {
-      var category = parseInt(id.slice(1, 2), 10);
-      var row = parseInt(id.slice(2, 3), 10);
+      var category = parseInt(id.toString().slice(1, 2), 10);
+      var row = parseInt(id.toString().slice(2, 3), 10);
     }
 
     if (this.pages[this.active].max > 0 && !this.isMaxed(row, category)) {
@@ -123,8 +124,9 @@ export class MasteryService extends Pages<Page> {
     return this.pages[this.active].rank[id];
   }
 
-  getCategory(id: string): number {
-    return parseInt(id.slice(1, 2), 10);
+  getCategory(id: number): number {
+    console.log(id);
+    return parseInt(id.toString().slice(1, 2), 10);
   }
 
   rowSum(row: number, category: number): number {
@@ -146,10 +148,6 @@ export class MasteryService extends Pages<Page> {
 
   getPointsOfCategory(category: number): number {
     return this.pages[this.active].sums[category];
-  }
-
-  getPointsMax(): number {
-    return this.pages[this.active].max;
   }
 
   getSums(page: number = this.active): number[] {
