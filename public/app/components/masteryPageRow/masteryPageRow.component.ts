@@ -19,9 +19,9 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
             rank: masteryService.getRank(mastery)
           }
         }"
-        (wheel)="masteryService.onScroll(mastery, $event)"
-        (click)="masteryService.addMastery(mastery, $event)"
-        (contextmenu)="masteryService.removeMastery(mastery, $event)"
+        (click)="masteryService.addMastery(mastery)"
+        (contextmenu)="onRightClick(mastery, $event)"
+        (wheel)="onWheel(mastery, $event)"
         [mastery]="mastery"
         [row-index]="rowIndex">
       </mastery-page-mastery-component>
@@ -34,4 +34,26 @@ export class MasteryPageRowComponent {
   @Input('index') rowIndex;
 
   constructor(public masteryService: MasteryService) { }
+
+  onRightClick(mastery, event: MouseEvent): void {
+
+    // Prevent context menu from showing up.
+    event.preventDefault();
+
+
+    this.masteryService.removeMastery(mastery);
+  }
+
+  onWheel(id: number, event: WheelEvent): void {
+
+    // Prevent page from scrolling.
+    event.preventDefault();
+
+
+    if (event.deltaY > 0) {
+      this.masteryService.removeMastery(id);
+    } else {
+      this.masteryService.addMastery(id);
+    }
+  }
 }

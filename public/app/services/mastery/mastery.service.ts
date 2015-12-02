@@ -41,38 +41,38 @@ export class MasteryService extends Pages<Page> {
     return n % 2 === 0;
   }
 
-  addMastery(id: string, event: MouseEvent): void {
-    const category = parseInt(id.slice(1, 2), 10);
-    const row = parseInt(id.slice(2, 3), 10);
+  addMastery(id: number): void {
+    const {category, row} = this.getInfo(id);
 
     if (this.masteryCheckUp(id, category, row)) {
-      this.pages[this.active].addMastery(id, category, row);
+      this.pages[this.active].addMastery(id, category);
       this.updateTooltip(id);
     } else {
       console.log('sorry, you can not do that!');
     }
   }
 
-  removeMastery(id: string, event: MouseEvent): void {
+  getInfo(id: number): {category: number, row: number} {
+    return {
+      category: parseInt(id.toString().slice(1, 2), 10),
+      row: parseInt(id.toString().slice(2, 3), 10)
+    }
+  }
 
-    // prevent context menu from showing up
-    event.preventDefault();
-
-    const category = parseInt(id.slice(1, 2), 10);
-    const row = parseInt(id.slice(2, 3), 10);
+  removeMastery(id: number): void {
+    const {category, row} = this.getInfo(id);
 
     if (this.masteryCheckDown(id, row, category)) {
-      this.pages[this.active].removeMastery(id);
+      this.pages[this.active].removeMastery(id, category);
       this.updateTooltip(id);
     } else {
       console.log('stop that!');
     }
   }
 
-  masteryCheckUp(id: string, category?: number, row?: number): boolean {
+  masteryCheckUp(id: number, category?: number, row?: number): boolean {
     if (isNaN(category) || isNaN(row)) {
-      var category = parseInt(id.toString().slice(1, 2), 10);
-      var row = parseInt(id.toString().slice(2, 3), 10);
+      const {category, row} = this.getInfo(id);
     }
 
     if (this.pages[this.active].max > 0 && !this.isMaxed(row, category)) {
@@ -85,16 +85,8 @@ export class MasteryService extends Pages<Page> {
     return false;
   }
 
-  onScroll(id: string, event: WheelEvent): void {
-    event.preventDefault();
-    if (event.deltaY > 0) {
-      this.removeMastery(id, event);
-    } else {
-      this.addMastery(id, event);
-    }
-  }
 
-  masteryCheckDown(id: string, row: number, category: number): boolean {
+  masteryCheckDown(id: number, row: number, category: number): boolean {
     if (
       this.pages[this.active].max < 30
       && this.getRank(id) > 0
@@ -112,31 +104,33 @@ export class MasteryService extends Pages<Page> {
     return even ? rowSum === 1 : rowSum === 5;
   }
 
-  isMasteryMaxed(id: string): boolean {
+  isMasteryMaxed(id: number): boolean {
     return (this.getRank(id) || 0) === this.masteries[id].ranks;
   }
 
-  isMasteryActive(id: string): boolean {
+  isMasteryActive(id: number): boolean {
     return (this.getRank(id) || 0) > 0;
   }
 
-  getRank(id: string): number {
+  getRank(id: number): number {
     return this.pages[this.active].rank[id];
   }
 
   getCategory(id: number): number {
-    console.log(id);
     return parseInt(id.toString().slice(1, 2), 10);
   }
 
-  rowSum(row: number, category: number): number {
+  rowSum(r: number, c: number): number {
     return this.pages[this.active].masteries
-      .filter(mastery => mastery.row === row && mastery.category === category)
+      .filter(mastery => {
+        const {category, row} = this.getInfo(mastery.id);
+        return r === row && c === category
+      })
       .map(mastery => mastery.rank)
       .reduce((a, b) => a + b, 0);
   }
 
-  updateTooltip(id: string): void {
+  updateTooltip(id: number): void {
     this.tooltipService.show({
       type: 'mastery',
       data: {
