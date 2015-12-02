@@ -16,25 +16,34 @@ export class Page {
       this.masteries.push(new Mastery(id, 1));
       this.rank[id] = 1;
     } else {
-      mastery.rank += 1;
-      this.rank[id] += 1;
+      this.updateMastery(1, mastery);
     }
-    this.sums[category - 1] += 1;
-    this.max -= 1;
+
+    this.updateCounters(1, category);
   }
 
   removeMastery(id: number, category: number) {
     const mastery = this.masteries.filter(mastery => mastery.id === id)[0];
-    const index = this.masteries.indexOf(mastery);
 
     if (mastery.rank > 1) {
-      mastery.rank -= 1;
-      this.rank[id] -= 1;
+      this.updateMastery(-1, mastery);
     } else {
+      const index = this.masteries.indexOf(mastery);
+
       this.masteries.splice(index, 1);
       delete this.rank[id];
     }
-    this.sums[category - 1] -= 1;
-    this.max += 1;
+
+    this.updateCounters(-1, category);
+  }
+
+  updateCounters(ammount: number, category: number): void {
+    this.sums[category - 1] += ammount;
+    this.max -= ammount;
+  }
+
+  updateMastery(ammount:number, mastery: Mastery): void {
+    mastery.rank += ammount;
+    this.rank[mastery.id] += ammount;
   }
 }

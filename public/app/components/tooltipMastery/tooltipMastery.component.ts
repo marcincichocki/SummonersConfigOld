@@ -8,7 +8,7 @@ import {MasteryService} from '../../services/mastery/mastery.service';
   directives: [NgClass, NgFor],
   template: `
     <div class="tooltip-mastery">
-      <h3 class="c{{ masteryService.getCategory(data.mastery.id) }}">
+      <h3 class="c{{ getCategory(data.mastery.id) }}">
         {{ data.mastery.name }}
       </h3>
       <p class="rank"
@@ -32,4 +32,9 @@ import {MasteryService} from '../../services/mastery/mastery.service';
 export class TooltipMasteryComponent {
   @Input() data;
   constructor(public masteryService: MasteryService) { }
+
+
+  getCategory(id: number): number {
+    return parseInt(id.toString().slice(1, 2), 10);
+  }
 }

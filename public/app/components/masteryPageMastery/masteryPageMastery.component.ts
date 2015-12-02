@@ -9,12 +9,12 @@ import {MasteryService} from '../../services/mastery/mastery.service';
     <div class="mastery m{{ mastery }}"
       [ng-class]="{
         available: masteryService.masteryCheckUp(mastery),
-        active: masteryService.isMasteryActive(mastery),
-        max: masteryService.isMasteryMaxed(mastery)
+        active: isMasteryActive(mastery),
+        max: isMasteryMaxed(mastery)
       }">
 
       <p class="rank" *ng-if="masteryService.isEven(rowIndex)">
-        <span>{{ masteryService.getRank(mastery) || 0 }}/</span>
+        <span>{{ masteryService.current.rank[mastery] || 0 }}/</span>
         <span>{{ masteryService.masteries[mastery].ranks }}</span>
       </p>
     </div>
@@ -26,4 +26,13 @@ export class MasteryPageMasteryComponent {
   @Input() mastery;
 
   constructor(public masteryService: MasteryService) { }
+
+
+  isMasteryMaxed(id: number): boolean {
+    return (this.masteryService.current.rank[id] || 0) === this.masteryService.masteries[id].ranks;
+  }
+
+  isMasteryActive(id: number): boolean {
+    return (this.masteryService.current.rank[id] || 0) > 0;
+  }
 }

@@ -16,7 +16,7 @@ import {TooltipDirective} from '../../directives/tooltip.directive';
           type: 'mastery',
           data: {
             mastery: masteryService.masteries[mastery],
-            rank: masteryService.getRank(mastery)
+            rank: masteryService.current.rank[mastery]
           }
         }"
         (click)="masteryService.addMastery(mastery)"

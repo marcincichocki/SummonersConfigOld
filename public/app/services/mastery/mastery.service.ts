@@ -37,7 +37,7 @@ export class MasteryService extends Pages<Page> {
       );
   }
 
-  isEven(n) {
+  isEven(n: number): boolean {
     return n % 2 === 0;
   }
 
@@ -45,10 +45,8 @@ export class MasteryService extends Pages<Page> {
     const {category, row} = this.getInfo(id);
 
     if (this.masteryCheckUp(id, category, row)) {
-      this.pages[this.active].addMastery(id, category);
+      this.current.addMastery(id, category);
       this.updateTooltip(id);
-    } else {
-      console.log('sorry, you can not do that!');
     }
   }
 
@@ -62,21 +60,19 @@ export class MasteryService extends Pages<Page> {
   removeMastery(id: number): void {
     const {category, row} = this.getInfo(id);
 
-    if (this.masteryCheckDown(id, row, category)) {
+    if (this.masteryCheckDown(id, category, row)) {
       this.pages[this.active].removeMastery(id, category);
       this.updateTooltip(id);
-    } else {
-      console.log('stop that!');
     }
   }
 
   masteryCheckUp(id: number, category?: number, row?: number): boolean {
     if (isNaN(category) || isNaN(row)) {
-      const {category, row} = this.getInfo(id);
+      var {category, row} = this.getInfo(id);
     }
 
-    if (this.pages[this.active].max > 0 && !this.isMaxed(row, category)) {
-      if (row !== 1 && this.isMaxed(row - 1, category)) {
+    if (this.current.max > 0 && !this.isMaxed(category, row)) {
+      if (row !== 1 && this.isMaxed(category, row - 1)) {
         return true;
       } else if (row === 1) {
         return true;
@@ -86,10 +82,10 @@ export class MasteryService extends Pages<Page> {
   }
 
 
-  masteryCheckDown(id: number, row: number, category: number): boolean {
+  masteryCheckDown(id: number, category: number, row: number): boolean {
     if (
-      this.pages[this.active].max < 30
-      && this.getRank(id) > 0
+      this.current.max < 30
+      && this.current.rank[id] > 0
       && this.rowSum(row + 1, category) === 0
     ) {
       return true;
@@ -97,34 +93,18 @@ export class MasteryService extends Pages<Page> {
     return false;
   }
 
-  isMaxed(row: number, category: number): boolean {
+  isMaxed(category: number, row: number): boolean {
     const even = this.isEven(row);
-    const rowSum = this.rowSum(row, category);
+    const rowSum = this.rowSum(category, row);
 
     return even ? rowSum === 1 : rowSum === 5;
   }
 
-  isMasteryMaxed(id: number): boolean {
-    return (this.getRank(id) || 0) === this.masteries[id].ranks;
-  }
-
-  isMasteryActive(id: number): boolean {
-    return (this.getRank(id) || 0) > 0;
-  }
-
-  getRank(id: number): number {
-    return this.pages[this.active].rank[id];
-  }
-
-  getCategory(id: number): number {
-    return parseInt(id.toString().slice(1, 2), 10);
-  }
-
-  rowSum(r: number, c: number): number {
-    return this.pages[this.active].masteries
+  rowSum(category: number, row: number): number {
+    return this.current.masteries
       .filter(mastery => {
-        const {category, row} = this.getInfo(mastery.id);
-        return r === row && c === category
+        const {category: c, row: r} = this.getInfo(mastery.id);
+        return category === c && row === r;
       })
       .map(mastery => mastery.rank)
       .reduce((a, b) => a + b, 0);
@@ -135,16 +115,8 @@ export class MasteryService extends Pages<Page> {
       type: 'mastery',
       data: {
         mastery: this.masteries[id],
-        rank: this.getRank(id)
+        rank: this.current.rank[id]
       }
     });
-  }
-
-  getPointsOfCategory(category: number): number {
-    return this.pages[this.active].sums[category];
-  }
-
-  getSums(page: number = this.active): number[] {
-    return this.pages[page].sums;
   }
 }
